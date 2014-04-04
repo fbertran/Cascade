@@ -1,0 +1,28 @@
+import(abind, animation, cluster, graphics, grDevices, igraph, lars, lattice, limma, magic, methods, nnls, splines, stats, stats4, survival, tnet, utils)
+importFrom(VGAM,rlaplace)
+
+exportMethods(
+    "analyze_network",
+    "cutoff",
+    "dim",
+    "evolution",
+    "geneNeighborhood",
+    "genePeakSelection",
+    "geneSelection",
+    "head",
+    "inference",
+    "plot",
+    "position",
+    "predict",
+    "print",
+    "summary",
+    "unionMicro",
+    "gene_expr_simulation"
+)
+exportClasses(
+    "micro_array",
+     "network",
+     "micropredict"
+)
+
+export("network_random","as.micro_array","compare")

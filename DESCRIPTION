@@ -1,0 +1,16 @@
+Package: Cascade
+Type: Package
+Title: Selection, Reverse-Engineering and Prediction in Cascade
+        networks.
+Version: 1.03
+Date: 2014-03-24
+Author: Nicolas Jung, Frederic Bertrand, Myriam Maumy-Bertrand Laurent Vallat
+Maintainer: <cascade@math.unistra.fr>
+Description: The Cascade is a modeling tool allowing gene selection, reverse engineering, and prediction. 
+License: GPL (>= 2)
+Depends: R (>= 2.10), methods, abind, animation, cluster, graphics,
+        grDevices, grid, igraph, lars, lattice, limma, magic, nnls,
+        splines, stats, stats4, survival, tnet, utils, VGAM
+Collate: global.R micro_array.R network.R micro_array-network.R
+        micropredict.R
+Packaged: 2014-03-24 10:37:06 UTC; nicolas

@@ -1,0 +1,18 @@
+citHeader("To cite package ''Cascade'' in publications use:")
+
+year <- sub(".*(2[[:digit:]]{3})-.*", "\\1", meta$Date, perl = TRUE)
+vers <- paste("R package version", meta$Version)
+
+citEntry(entry = "Article",
+         title = "Cascade: a R-package to study, predict and simulate the diffusion of a signal through a temporal gene network",
+         author = personList(as.person("Nicolas Jung"),
+                             as.person("Frederic Bertrand"),
+                             as.person("Seiamak Bahram"),
+                             as.person("Myriam Maumy-Bertrand"),
+                             as.person("Laurent Vallat")
+                             ),
+         year = 2013,
+         
+journal="Bioinformatics",
+         textVersion =
+         paste0("Jung, N., Bertrand, F., Bahram, S., Vallat, L., and Maumy-Bertrand, M. (2013). Cascade: a R-package to study, predict and simulate the diffusion of a signal through a temporal gene network. Bioinformatics, btt705."))
