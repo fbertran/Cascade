@@ -139,7 +139,7 @@ setMethod("position","network",function(net,nv=0){
   
   # dev.new(width=150,heigth=300,xlim=c(min(L[,1]),max(L[,1])))
   #par(mar=c(0,0,0,0), oma=c(0,0,0,0),mai=c(0,0,0,0))
-  L<-layout.fruchterman.reingold(G,xmin=0,xmax=150,ymin=0,ymax=300)
+  L<-layout.fruchterman.reingold(G,minx=rep(0,vcount(G)),maxx=rep(150,vcount(G)),miny=rep(0,vcount(G)),maxy=rep(300,vcount(G)))
   return(cbind(nom,L))
 }
 )
@@ -416,6 +416,7 @@ setMethod("plot"
                       
                       plot(G
                            ,layout=ini
+                           ,vertex.size=size
                            #,vertex.size=size,edge.width=size.ed*5*edge.thickness
                            #,edge.arrow.size=edge.arrow.size*size.ed*edge.thickness
                            #,edge.arrow.width=edge.arrow.size*size.ed*edge.thickness

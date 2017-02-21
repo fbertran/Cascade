@@ -186,7 +186,7 @@ else{
 	signature=c("micro_array","micro_array","numeric"),
 	definition=function(x,y,tot.number,data_log=TRUE,wanted.patterns=NULL,forbidden.patterns=NULL,pic=NULL,alpha=0.05,Design=NULL,lfc=0){
    
-	  BBB<-strsplit(sessionInfo()[5]$otherPkgs$limma$Version,"[.]")
+	  BBB<-strsplit(sessionInfo()$otherPkgs$limma$Version,"[.]")
 	  
 	  if( !(BBB[[1]][1]>3 || (BBB[[1]][1]==3 && BBB[[1]][2]>18) || 
 	          (BBB[[1]][1]==3 && BBB[[1]][2]==18 && BBB[[1]][3]>=13 ) ))
@@ -412,7 +412,7 @@ setMethod(f="geneSelection",
 	definition=function(x,y,tot.number,data_log=TRUE,alpha=0.05,cont=FALSE,lfc=0,f.asso=NULL){
   
   
-	  BBB<-strsplit(sessionInfo()[5]$otherPkgs$limma$Version,"[.]")
+	  BBB<-strsplit(sessionInfo()$otherPkgs$limma$Version,"[.]")
 	  
 	  if( !(BBB[[1]][1]>3 || (BBB[[1]][1]==3 && BBB[[1]][2]>18) || 
 	          (BBB[[1]][1]==3 && BBB[[1]][2]==18 && BBB[[1]][3]>=13 ) ))
