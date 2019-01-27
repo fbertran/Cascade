@@ -39,6 +39,7 @@ Nicolas Jung, Fr\'ed\'eric Bertrand , Myriam Maumy-Bertrand.
 
 
 \examples{
+  require(CascadeData)
 	data(micro_US)
 	micro_US<-as.micro_array(micro_US,time=c(60,90,210,390),subject=6)
 }

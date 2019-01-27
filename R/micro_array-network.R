@@ -12,62 +12,62 @@ setMethod("predict"
             if(!is.null(targets)){
               micro@microarray[targets,]<-0
             }
-            #groupes
+            #groups
             groupe<-object@group
-            #Le microarray
+            #microarray
             M<-micro@microarray
-            #Nombre de temps
+            #number of measurements (=number of timepoints)
             T<-length(object@time)
-            #Genes
+            #genes
             gene<-1:length(groupe)
             gene2<-gene
-            #Premiers temps
+            #first times
             supp<-seq(1,T*object@subject,T)
-            #Tous les temps
+            #all the times
             supp2<-1:(T*object@subject)
-            #Tous les temps moins les premiers
+            #all times that are not first times
             supp2<-supp2[-supp]
-            #On enleve les genes silences
+            #removinh silenced genes
             if(!is.null(targets)){
               gene<-gene[-targets]
             }
-            #Les poids
+            #weights
             O<-Omega@network
-            #Cutoff
+            #cutoff
             O[abs(O)<nv]<-0
-            #Matrices F
+            #F matrices
             F<-Omega@F
-            #Encore le microarray
+            #microarray (again)
             microP<-micro
-            #predicteurs
+            #predictors
             sup_pred<-rep(1:(T-1),micro@subject)+rep(seq(0,T*(micro@subject-1),T),each=T-1)
             
             
-            #Encore le microarray
+            #microarray (again)
             micro2<-micro
-            #Indice pour les matrices F
+            #index for the F matrices
             u<-0
             for(pic in 2:(T)){
               
-              #On garde les groupes predicteurs
+              #keeping predictor groups
               IND<-which(groupe[gene2]%in%1:(pic-1))
               grIND<-groupe[IND]
-              #On silence les targets
+              #silencing targets
               if(!is.null(targets)){
                 micro2@microarray[targets,]<-micro@microarray[targets,]
               }
-              #Genes predicteurs aux temps 1..T-1
+              #predictors genes (timepoints 1..T-1)
               pred<-micro2@microarray[IND,sup_pred]
               #print(pred[IND==72,])
-              #Pour chaque groupe
+              #for every group
               for(k in 1:(pic-1)){
-                #On prend les indices du kieme groupe
+                #indices for the kth group
                 ind<-which(grIND %in% k)
-                #On incremente l'indice de la matrice F
+                #increasing the F matrix index
                 u<-u+1
-                #Fonction produit de la matrice F avec un vecteur
+                #product of the F matrix and a vector
                 f<-function(x){(F[,,u]%*%(x))}#/(sqrt(sum((F[,,u]%*%(x))^2)))}
-                #Pour chaque sujet
+                #for each subject
                 for(i in 1:micro@subject){
                   pred[ind,1:(T-1)+(i-1)*(T-1)]<-t(apply(pred[ind,1:(T-1)+(i-1)*(T-1)],1,f))
                 }
