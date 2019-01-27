@@ -11,8 +11,8 @@ citEntry(entry = "Article",
                              as.person("Myriam Maumy-Bertrand"),
                              as.person("Laurent Vallat")
                              ),
-         year = 2013,
+         year = 2014,
          
 journal="Bioinformatics",
          textVersion =
-         paste0("Jung, N., Bertrand, F., Bahram, S., Vallat, L., and Maumy-Bertrand, M. (2013). Cascade: a R-package to study, predict and simulate the diffusion of a signal through a temporal gene network. Bioinformatics, btt705."))
+         paste0("Jung, N., Bertrand, F., Bahram, S., Vallat, L., and Maumy-Bertrand, M. (2014). Cascade: a R-package to study, predict and simulate the diffusion of a signal through a temporal gene network. Bioinformatics, btt705."))

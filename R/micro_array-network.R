@@ -310,24 +310,37 @@ setMethod(f="inference"
                 Omega[IND, which(gr %in% pic)]<-Omega[IND, which(gr %in% pic)]*0
                 
                 #Nous allons passer au Lasso
-                fun_lasso<-function(x){lasso_reg(pred,x,K=K,eps)} 
-                retenir<-lars::cv.folds 
+                #retenir<-lars::cv.folds 
                 #Ceci permet de changer une fonction interne de lars 
                 # qui s'occupe de la validation croisee. 
+                
                 if(cv.subjects==TRUE){
-                  assignInNamespace("cv.folds"
-                                    ,function(n,folds){
+                  cv.folds1=function(n,folds){
                                       split(1:dim(pred)[2]
-                                            ,rep(1:P,each=dim(pred)[2]/P)
-                                      )
-                                    }
-                                    , ns="lars")
+                                            ,rep(1:P,each=dim(pred)[2]/P))}
+#                  cv.fun.name="cv.folds1"
+                  } else {
+                    cv.folds1=lars::cv.folds
+#                    cv.fun.name="lars::cv.folds"
+                  }
+#                cat(cv.fun.name)
+                fun_lasso<-function(x){lasso_reg(pred,x,K=K,eps,cv.fun=cv.folds1
+                                                 #,cv.fun.name=cv.fun.name
+                                                 )} 
+                
+                  # assignInNamespace("cv.folds"
+                  #                   ,function(n,folds){
+                  #                     split(1:dim(pred)[2]
+                  #                           ,rep(1:P,each=dim(pred)[2]/P)
+                  #                     )
+                  #                   }
+                  #                   , ns="lars")
                   Omega[IND, which(gr %in% pic)]<-apply(Y,1,fun_lasso)
-                  assignInNamespace("cv.folds",retenir, ns="lars")
-                }
-                else{
-                  Omega[IND, which(gr %in% pic)]<-apply(Y,1,fun_lasso)
-                }
+#                  assignInNamespace("cv.folds",retenir, ns="lars")
+                # }
+                # else{
+                #   Omega[IND, which(gr %in% pic)]<-apply(Y,1,fun_lasso)
+                # }
                 
               } 
               #fin de la boucle for avec pic ; 
@@ -477,16 +490,16 @@ setMethod("gene_expr_simulation"
             T<-length(unique(time_label))
             gene1<-which(time_label==1)
             supp<-seq(1,dim(M)[2],by=length(unique(time_label)))
-            M[gene1,supp]<-rlaplace(length(supp)*length(gene1),level_pic,level_pic*0.9)*(-1)^rbinom(length(supp)*length(gene1),1,0.5)
+            M[gene1,supp]<-VGAM::rlaplace(length(supp)*length(gene1),level_pic,level_pic*0.9)*(-1)^rbinom(length(supp)*length(gene1),1,0.5)
             supp<-(1:dim(M)[2])[-supp]
-            M[gene1,supp]<-rlaplace(length(supp)*length(gene1),0,level_pic*0.3) 
+            M[gene1,supp]<-VGAM::rlaplace(length(supp)*length(gene1),0,level_pic*0.3) 
             
             
             for(i in 2:T){
               
               genei<-which(time_label==i)
               supp<-seq(1,dim(M)[2],by=length(unique(time_label)))
-              M[genei,supp]<-rlaplace(length(supp)*length(genei),0,level_pic*0.3)
+              M[genei,supp]<-VGAM::rlaplace(length(supp)*length(genei),0,level_pic*0.3)
               for(j in genei){
                 for( t in 2:T){
                   M[j,supp+t-1]<-apply(N[,j]*M[,supp+(t-2)],2,sum) + 	rnorm(length(supp+t),0,50)	

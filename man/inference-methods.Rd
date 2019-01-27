@@ -38,9 +38,9 @@ Nicolas Jung, Fr\'ed\'eric Bertrand , Myriam Maumy-Bertrand.
 }
 
 \examples{
-	#data(micro_US)
-	#inference(micro_US)
+\donttest{
 	#See vignette for more details
+}
 }
 
 \keyword{methods}

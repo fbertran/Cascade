@@ -1,2 +1,9 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
+^\.gitignore$
+^css*$
+^fullrespdf*$
+^images*$
+^index\.html$
+^js*$
+^README\.md$

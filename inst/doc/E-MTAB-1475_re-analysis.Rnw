@@ -1,4 +1,0 @@
-%\VignetteIndexEntry{E-MTAB-1475_re-analysis}
-\documentclass{article}
-\begin{document}
-\end{document}

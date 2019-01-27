@@ -4,22 +4,22 @@
 \docType{package}
 \title{The Cascade Package}
 \description{
-The Cascade is a modeling tool allowing gene selection, reverse engineering, and prediction.
+A modeling tool allowing gene selection, reverse engineering, and prediction in Cascade networks.
 }
 \details{
 \tabular{ll}{
 Package: \tab Cascade\cr
 Type: \tab Package\cr
-Version: \tab 1.03\cr
-Date: \tab 2014-03-24\cr
+Version: \tab 1.5\cr
+Date: \tab 2019-01-26\cr
 License: \tab GNU 2.0\cr
 Depends: \tab methods\cr
 }
 
 }
 \author{
-This package has been written by Nicolas Jung in collaboration with Frederic Bertrand, Myriam Maumy-Bertrand and Laurent Vallat.
-Maintainer:  <cascade@math.unistra.fr>
+This package has been written by Fr\'ed\'eric Bertrand, Myriam Maumy-Bertrand and Nicolas Jung with biological insights from Laurent Vallat.
+Maintainer:  Fr\'ed\'eric Bertrand <frederic.bertrand@math.unistra.fr>
 }
 
 

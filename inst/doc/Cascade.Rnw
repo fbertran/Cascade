@@ -1,4 +1,0 @@
-%\VignetteIndexEntry{Introduction_to_Cascade}
-\documentclass{article}
-\begin{document}
-\end{document}

@@ -1,5 +1,6 @@
 \name{unionMicro-methods}
 \docType{methods}
+\alias{unionMicro}
 \alias{unionMicro-methods}
 \alias{unionMicro,micro_array,micro_array-method}
 \alias{unionMicro,list,ANY-method}

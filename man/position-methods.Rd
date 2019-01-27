@@ -1,5 +1,6 @@
 \name{position-methods}
 \docType{methods}
+\alias{position}
 \alias{position-methods}
 \alias{position,network-method}
 \title{Returns the position of edges in the network}

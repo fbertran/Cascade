@@ -89,10 +89,10 @@ setMethod("summary","micro_array",function(object,nb.graph=NULL,...)
 	G<-object@microarray
 	colnames(G)<-paste(rep(paste("T",object@time),object@subject), as.character(rep(paste("subject",1:object@subject),each=length(object@time))))
 	z <- cor(G)
-	require(lattice)
+	#require(lattice)
 	#rownames(z)<-NULL
 	if(is.null(nb.graph) || nb.graph==1 ){
-	print(levelplot(z,aspect="iso",xlab="",ylab="", 
+	print(lattice::levelplot(z,aspect="iso",xlab="",ylab="", 
 scales=list(x=list(rot=90)), 
 ylab.right = "Level of correlation",
 par.settings = list(layout.widths = list(axis.key.padding = 0,
@@ -106,7 +106,7 @@ par.settings = list(layout.widths = list(axis.key.padding = 0,
 	z <- cor(G)
 	
 	if(is.null(nb.graph) || nb.graph==2 ){
-	print(levelplot(z,aspect="iso",xlab="",ylab="", 
+	print(lattice::levelplot(z,aspect="iso",xlab="",ylab="", 
 scales=list(x=list(rot=90)), 
 ylab.right = "Level of correlation",
 par.settings = list(layout.widths = list(axis.key.padding = 0,
@@ -121,7 +121,7 @@ par.settings = list(layout.widths = list(axis.key.padding = 0,
 	z <- cor(t(R))
 
 	if(is.null(nb.graph) || nb.graph==3 ){
-	print(levelplot(z,aspect="iso",xlab="",ylab="", 
+	print(lattice::levelplot(z,aspect="iso",xlab="",ylab="", 
 scales=list(x=list(rot=90)), 
 ylab.right = "Level of correlation",
 par.settings = list(layout.widths = list(axis.key.padding = 0,
@@ -137,8 +137,8 @@ setMethod("dim","micro_array",function(x)
 setMethod("plot","micro_array",function(x,y,...)
 {
 		
-require(lattice)
-require(grid)	
+#require(lattice)
+#require(grid)	
 xs<-t(x@microarray)
 
 rownames(xs)<-1:dim(xs)[1]
@@ -157,13 +157,13 @@ gr<-rep(paste("Cluster",x@group,sep=" "),each=x@subject*length(x@time))
 
 
 dev.new()
-print(xyplot(V$conc~V$ys|V$suj,as.table=TRUE,xlab="Time",ylab="Gene Expression",group=rep(1:(x@subject*dim(xs)[2]),each=length(x@time)),type="l",scales=list(x=list(relation="free",at=x@time),y=list(relation="free")),col=rep(x@group,each=x@subject),key=list(
+print(lattice::xyplot(V$conc~V$ys|V$suj,as.table=TRUE,xlab="Time",ylab="Gene Expression",group=rep(1:(x@subject*dim(xs)[2]),each=length(x@time)),type="l",scales=list(x=list(relation="free",at=x@time),y=list(relation="free")),col=rep(x@group,each=x@subject),key=list(
 space="right",
 lines=list(type="l",col=cclus),
 text=list(text=paste("Cluster",as.character(cclus)))
 )))
 dev.new()
-print(xyplot(V$conc~V$ys|gr,as.table=TRUE,xlab="Time",ylab="Gene Expression",group=rep(1:(x@subject*dim(xs)[2]),each=length(x@time)),type="l",scales=list(x=list(relation="free",at=x@time),y=list(relation="free")),col=rep(1:x@subject,dim(xs)[2]),key=list(
+print(lattice::xyplot(V$conc~V$ys|gr,as.table=TRUE,xlab="Time",ylab="Gene Expression",group=rep(1:(x@subject*dim(xs)[2]),each=length(x@time)),type="l",scales=list(x=list(relation="free",at=x@time),y=list(relation="free")),col=rep(1:x@subject,dim(xs)[2]),key=list(
 space="right",
 lines=list(type="l",col=1:x@subject),
 text=list(text=paste("Subject",as.character(1:x@subject)))
@@ -172,11 +172,11 @@ for(i in 1:x@subject){
 ss<-V$suj
 sss<-ss==paste("Subject",i,sep=" ")
 dev.new()
-print(xyplot(V$conc[sss]~V$ys[sss]|gr[sss],as.table=TRUE,xlab="Time",ylab="Gene Expression",type="l",main=paste("Subject",i,sep=" "),group=rep(1:(x@subject*dim(xs)[2]),each=length(x@time))[sss],scales=list(x=list(relation="free",at=x@time),y=list(relation="free"))))
+print(lattice::xyplot(V$conc[sss]~V$ys[sss]|gr[sss],as.table=TRUE,xlab="Time",ylab="Gene Expression",type="l",main=paste("Subject",i,sep=" "),group=rep(1:(x@subject*dim(xs)[2]),each=length(x@time))[sss],scales=list(x=list(relation="free",at=x@time),y=list(relation="free"))))
 }
 }
 else{
-	xyplot(V$conc~V$ys|V$suj,xlab="Time",as.table=TRUE,group=rep(1:(x@subject*dim(xs)[2]),each=length(x@time)),ylab="Gene Expression",scales=list(x=list(relation="free",at=x@time),y=list(relation="free")),type="l",col="black")
+  lattice::xyplot(V$conc~V$ys|V$suj,xlab="Time",as.table=TRUE,group=rep(1:(x@subject*dim(xs)[2]),each=length(x@time)),ylab="Gene Expression",scales=list(x=list(relation="free",at=x@time),y=list(relation="free")),type="l",col="black")
 	}
 }
 )
@@ -240,7 +240,7 @@ if(is.null(rownames(M2_mic))){rownames(M2_mic)<-paste("probe ",1:dim(M2_mic)[1])
 		vnom<-paste(c(paste(rep("US_time",length(M1@time)),M1@time[1:(length(M1@time))],sep=""),paste(rep("S_time",length(M1@time)),M1@time[1:(length(M1@time))],sep="")),sep="")
 		colnames(design)<-vnom
 		}else{
-		 design<-Desing$X		
+		 design<-Design$X		
 		}
 		#block<-rep(1:(M1@subject*2),each=T)
 		#dupcor <- duplicateCorrelation(M,design,block=block)
@@ -458,7 +458,7 @@ Subj<-(M[[2]]@subject)
 #		
 #		
 #		
-    	Ma<-abind(M_mic,along=2)
+    	Ma<-abind::abind(M_mic,along=2)
 		T<-Time
 		
 		

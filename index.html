@@ -1,7 +1,7 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta name="generator" content="R package animation 2.4">
+	<meta name="generator" content="R package animation 2.6">
 	<title>Animations Using the R Language</title>
 	<link rel="stylesheet" href="css/reset.css" />
 	<link rel="stylesheet" href="css/styles.css" />
@@ -18,92 +18,30 @@
 <body>
 
 	<div class="scianimator"><div id="Rplot" style="display: inline-block;"></div></div>
-	<div class="scianimator" style="width: 2000px; text-align: left"><pre><code class="r">## Animations generated in R version 3.3.1 (2016-06-21) using the package animation
-library(hgu133plus2.db)
-library(org.Hs.eg.db)
-library(AnnotationDbi)
-library(IRanges)
-library(S4Vectors)
-library(Biobase)
-library(BiocGenerics)
-library(Cascade)
-library(VGAM)
+	<div class="scianimator" style="width: 2000px; text-align: left"><pre><code class="r">## Animations generated in R version 3.5.2 (2018-12-20) using the package animation
+library(animation)
 library(tnet)
 library(survival)
-library(nnls)
-library(magic)
-library(limma)
-library(lattice)
-library(lars)
 library(igraph)
-library(cluster)
-library(animation)
-library(abind)
-for (i in c(0.999, 0.99, 0.98, 0.97, 0.96, 0.95)) {
-    plot(G, layout = ini, vertex.size = size, edge.arrow.size = 0.6 * 
-        (1 + size.ed), edge.width = size.ed * 5, edge.arrow.width = 0.5 * 
-        (1 + size.ed), vertex.color = grey(i), vertex.label.cex = 1, 
-        edge.color = grey(i), asp = 0, vertex.label = nom2, 
-        vertex.frame.color = frame.color)
-}
-for (i in 1:(T)) {
-    Ver.col <- rep(grey(0.95), length(nom))
-    Edge.col <- rep(grey(0.95), dim(Q)[1])
-    mms <- 20
-    PP <- 1:mms
-    for (p in PP) {
-        coul <- col2rgb(color.vertex[i])
-        indi <- which(gr2 == i)
-        Ver.col[indi] <- rgb(coul[1], coul[2], coul[3], alpha = (p - 
-            1) * 255/(mms), max = 255)
-        for (k in 1:i) {
-            coul <- col2rgb(color.vertex[k])
-            indi3 <- which(gr[Q[, 1]] == k & gr[Q[, 2]] == 
-              i)
-            Edge.col[indi3] <- rgb(coul[1], coul[2], coul[3], 
-              alpha = 255 - (p - 1) * 255/(mms), max = 255)
-        }
-        if (i != T) {
-            for (k in 1:i) {
-              for (k2 in min((i + 1), T):T) {
-                coul <- col2rgb(color.vertex[k])
-                indi3 <- which(gr[Q[, 1]] == k & gr[Q[, 2]] == 
-                  k2)
-                al <- round(mms/(k2 - k))
-                ald <- min(1 + al * (i - k), mms)
-                if (k2 == (i + 1)) {
-                  alf <- mms
-                }
-                else {
-                  alf <- min(al * (i - k + 1), mms)
-                }
-                alseq <- seq(25, 255, length.out = mms)
-                alphaseq2 <- seq(alseq[ald], alseq[alf], 
-                  length.out = mms)
-                Edge.col[indi3] <- rgb(coul[1], coul[2], 
-                  coul[3], alpha = alphaseq2[p], max = 255)
-              }
-            }
-        }
-        plot(G, layout = ini, vertex.size = size, edge.arrow.size = 0.6 * 
-            (1 + size.ed), edge.width = size.ed * 5, edge.arrow.size = 0.5 * 
-            (1 + size.ed), vertex.color = Ver.col, vertex.label.cex = 1, 
-            edge.color = Edge.col, asp = 0, vertex.label = nom2, 
-            vertex.frame.color = frame.color)
-        if (length(unique(gr[nom])) > 1) {
-            legend(legend.position, horiz = horiz, pch = 21, 
-              pt.bg = color.vertex[unique(gr[nom])[order(unique(gr[nom]))]], 
-              col = frame.color, legend = paste("Cluster", 
-                unique(gr[nom])[order(unique(gr[nom]))]))
-        }
+library(Cascade)
+POS <- position(net, nv = list_nv[1])
+for (i in list_nv) {
+    if (fix == TRUE) {
+        plot(Omega, nv = i, gr = gr, ini = POS, color.vertex = color.vertex, 
+            label_v = label_v, legend.position = legend.position, 
+            frame.color = frame.color, label.hub = label.hub)
     }
+    else {
+        plot(Omega, nv = i, gr = gr, color.vertex = color.vertex, 
+            label_v = label_v, legend.position = legend.position, 
+            frame.color = frame.color, label.hub = label.hub)
+    }
+    text(-1, 1, round(i, 3))
 }
-## R version 3.3.1 (2016-06-21)
-## Platform: x86_64-apple-darwin13.4.0 (64-bit)
-## Other packages: hgu133plus2.db 3.2.3, org.Hs.eg.db 3.3.0, AnnotationDbi 1.34.3, IRanges 2.6.1, S4Vectors
-## 0.10.1, Biobase 2.32.0, BiocGenerics 0.18.0, Cascade 1.03, VGAM 1.0-2, tnet 3.0.14, survival 2.39-4, nnls
-## 1.4, magic 1.5-6, limma 3.28.12, lattice 0.20-33, lars 1.2, igraph 1.0.1, cluster 2.0.4, animation 2.4,
-## abind 1.4-3</code></pre></div>
+## R version 3.5.2 (2018-12-20)
+## Platform: x86_64-apple-darwin15.6.0 (64-bit)
+## Other packages: animation 2.6, tnet 3.0.14, survival 2.43-3, igraph
+## 1.2.2, Cascade 1.5</code></pre></div>
 	<script src="js/Rplot.js"></script>
 <!-- highlight R code -->
 

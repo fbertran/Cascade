@@ -54,8 +54,8 @@ setMethod("evolution","network",function(net
   
   if(gif==TRUE){
     require(animation)
-    ani.options(ani.height=taille[2],ani.width=taille[1],outdir = getwd())
-    saveHTML({
+    animation::ani.options(ani.height=taille[2],ani.width=taille[1],outdir = getwd())
+    animation::saveHTML({
       
       POS<-position(net,nv=list_nv[1])
       
@@ -339,10 +339,10 @@ setMethod("plot"
               
               
               if(ani==TRUE){
-                if(is.null(gr)){error("Need of groups")}
+                if(is.null(gr)){stop("Need groups")}
                 T<-length(x@time_pt)
                 require(animation)
-                ani.options(ani.height=taille[2],ani.width=taille[1],outdir = getwd())
+                animation::ani.options(ani.height=taille[2],ani.width=taille[1],outdir = getwd())
                 
                 if(is.null(ini)){
                   ini<-position(x,nv)[]
@@ -353,7 +353,7 @@ setMethod("plot"
                 ini<-ini[,2:3]
                 gr2<-gr[nom]
                 
-                saveHTML({
+                animation::saveHTML({
                   for(i in c(0.999,0.99,0.98,0.97,0.96,0.95)){											
                     plot(G
                          ,layout=ini
@@ -381,14 +381,14 @@ setMethod("plot"
                     for(p in PP){	
                       coul<-col2rgb(color.vertex[i])
                       indi<-which(gr2==i)
-                      Ver.col[indi]<-rgb(coul[1],coul[2],coul[3],alpha=(p-1)*255/(mms), max = 255)
+                      Ver.col[indi]<-rgb(coul[1],coul[2],coul[3],alpha=(p-1)*255/(mms), maxColorValue = 255)
                       
                       
                       for(k in 1:i){
                         coul<-col2rgb(color.vertex[k])	
                         indi3<-which(gr[Q[,1]]==k & gr[Q[,2]]==i )
                         
-                        Edge.col[indi3]<-rgb(coul[1],coul[2],coul[3],alpha=255-(p-1)*255/(mms), max = 255)
+                        Edge.col[indi3]<-rgb(coul[1],coul[2],coul[3],alpha=255-(p-1)*255/(mms), maxColorValue = 255)
                       }
                       
                       if(i!=T){
@@ -411,7 +411,7 @@ setMethod("plot"
                             
                             alphaseq2<-seq(alseq[ald],alseq[alf],length.out=mms)
                             
-                            Edge.col[indi3]<-rgb(coul[1],coul[2],coul[3],alpha=alphaseq2[p], max = 255)
+                            Edge.col[indi3]<-rgb(coul[1],coul[2],coul[3],alpha=alphaseq2[p], maxColorValue = 255)
                           }}}
                       
                       plot(G
@@ -597,9 +597,9 @@ setMethod("geneNeighborhood","network"
               
               for(i in 1:gg){
                 #if(.Platform$OS.type=="unix"){
-                #color[N[[i]]+1]<-rgb(couleur((j-1)*1/(order-1)),alpha=255,max=255)
+                #color[N[[i]]+1]<-rgb(couleur((j-1)*1/(order-1)),alpha=255,maxColorValue=255)
                 #}else{
-                color[N[[i]]]<-rgb(couleur((j-1)*1/(order-1)),alpha=255,max=255)
+                color[N[[i]]]<-rgb(couleur((j-1)*1/(order-1)),alpha=255,maxColorValue=255)
                 
                 #}
                 
@@ -618,7 +618,7 @@ setMethod("geneNeighborhood","network"
               legend("topright"
                      ,legend=paste("order",1:order)
                      ,pch=16
-                     ,col=rgb(couleur((1:order-1)*1/(order-1)),max=255)
+                     ,col=rgb(couleur((1:order-1)*1/(order-1)),maxColorValue=255)
               )
             }
             ind1<-K[[1]][[1]]
@@ -643,7 +643,7 @@ setMethod("geneNeighborhood","network"
 
 setMethod("cutoff","network",function(Omega,sequence=NULL,x_min=0){
   
-  plfit<-function(x=rpareto(1000,10,2.5)
+  plfit<-function(x=VGAM::rpareto(1000,10,2.5)
                   ,method="limit"
                   ,value=c()
                   ,finite=FALSE
@@ -765,7 +765,7 @@ setMethod("cutoff","network",function(Omega,sequence=NULL,x_min=0){
     if( fdattype=="integer" ){
       
       if( is.null(vec) ){ vec<-seq(1.5,3.5,.01) } # covers range of most practical scaling parameters
-      zvec <- zeta(vec)
+      zvec <- VGAM::zeta(vec)
       #On enleve la plus grande valeur
       xmins <- sort(unique(x))
       xmins <- xmins[-length(xmins)]
@@ -840,7 +840,7 @@ setMethod("cutoff","network",function(Omega,sequence=NULL,x_min=0){
   ###########################################################################################
   ###########################################################################################
   ###########################################################################################
-  plpva<-function(x=rpareto(1000,10,2.5),xmin=1,method="limit",value=c(),Bt=1000,quiet=FALSE,vec=seq(1.5,3.5,.01)){
+  plpva<-function(x=VGAM::rpareto(1000,10,2.5),xmin=1,method="limit",value=c(),Bt=1000,quiet=FALSE,vec=seq(1.5,3.5,.01)){
     #init method value to NULL  
     sampl <- c() ; limit <- c()
     ###########################################################################################
@@ -950,7 +950,7 @@ setMethod("cutoff","network",function(Omega,sequence=NULL,x_min=0){
     if( fdattype=="integer" ){
       
       if( is.null(vec) ){ vec<-seq(1.5,3.5,.01) } # covers range of most practical scaling parameters
-      zvec <- zeta(vec)
+      zvec <- VGAM::zeta(vec)
       
       # compute D for the empirical distribution
       z     <- x[x>=xmin];     nz   <- length(z);    xmax <- max(z)
