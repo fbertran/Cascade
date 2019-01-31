@@ -12,12 +12,13 @@ knitr::opts_chunk$set(
   comment = "#>",
   fig.path = "man/figures/README-",
   out.width = "100%",
-  dpi=300,fig.width=7
+  dpi=300,fig.width=7,
+  fig.keep="all"
 )
 ```
 # Cascade
 
-The goal of Cascade is to be a modeling tool allowing gene selection, reverse engineering, and prediction in cascade networks. Jung, N., Bertrand, F., Bahram, S., Vallat, L., and Maumy-Bertrand, M. (2014) <https://doi.org/10.1093/bioinformatics/btt705>.
+Cascade is a modeling tool allowing gene selection, reverse engineering, and prediction in cascade networks. Jung, N., Bertrand, F., Bahram, S., Vallat, L., and Maumy-Bertrand, M. (2014) <https://doi.org/10.1093/bioinformatics/btt705>.
 
 ## Installation
 
@@ -89,8 +90,12 @@ M <- Cascade::gene_expr_simulation(
 ```
 
 Get a summay and plots of the simulated data:
-```{r plotsimuldata}
+```{r summarysimuldata}
 summary(M)
+```
+
+```{r plotsimuldata}
+plot(M)
 ```
 
 ### Network inferrence

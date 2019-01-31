@@ -98,7 +98,7 @@ ylab.right = "Level of correlation",
 par.settings = list(layout.widths = list(axis.key.padding = 0,
                                                       ylab.right = 2))))
  	}
-	if(is.null(nb.graph)){dev.new()}
+#	if(is.null(nb.graph)){dev.new()}
 	G<-object@microarray
 	colnames(G)<-paste(rep(paste("T",object@time),object@subject), as.character(rep(paste("subject",1:object@subject),each=length(object@time))))
 	w<-agnes(t(G))[1]$order
@@ -113,7 +113,7 @@ par.settings = list(layout.widths = list(axis.key.padding = 0,
                                                       ylab.right = 2))))
                      }
 	if(dim(object@microarray)[1]<1000){
-		if(is.null(nb.graph)){dev.new()}
+#		if(is.null(nb.graph)){dev.new()}
 		
 	R<-object@microarray
 	w<-agnes(R)[1]$order
@@ -156,13 +156,13 @@ if(length(unique(x@group))>1){
 gr<-rep(paste("Cluster",x@group,sep=" "),each=x@subject*length(x@time))
 
 
-dev.new()
+#dev.new()
 print(lattice::xyplot(V$conc~V$ys|V$suj,as.table=TRUE,xlab="Time",ylab="Gene Expression",group=rep(1:(x@subject*dim(xs)[2]),each=length(x@time)),type="l",scales=list(x=list(relation="free",at=x@time),y=list(relation="free")),col=rep(x@group,each=x@subject),key=list(
 space="right",
 lines=list(type="l",col=cclus),
 text=list(text=paste("Cluster",as.character(cclus)))
 )))
-dev.new()
+#dev.new()
 print(lattice::xyplot(V$conc~V$ys|gr,as.table=TRUE,xlab="Time",ylab="Gene Expression",group=rep(1:(x@subject*dim(xs)[2]),each=length(x@time)),type="l",scales=list(x=list(relation="free",at=x@time),y=list(relation="free")),col=rep(1:x@subject,dim(xs)[2]),key=list(
 space="right",
 lines=list(type="l",col=1:x@subject),
@@ -171,7 +171,7 @@ text=list(text=paste("Subject",as.character(1:x@subject)))
 for(i in 1:x@subject){
 ss<-V$suj
 sss<-ss==paste("Subject",i,sep=" ")
-dev.new()
+#dev.new()
 print(lattice::xyplot(V$conc[sss]~V$ys[sss]|gr[sss],as.table=TRUE,xlab="Time",ylab="Gene Expression",type="l",main=paste("Subject",i,sep=" "),group=rep(1:(x@subject*dim(xs)[2]),each=length(x@time))[sss],scales=list(x=list(relation="free",at=x@time),y=list(relation="free"))))
 }
 }

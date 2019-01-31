@@ -9,7 +9,7 @@ output: github_document
 
 # Cascade
 
-The goal of Cascade is to be a modeling tool allowing gene selection, reverse engineering, and prediction in cascade networks. Jung, N., Bertrand, F., Bahram, S., Vallat, L., and Maumy-Bertrand, M. (2014) <https://doi.org/10.1093/bioinformatics/btt705>.
+Cascade is a modeling tool allowing gene selection, reverse engineering, and prediction in cascade networks. Jung, N., Bertrand, F., Bahram, S., Vallat, L., and Maumy-Bertrand, M. (2014) <https://doi.org/10.1093/bioinformatics/btt705>.
 
 ## Installation
 
@@ -78,6 +78,8 @@ summary(micro_US)
 #>  3rd Qu.:  86.3   3rd Qu.:  85.6   3rd Qu.:  86.3   3rd Qu.:  86.6  
 #>  Max.   :8241.0   Max.   :8355.0   Max.   :8207.1   Max.   :9520.0
 ```
+
+<img src="man/figures/README-plotmicroarrayclass-1.png" title="plot of chunk plotmicroarrayclass" alt="plot of chunk plotmicroarrayclass" width="100%" /><img src="man/figures/README-plotmicroarrayclass-2.png" title="plot of chunk plotmicroarrayclass" alt="plot of chunk plotmicroarrayclass" width="100%" />
 
 ### Gene selection
 There are several functions to carry out gene selection before the inference. They are detailed in the two vignettes of the package. 
@@ -180,6 +182,13 @@ summary(M)
 #>  Mean   :   6.190   Mean   :  26.740  
 #>  3rd Qu.:  47.694   3rd Qu.:  67.879  
 #>  Max.   : 434.178   Max.   : 743.820
+```
+
+<img src="man/figures/README-summarysimuldata-1.png" title="plot of chunk summarysimuldata" alt="plot of chunk summarysimuldata" width="100%" /><img src="man/figures/README-summarysimuldata-2.png" title="plot of chunk summarysimuldata" alt="plot of chunk summarysimuldata" width="100%" /><img src="man/figures/README-summarysimuldata-3.png" title="plot of chunk summarysimuldata" alt="plot of chunk summarysimuldata" width="100%" />
+
+
+```r
+plot(M)
 ```
 
 ### Network inferrence
