@@ -115,7 +115,7 @@ We switch to data that were derived from the inferrence of a real biological net
 ```{r cutoff}
 data("network")
 set.seed(1)
-#cutoff(network)
+cutoff(network)
 ```
 
 Analyze the network with a cutoff set to the previouly found 0.14 optimal value.

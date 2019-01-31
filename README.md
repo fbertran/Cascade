@@ -221,7 +221,34 @@ We switch to data that were derived from the inferrence of a real biological net
 ```r
 data("network")
 set.seed(1)
-#cutoff(network)
+cutoff(network)
+#> [1] "This calculation may be long"
+#> [1] "1/10"
+#> [1] "2/10"
+#> [1] "3/10"
+#> [1] "4/10"
+#> [1] "5/10"
+#> [1] "6/10"
+#> [1] "7/10"
+#> [1] "8/10"
+#> [1] "9/10"
+#> [1] "10/10"
+#>  [1] 0.000 0.000 0.569 0.295 0.242 0.147 0.012 0.387 0.351 0.096
+```
+
+<img src="man/figures/README-cutoff-1.png" title="plot of chunk cutoff" alt="plot of chunk cutoff" width="100%" />
+
+```
+#> $p.value
+#>  [1] 0.000 0.000 0.569 0.295 0.242 0.147 0.012 0.387 0.351 0.096
+#> 
+#> $p.value.inter
+#>  [1] -0.0655747  0.2027477  0.3488525  0.3976355  0.2215038  0.1046155
+#>  [7]  0.1257731  0.2560059  0.2561465  0.1560364
+#> 
+#> $sequence
+#>  [1] 0.00000000 0.04444444 0.08888889 0.13333333 0.17777778 0.22222222
+#>  [7] 0.26666667 0.31111111 0.35555556 0.40000000
 ```
 
 Analyze the network with a cutoff set to the previouly found 0.14 optimal value.
