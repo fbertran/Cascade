@@ -22,7 +22,8 @@ License: GPL (>= 2)
 Encoding: UTF-8
 Collate: global.R micro_array.R network.R micro_array-network.R
         micropredict.R
-URL: http://www-irma.u-strasbg.fr/~fbertran/
 Classification/MSC: 62J05, 62J07, 62J99, 92C42
 VignetteBuilder: R.rsp
 RoxygenNote: 6.1.1
+URL: http://www-irma.u-strasbg.fr/~fbertran/, https://github.com/fbertran/Cascade
+BugReports: https://github.com/fbertran/Cascade/issues

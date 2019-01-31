@@ -1,4 +1,6 @@
 ---
+title: "Selection, Reverse-Engineering and Prediction in Cascade Networks"
+author: "Frédéric Bertrand and Myriam Maumy-Bertrand"
 output: github_document
 ---
 
@@ -13,10 +15,18 @@ Cascade is a modeling tool allowing gene selection, reverse engineering, and pre
 
 ## Installation
 
-You can install the released version of Cascade from [CRAN](https://CRAN.R-project.org) with:
+You can install the released version of CascadeData from [CRAN](https://CRAN.R-project.org) with:
 
-``` r
+
+```r
 install.packages("Cascade")
+```
+
+You can install the development version of CascadeData from [github](https://github.com) with:
+
+
+```r
+devtools::install_github("fbertran/Cascade")
 ```
 
 ## Examples
@@ -190,6 +200,8 @@ summary(M)
 ```r
 plot(M)
 ```
+
+<img src="man/figures/README-plotsimuldata-1.png" title="plot of chunk plotsimuldata" alt="plot of chunk plotsimuldata" width="100%" /><img src="man/figures/README-plotsimuldata-2.png" title="plot of chunk plotsimuldata" alt="plot of chunk plotsimuldata" width="100%" /><img src="man/figures/README-plotsimuldata-3.png" title="plot of chunk plotsimuldata" alt="plot of chunk plotsimuldata" width="100%" /><img src="man/figures/README-plotsimuldata-4.png" title="plot of chunk plotsimuldata" alt="plot of chunk plotsimuldata" width="100%" /><img src="man/figures/README-plotsimuldata-5.png" title="plot of chunk plotsimuldata" alt="plot of chunk plotsimuldata" width="100%" /><img src="man/figures/README-plotsimuldata-6.png" title="plot of chunk plotsimuldata" alt="plot of chunk plotsimuldata" width="100%" /><img src="man/figures/README-plotsimuldata-7.png" title="plot of chunk plotsimuldata" alt="plot of chunk plotsimuldata" width="100%" />
 
 ### Network inferrence
 We infer the new network using subjectwise leave one out cross-validation (all measurement from the same subject are removed from the dataset)
