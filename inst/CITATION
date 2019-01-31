@@ -14,8 +14,8 @@ citEntry(entry = "Article",
          year = 2014,
          
 journal="Bioinformatics",
-volume=30,
-issue=4,
-pages=571-573,
+volume="30",
+issue="4",
+pages="571-573",
          textVersion =
          paste0("Jung, N., Bertrand, F., Bahram, S., Vallat, L., and Maumy-Bertrand, M. (2014). Cascade: a R-package to study, predict and simulate the diffusion of a signal through a temporal gene network. Bioinformatics, 30(4):571-573, btt705."))
