@@ -1,3 +1,4 @@
+^README\.Rmd$
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^\.gitignore$
@@ -6,4 +7,5 @@
 ^images*$
 ^index\.html$
 ^js*$
-^README\.md$
+^inst/animation*$
+^docs*$

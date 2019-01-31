@@ -1,0 +1,122 @@
+---
+output: github_document
+---
+
+[![CRAN status](https://www.r-pkg.org/badges/version/Cascade)](https://cran.r-project.org/package=Cascade)
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%",
+  dpi=300,fig.width=7
+)
+```
+# Cascade
+
+The goal of Cascade is to be a modeling tool allowing gene selection, reverse engineering, and prediction in cascade networks. Jung, N., Bertrand, F., Bahram, S., Vallat, L., and Maumy-Bertrand, M. (2014) <https://doi.org/10.1093/bioinformatics/btt705>.
+
+## Installation
+
+You can install the released version of Cascade from [CRAN](https://CRAN.R-project.org) with:
+
+``` r
+install.packages("Cascade")
+```
+
+## Examples
+
+### Data management
+Import Cascade Data (repeated measurements on several subjects) and turn them into a micro array object:
+```{r microarrayclass}
+library(Cascade)
+require(CascadeData)
+data(micro_US)
+micro_US<-as.micro_array(micro_US,time=c(60,90,210,390),subject=6)
+```
+
+Get a summay and plots of the data:
+```{r plotmicroarrayclass}
+summary(micro_US)
+```
+
+### Gene selection
+There are several functions to carry out gene selection before the inference. They are detailed in the two vignettes of the package. 
+
+### Data simulation
+Let's simulate some cascade data and then do some reverse engineering.
+
+We first design the F matrix
+```{r createF}
+T<-4
+F<-array(0,c(T-1,T-1,T*(T-1)/2))
+
+for(i in 1:(T*(T-1)/2)){diag(F[,,i])<-1}
+F[,,2]<-F[,,2]*0.2
+F[2,1,2]<-1
+F[3,2,2]<-1
+F[,,4]<-F[,,2]*0.3
+F[3,1,4]<-1
+F[,,5]<-F[,,2]
+```
+
+We set the seed to make the results reproducible and draw a scale free random network.
+```{r randomN}
+set.seed(1)
+Net<-Cascade::network_random(
+  nb=100,
+  time_label=rep(1:4,each=25),
+  exp=1,
+  init=1,
+  regul=round(rexp(100,1))+1,
+  min_expr=0.1,
+  max_expr=2,
+  casc.level=0.4
+)
+Net@F<-F
+```
+
+We simulate gene expression according to the network that was previously drawn
+```{r genesimul}
+M <- Cascade::gene_expr_simulation(
+  network=Net,
+  time_label=rep(1:4,each=25),
+  subject=5,
+  level_pic=200)
+```
+
+Get a summay and plots of the simulated data:
+```{r plotsimuldata}
+summary(M)
+```
+
+### Network inferrence
+We infer the new network using subjectwise leave one out cross-validation (all measurement from the same subject are removed from the dataset)
+```{r netinf}
+Net_inf_C <- Cascade::inference(M, cv.subjects=TRUE)
+```
+
+Heatmap of the coefficients of the Omega matrix of the network
+```{r heatresults}
+stats::heatmap(Net_inf_C@network, Rowv = NA, Colv = NA, scale="none", revC=TRUE)
+```
+
+###Post inferrence network analysis
+We switch to data that were derived from the inferrence of a real biological network and try to detect the optimal cutoff value: the best cutoff value for a network to fit a scale free network.
+
+```{r cutoff}
+data("network")
+set.seed(1)
+#cutoff(network)
+```
+
+Analyze the network with a cutoff set to the previouly found 0.14 optimal value.
+
+```{r analyzenet}
+analyze_network(network,nv=0.14)
+```
+
+

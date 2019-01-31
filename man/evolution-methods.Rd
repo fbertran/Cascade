@@ -43,7 +43,8 @@ Nicolas Jung, Fr\'ed\'eric Bertrand , Myriam Maumy-Bertrand.
 \donttest{
 	data(network)
 	sequence<-seq(0,0.2,length.out=20)
-	evolution(network,sequence)
+	#setwd("inst/animation")
+	#evolution(network,sequence)
 }
 }
 

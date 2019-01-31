@@ -23,7 +23,7 @@ setMethod("analyze_network","network",function(Omega,nv,label_v=NULL){
   weight<-rep(0,dim(Q)[1])
   for(i in 1:dim(Q)[1]){weight[i]<-Omega[Q[i,1],Q[i,2]]}
   R<-cbind(Q,abs(weight))
-  G<-as.tnet(R)
+  G<-as.tnet(R,type="weighted one-mode tnet")
   C<-data.frame(label_v,betweenness_w(G)[,2], degree_w(G)[,2:3],closeness_w(G,gconly=FALSE)[,2])
   colnames(C)<-c("node","betweenness","degree","output","closeness")
   return(C)

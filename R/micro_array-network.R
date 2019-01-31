@@ -456,7 +456,7 @@ setMethod(f="inference"
             
             if(type.inf=="iterative"){
               plot(convO[-1],type="l")
-              dev.new()
+              #dev.new()
               matplot(t(convF),type="l")
             }
             else{
