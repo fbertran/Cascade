@@ -15,14 +15,14 @@ Cascade is a modeling tool allowing gene selection, reverse engineering, and pre
 
 ## Installation
 
-You can install the released version of CascadeData from [CRAN](https://CRAN.R-project.org) with:
+You can install the released version of Cascade from [CRAN](https://CRAN.R-project.org) with:
 
 
 ```r
 install.packages("Cascade")
 ```
 
-You can install the development version of CascadeData from [github](https://github.com) with:
+You can install the development version of Cascade from [github](https://github.com) with:
 
 
 ```r
