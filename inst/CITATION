@@ -2,7 +2,7 @@ citHeader("To cite package ''Cascade'' in publications use:")
 
 year <- sub(".*(2[[:digit:]]{3})-.*", "\\1", meta$Date, perl = TRUE)
 vers <- paste("R package version", meta$Version)
-note <- "book of abstracts, User2014!, Los Angeles, page 150"
+note <- "book of abstracts, User2014!, Los Angeles, page 153"
 titl <- "Cascade: a R-package to study, predict and simulate the diffusion of a signal through a temporal gene network"
 auth <- personList(as.person("Nicolas Jung"),
                              as.person("Frederic Bertrand"),
