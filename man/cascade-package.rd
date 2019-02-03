@@ -10,21 +10,21 @@ A modeling tool allowing gene selection, reverse engineering, and prediction in 
 \tabular{ll}{
 Package: \tab Cascade\cr
 Type: \tab Package\cr
-Version: \tab 1.5\cr
-Date: \tab 2019-01-26\cr
+Version: \tab 1.6\cr
+Date: \tab 2019-02-03\cr
 License: \tab GNU 2.0\cr
 Depends: \tab methods\cr
 }
 
 }
 \author{
-This package has been written by Fr\'ed\'eric Bertrand, Myriam Maumy-Bertrand and Nicolas Jung with biological insights from Laurent Vallat.
-Maintainer:  Fr\'ed\'eric Bertrand <frederic.bertrand@math.unistra.fr>
+This package has been written by Frédéric Bertrand, Myriam Maumy-Bertrand and Nicolas Jung with biological insights from Laurent Vallat.
+Maintainer:  Frédéric Bertrand <frederic.bertrand@math.unistra.fr>
 }
 
 
 \references{
-Jung, N., Bertrand, F., Bahram, S., Vallat, L., and Maumy-Bertrand, M. (2013). Cascade: a R-package to study, predict and simulate the diffusion of a signal through a temporal gene network. \emph{Bioinformatics}, btt705. 
+Jung, N., Bertrand, F., Bahram, S., Vallat, L., and Maumy-Bertrand, M. (2014). Cascade: a R-package to study, predict and simulate the diffusion of a signal through a temporal gene network. \emph{Bioinformatics}, btt705. 
 	
 Vallat, L., Kemper, C. A., Jung, N., Maumy-Bertrand, M., Bertrand, F., Meyer, N., ... & Bahram, S. (2013). Reverse-engineering the genetic circuitry of a cancer cell with predicted intervention in chronic lymphocytic leukemia. \emph{Proceedings of the National Academy of Sciences}, 110(2), 459-464.
 }

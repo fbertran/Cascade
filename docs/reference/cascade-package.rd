@@ -52,7 +52,7 @@
   <body>
     <div class="container template-reference-topic">
       <header>
-      <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
@@ -71,9 +71,24 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fa fa-home"></span>
      
   </a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Vignettes
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="https://cran.r-project.org/web/packages/Cascade/vignettes/Cascade.pdf">Introduction to the Cascade package and application to the GSE39411 dataset</a>
+    </li>
+    <li>
+      <a href="https://cran.r-project.org/web/packages/Cascade/vignettes/E-MTAB-1475_re-analysis.pdf">Additional application of the Cascade package to E-MTAB-1475 dataset</a>
+    </li>
+  </ul>
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
@@ -86,7 +101,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/fbertran/Cascade">
-    <span class="fa fa-github fa-lg"></span>
+    <span class="fa fa-github"></span>
      
   </a>
 </li>
@@ -121,8 +136,8 @@
 <tr><td>Cascade</td><td></td></tr>
 <tr><td>Type:</td><td>Package</td></tr>
 <tr><td></td><td>Version:</td></tr>
-<tr><td>1.5</td><td></td></tr>
-<tr><td>Date:</td><td>2019-01-26</td></tr>
+<tr><td>1.6</td><td></td></tr>
+<tr><td>Date:</td><td>2019-02-03</td></tr>
 <tr><td></td><td>License:</td></tr>
 <tr><td>GNU 2.0</td><td></td></tr>
 <tr><td>Depends:</td><td>methods</td></tr>
@@ -131,7 +146,7 @@
     
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p>Jung, N., Bertrand, F., Bahram, S., Vallat, L., and Maumy-Bertrand, M. (2013). Cascade: a R-package to study, predict and simulate the diffusion of a signal through a temporal gene network. <em>Bioinformatics</em>, btt705.</p>	
+    <p>Jung, N., Bertrand, F., Bahram, S., Vallat, L., and Maumy-Bertrand, M. (2014). Cascade: a R-package to study, predict and simulate the diffusion of a signal through a temporal gene network. <em>Bioinformatics</em>, btt705.</p>	
 <p>Vallat, L., Kemper, C. A., Jung, N., Maumy-Bertrand, M., Bertrand, F., Meyer, N., ... &amp; Bahram, S. (2013). Reverse-engineering the genetic circuitry of a cancer cell with predicted intervention in chronic lymphocytic leukemia. <em>Proceedings of the National Academy of Sciences</em>, 110(2), 459-464.</p>
     
 
@@ -146,8 +161,8 @@
           </ul>
 
     <h2>Author</h2>
-    <p>This package has been written by Fr\'ed\'eric Bertrand, Myriam Maumy-Bertrand and Nicolas Jung with biological insights from Laurent Vallat.
-Maintainer:  Fr\'ed\'eric Bertrand &lt;frederic.bertrand@math.unistra.fr&gt;</p>
+    <p>This package has been written by Frédéric Bertrand, Myriam Maumy-Bertrand and Nicolas Jung with biological insights from Laurent Vallat.
+Maintainer:  Frédéric Bertrand &lt;frederic.bertrand@math.unistra.fr&gt;</p>
   </div>
 </div>
 

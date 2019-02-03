@@ -42,10 +42,10 @@ devtools::install_github("fbertran/Cascade")
 ## Examples
 
 ### Data management
-Import Cascade Data (repeated measurements on several subjects) and turn them into a micro array object:
+Import Cascade Data (repeated measurements on several subjects) from the CascadeData package and turn them into a micro array object. The second line makes sure the CascadeData package is installed.
 ```{r microarrayclass}
 library(Cascade)
-require(CascadeData)
+if(!require(CascadeData)){install.packages("CascadeData")}
 data(micro_US)
 micro_US<-as.micro_array(micro_US,time=c(60,90,210,390),subject=6)
 ```

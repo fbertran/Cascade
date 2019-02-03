@@ -107,9 +107,9 @@
 <div id="data-management" class="section level3">
 <h3 class="hasAnchor">
 <a href="#data-management" class="anchor"></a>Data management</h3>
-<p>Import Cascade Data (repeated measurements on several subjects) and turn them into a micro array object:</p>
+<p>Import Cascade Data (repeated measurements on several subjects) from the CascadeData package and turn them into a micro array object. The second line makes sure the CascadeData package is installed.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(Cascade)
-<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">require</a></span>(CascadeData)
+<span class="cf">if</span>(<span class="op">!</span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">require</a></span>(CascadeData)){<span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/install.packages">install.packages</a></span>(<span class="st">"CascadeData"</span>)}
 <span class="co">#&gt; Loading required package: CascadeData</span>
 <span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/data">data</a></span>(micro_US)
 micro_US&lt;-<span class="kw"><a href="reference/as.micro_array.html">as.micro_array</a></span>(micro_US,<span class="dt">time=</span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">60</span>,<span class="dv">90</span>,<span class="dv">210</span>,<span class="dv">390</span>),<span class="dt">subject=</span><span class="dv">6</span>)</code></pre></div>

@@ -26,20 +26,21 @@ The number of subjects.
 \value{A micro_array object.}
 
 \references{
-Jung, N., Bertrand, F., Bahram, S., Vallat, L., and Maumy-Bertrand, M. (2013). Cascade: a R-package to study, predict and simulate the diffusion of a signal through a temporal gene network. \emph{Bioinformatics}, btt705. 
+Jung, N., Bertrand, F., Bahram, S., Vallat, L., and Maumy-Bertrand, M. (2014). Cascade: a R-package to study, predict and simulate the diffusion of a signal through a temporal gene network. \emph{Bioinformatics}, btt705. 
 	
 Vallat, L., Kemper, C. A., Jung, N., Maumy-Bertrand, M., Bertrand, F., Meyer, N., ... & Bahram, S. (2013). Reverse-engineering the genetic circuitry of a cancer cell with predicted intervention in chronic lymphocytic leukemia. \emph{Proceedings of the National Academy of Sciences}, 110(2), 459-464.
 }
 
 \author{
-Nicolas Jung, Fr\'ed\'eric Bertrand , Myriam Maumy-Bertrand.
+Nicolas Jung, Frédéric Bertrand , Myriam Maumy-Bertrand.
 }
 
 
 
 
 \examples{
-  require(CascadeData)
+  if(require(CascadeData)){
 	data(micro_US)
 	micro_US<-as.micro_array(micro_US,time=c(60,90,210,390),subject=6)
+	}
 }
