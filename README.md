@@ -16,6 +16,9 @@ Cascade is a modeling tool allowing gene selection, reverse engineering, and pre
 
 The package was presented at the [User2014!](http://user2014.r-project.org/) conference. Jung, N., Bertrand, F., Bahram, S., Vallat, L., and Maumy-Bertrand, M. (2014). "Cascade: a R-package to study, predict and simulate the diffusion of a signal through a temporal genenetwork", *book of abstracts*, User2014!, Los Angeles, page 153, <http://user2014.r-project.org/abstracts/posters/181_Jung.pdf>.
 
+
+This webite and these examples were created by F. Bertrand and M. Maumy-Bertrand.
+
 ## Installation
 
 You can install the released version of Cascade from [CRAN](https://CRAN.R-project.org) with:
