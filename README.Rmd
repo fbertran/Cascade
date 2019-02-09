@@ -30,7 +30,7 @@ The package was presented at the [User2014!](http://user2014.r-project.org/) con
 
 ![Simulation of an intervention on a gene of the network.](man/figures/figure_network_pred2.png)
 
-This webite and these examples were created by F. Bertrand and M. Maumy-Bertrand.
+This website and these examples were created by F. Bertrand and M. Maumy-Bertrand.
 
 ## Installation
 
