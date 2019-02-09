@@ -5,7 +5,7 @@
 A network object data.
 }
 \description{
-A network object (the same as the result in the vignette).
+A network object. It is the same as the result in the vignette for the inference of the network.
 }
 \usage{data(network)}
 

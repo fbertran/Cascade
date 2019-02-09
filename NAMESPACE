@@ -28,6 +28,7 @@ import(grid,
 
 exportMethods(
     "analyze_network",
+    "compare",
     "cutoff",
     "dim",
     "evolution",
@@ -50,4 +51,4 @@ exportClasses(
      "micropredict"
 )
 
-export("network_random","as.micro_array","compare")
+export("network_random","as.micro_array")

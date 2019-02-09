@@ -52,7 +52,7 @@
   <body>
     <div class="container template-reference-topic">
       <header>
-      <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
@@ -71,9 +71,24 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fa fa-home"></span>
      
   </a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Vignettes
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="https://cran.r-project.org/web/packages/Cascade/vignettes/Cascade.pdf">Introduction to the Cascade package and application to the GSE39411 dataset</a>
+    </li>
+    <li>
+      <a href="https://cran.r-project.org/web/packages/Cascade/vignettes/E-MTAB-1475_re-analysis.pdf">Additional application of the Cascade package to E-MTAB-1475 dataset</a>
+    </li>
+  </ul>
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
@@ -86,7 +101,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/fbertran/Cascade">
-    <span class="fa fa-github fa-lg"></span>
+    <span class="fa fa-github"></span>
      
   </a>
 </li>
@@ -121,13 +136,115 @@
 </dl>
     
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='fu'><a href='https://www.rdocumentation.org/packages/utils/topics/data'>data</a></span>(<span class='no'>simul</span>)
+<span class='fu'>position</span>(<span class='no'>Net</span>)</div><div class='output co'>#&gt;       nom                  
+#&gt;  [1,]   1 86.28886 140.8559
+#&gt;  [2,]   2 74.76234 143.9413
+#&gt;  [3,]   3 82.00023 140.6807
+#&gt;  [4,]   4 76.59251 145.4013
+#&gt;  [5,]   5 82.69152 150.1110
+#&gt;  [6,]   6 84.64301 141.4651
+#&gt;  [7,]   7 83.28489 138.5121
+#&gt;  [8,]   8 85.69518 146.1499
+#&gt;  [9,]   9 84.11061 136.8050
+#&gt; [10,]  10 79.76102 144.6050
+#&gt; [11,]  11 79.64630 145.6379
+#&gt; [12,]  12 84.08473 145.4271
+#&gt; [13,]  14 83.74666 149.0822
+#&gt; [14,]  16 79.97621 141.1700
+#&gt; [15,]  17 84.03095 146.0752
+#&gt; [16,]  18 81.60416 149.4737
+#&gt; [17,]  20 86.99650 138.8308
+#&gt; [18,]  21 86.40023 137.8015
+#&gt; [19,]  22 76.42021 149.8191
+#&gt; [20,]  23 79.06276 145.8588
+#&gt; [21,]  24 81.63390 140.5510
+#&gt; [22,]  25 88.50194 150.5046
+#&gt; [23,]  26 79.87445 138.9959
+#&gt; [24,]  27 85.05660 138.5914
+#&gt; [25,]  28 84.95835 139.4037
+#&gt; [26,]  29 86.74924 139.9620
+#&gt; [27,]  30 84.27312 139.9856
+#&gt; [28,]  31 76.64580 144.7096
+#&gt; [29,]  32 80.50715 143.1912
+#&gt; [30,]  33 77.41636 143.7088
+#&gt; [31,]  34 74.67060 144.8507
+#&gt; [32,]  35 78.81372 144.3508
+#&gt; [33,]  36 83.76781 143.7021
+#&gt; [34,]  37 85.23235 147.6617
+#&gt; [35,]  38 82.73252 137.7640
+#&gt; [36,]  39 81.91081 148.1621
+#&gt; [37,]  40 83.45251 151.7663
+#&gt; [38,]  41 85.73732 147.2449
+#&gt; [39,]  42 84.23519 142.8000
+#&gt; [40,]  43 85.69105 148.7360
+#&gt; [41,]  44 76.28171 148.0160
+#&gt; [42,]  45 79.56361 147.4023
+#&gt; [43,]  46 86.48614 144.6473
+#&gt; [44,]  47 82.97719 145.1906
+#&gt; [45,]  48 84.53249 148.4895
+#&gt; [46,]  49 87.02899 143.4204
+#&gt; [47,]  50 81.55349 147.3421
+#&gt; [48,]  51 80.85750 149.0865
+#&gt; [49,]  52 81.34495 146.3667
+#&gt; [50,]  53 83.02778 143.5723
+#&gt; [51,]  54 86.08921 143.7048
+#&gt; [52,]  55 79.14095 141.0294
+#&gt; [53,]  56 85.33512 145.3948
+#&gt; [54,]  57 81.69051 143.9616
+#&gt; [55,]  58 82.44720 138.9503
+#&gt; [56,]  59 79.96968 149.2808
+#&gt; [57,]  60 78.16365 142.5321
+#&gt; [58,]  61 88.37430 143.1373
+#&gt; [59,]  62 84.49551 137.4855
+#&gt; [60,]  63 76.97263 145.9947
+#&gt; [61,]  64 82.46222 144.2710
+#&gt; [62,]  65 81.98906 142.9360
+#&gt; [63,]  66 78.36303 141.6996
+#&gt; [64,]  67 82.57339 143.3169
+#&gt; [65,]  68 81.46935 137.9421
+#&gt; [66,]  69 81.47243 145.1343
+#&gt; [67,]  70 79.92819 142.9488
+#&gt; [68,]  71 82.23993 146.6593
+#&gt; [69,]  72 81.29512 139.9071
+#&gt; [70,]  73 84.77261 141.9546
+#&gt; [71,]  74 77.74168 141.7818
+#&gt; [72,]  75 89.05995 145.0358
+#&gt; [73,]  76 88.48701 145.4172
+#&gt; [74,]  77 88.48639 146.2140
+#&gt; [75,]  78 79.11044 143.4273
+#&gt; [76,]  79 80.65854 138.5652
+#&gt; [77,]  80 79.55240 141.5778
+#&gt; [78,]  81 88.82702 144.2181
+#&gt; [79,]  82 86.59666 145.8327
+#&gt; [80,]  83 75.43997 146.0000
+#&gt; [81,]  84 75.69101 147.4459
+#&gt; [82,]  85 84.33055 144.3317
+#&gt; [83,]  86 84.89989 143.4359
+#&gt; [84,]  87 83.36160 140.3196
+#&gt; [85,]  88 83.25818 142.1160
+#&gt; [86,]  89 80.43235 140.3546
+#&gt; [87,]  90 78.51154 143.4604
+#&gt; [88,]  91 81.22866 141.8498
+#&gt; [89,]  92 77.45031 139.3441
+#&gt; [90,]  93 82.91702 148.0656
+#&gt; [91,]  94 79.99389 148.2784
+#&gt; [92,]  95 87.47846 141.8726
+#&gt; [93,]  96 82.34090 151.8975
+#&gt; [94,]  97 75.07261 146.8726
+#&gt; [95,]  98 87.76647 151.1557
+#&gt; [96,]  99 77.01369 151.0005
+#&gt; [97,] 100 86.43040 147.0344</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       
       <li><a href="#methods">Methods</a></li>
-          </ul>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Some basic criteria of comparison between actual and inferred network. — compare • Cascade</title>
+<title>Some basic criteria of comparison between actual and inferred network. — compare-methods • Cascade</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -30,7 +30,7 @@
 
 
 
-<meta property="og:title" content="Some basic criteria of comparison between actual and inferred network. — compare" />
+<meta property="og:title" content="Some basic criteria of comparison between actual and inferred network. — compare-methods" />
 
 <meta property="og:description" content="Allows comparison between actual and inferred network." />
 <meta name="twitter:card" content="summary" />
@@ -128,24 +128,16 @@
     
     </div>
 
-    <pre class="usage"><span class='fu'>compare</span>(<span class='no'>Net</span>, <span class='no'>Net_inf</span>, <span class='no'>nv</span>)</pre>
-    
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>Net</th>
-      <td><p>A network object containing the actual network.</p></td>
-    </tr>
-    <tr>
-      <th>Net_inf</th>
-      <td><p>A network object containing the inferred network.</p></td>
-    </tr>
-    <tr>
-      <th>nv</th>
-      <td><p>A number that indicates at which level of cutoff the comparison should be done.</p></td>
-    </tr>
-    </table>
+        
+    <h2 class="hasAnchor" id="methods"><a class="anchor" href="#methods"></a>Methods</h2>
+
+    <dl class='dl-horizontal'>
+    <dt><code>signature(Net = "network", Net_inf = "network", nv = "numeric")</code></dt><dd><p><dl class='dl-horizontal'>
+  <dt>Net</dt><dd><p>A network object containing the actual network.</p></dd>
+  <dt>Net_inf</dt><dd><p>A network object containing the inferred network.</p></dd>
+  <dt>nv</dt><dd><p>A number that indicates at which level of cutoff the comparison should be done.</p></dd>
+</dl></p></dd>
+    </dl>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
@@ -157,16 +149,31 @@
 <p>Vallat, L., Kemper, C. A., Jung, N., Maumy-Bertrand, M., Bertrand, F., Meyer, N., ... &amp; Bahram, S. (2013). Reverse-engineering the genetic circuitry of a cancer cell with predicted intervention in chronic lymphocytic leukemia. <em>Proceedings of the National Academy of Sciences</em>, 110(2), 459-464.</p>
     
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='fu'><a href='https://www.rdocumentation.org/packages/utils/topics/data'>data</a></span>(<span class='no'>simul</span>)
+
+<span class='co'>#Comparing true and inferred networks</span>
+<span class='no'>F_score</span><span class='kw'>=</span><span class='kw'>NULL</span>
+
+<span class='co'>#Here are the cutoff level tested</span>
+<span class='no'>test.seq</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/seq'>seq</a></span>(<span class='fl'>0</span>,<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/Extremes'>max</a></span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/MathFun'>abs</a></span>(<span class='no'>Net_inf</span>@<span class='kw'>network</span>*<span class='fl'>0.9</span>)),<span class='kw'>length.out</span><span class='kw'>=</span><span class='fl'>200</span>)
+<span class='kw'>for</span>(<span class='no'>u</span> <span class='kw'>in</span> <span class='no'>test.seq</span>){
+        <span class='no'>F_score</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/cbind'>rbind</a></span>(<span class='no'>F_score</span>,<span class='kw pkg'>Cascade</span><span class='kw ns'>::</span><span class='fu'>compare</span>(<span class='no'>Net</span>,<span class='no'>Net_inf</span>,<span class='no'>u</span>))
+}
+<span class='fu'><a href='https://www.rdocumentation.org/packages/graphics/topics/matplot'>matplot</a></span>(<span class='no'>test.seq</span>,<span class='no'>F_score</span>,<span class='kw'>type</span><span class='kw'>=</span><span class='st'>"l"</span>,<span class='kw'>ylab</span><span class='kw'>=</span><span class='st'>"criterion value"</span>,<span class='kw'>xlab</span><span class='kw'>=</span><span class='st'>"cutoff level"</span>,<span class='kw'>lwd</span><span class='kw'>=</span><span class='fl'>2</span>)</div><div class='img'><img src='compare-1.png' alt='' width='700' height='433' /></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
       
+      <li><a href="#methods">Methods</a></li>
+
       <li><a href="#value">Value</a></li>
 
       <li><a href="#references">References</a></li>
-          </ul>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
     <h2>Author</h2>
     <p>Nicolas Jung, Frédéric Bertrand , Myriam Maumy-Bertrand.</p>

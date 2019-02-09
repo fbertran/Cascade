@@ -39,7 +39,15 @@ Nicolas Jung, Frédéric Bertrand , Myriam Maumy-Bertrand.
 
 \examples{
 \donttest{
-	#See vignette for more details
+#With simulated data
+data(simul)
+infM <- inference(M)
+str(infM)
+
+#With selection of genes from GSE39411
+data(Selection)
+infSel <- inference(Selection)
+str(infSel)
 }
 }
 

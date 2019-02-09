@@ -52,7 +52,7 @@
   <body>
     <div class="container template-reference-topic">
       <header>
-      <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
@@ -71,9 +71,24 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fa fa-home"></span>
      
   </a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Vignettes
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="https://cran.r-project.org/web/packages/Cascade/vignettes/Cascade.pdf">Introduction to the Cascade package and application to the GSE39411 dataset</a>
+    </li>
+    <li>
+      <a href="https://cran.r-project.org/web/packages/Cascade/vignettes/E-MTAB-1475_re-analysis.pdf">Additional application of the Cascade package to E-MTAB-1475 dataset</a>
+    </li>
+  </ul>
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
@@ -86,7 +101,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/fbertran/Cascade">
-    <span class="fa fa-github fa-lg"></span>
+    <span class="fa fa-github"></span>
      
   </a>
 </li>
@@ -122,13 +137,33 @@
 </dl>
     
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='fu'><a href='https://www.rdocumentation.org/packages/utils/topics/data'>data</a></span>(<span class='no'>simul</span>)
+<span class='co'>#Create another microarray object with 100 genes</span>
+<span class='no'>Mbis</span><span class='kw'>&lt;-</span><span class='no'>M</span>
+<span class='co'>#Rename the 100 genes</span>
+<span class='no'>Mbis</span>@<span class='kw'>name</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/paste'>paste</a></span>(<span class='no'>M</span>@<span class='kw'>name</span>,<span class='st'>"bis"</span>)
+<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/colnames'>rownames</a></span>(<span class='no'>Mbis</span>@<span class='kw'>microarray</span>) <span class='kw'>&lt;-</span> <span class='no'>Mbis</span>@<span class='kw'>name</span>
+<span class='co'>#Union (merge without duplicated names) of the two microarrays. </span>
+<span class='fu'><a href='https://www.rdocumentation.org/packages/utils/topics/str'>str</a></span>(<span class='fu'>unionMicro</span>(<span class='no'>M</span>,<span class='no'>Mbis</span>))</div><div class='output co'>#&gt; Formal class 'micro_array' [package "Cascade"] with 6 slots
+#&gt;   ..@ microarray: num [1:200, 1:20] 41.4 478.6 -655.7 -759.9 -159.7 ...
+#&gt;   .. ..- attr(*, "dimnames")=List of 2
+#&gt;   .. .. ..$ : chr [1:200] "gene 1" "gene 2" "gene 3" "gene 4" ...
+#&gt;   .. .. ..$ : chr [1:20] "log(S/US) : P1T1" "log(S/US) : P1T2" "log(S/US) : P1T3" "log(S/US) : P1T4" ...
+#&gt;   ..@ name      : chr [1:200] "gene 1" "gene 2" "gene 3" "gene 4" ...
+#&gt;   ..@ group     : int [1:200] 1 1 1 1 1 1 1 1 1 1 ...
+#&gt;   ..@ start_time: num [1:200] 0 NA NA NA NA NA NA NA NA NA ...
+#&gt;   ..@ time      : int [1:4] 1 2 3 4
+#&gt;   ..@ subject   : num 5</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       
       <li><a href="#methods">Methods</a></li>
-          </ul>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>

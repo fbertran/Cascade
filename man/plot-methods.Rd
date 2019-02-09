@@ -45,7 +45,17 @@ Considering the class of the argument which is passed to plot, the graphical out
 }}
 }
 }
+\examples{
+data(simul)
+plot(Net)
+plot(M)
 
+data(Selection)
+data(network)
+nv<-0.11
+plot(network,choice="network",gr=Selection@group,nv=nv,label_v=Selection@name,
+edge.arrow.size=0.9,edge.thickness=1.5)
+}
 
 \keyword{methods}
 

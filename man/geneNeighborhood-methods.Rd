@@ -30,10 +30,16 @@ Vallat, L., Kemper, C. A., Jung, N., Maumy-Bertrand, M., Bertrand, F., Meyer, N.
 Nicolas Jung, Frédéric Bertrand , Myriam Maumy-Bertrand.
 }
 
-
-
 \examples{
-	#See vignette
+data(Selection)
+data(network)
+#A nv value can chosen using the cutoff function
+nv=.11 
+EGR1<-which(match(Selection@name,"EGR1")==1)
+P<-position(network,nv=nv)
+
+geneNeighborhood(network,targets=EGR1,nv=nv,ini=P,
+label_v=network@name)
 }
 
 \keyword{methods}

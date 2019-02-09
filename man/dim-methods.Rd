@@ -14,5 +14,12 @@ Dimension of the data
 Gives the dimension of the matrix of measurements.
 }
 }}
+\examples{
+  if(require(CascadeData)){
+	data(micro_US)
+	micro_US<-as.micro_array(micro_US,time=c(60,90,210,390),subject=6)
+	dim(micro_US)
+	}
+}
 \keyword{methods}
 

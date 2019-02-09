@@ -47,10 +47,10 @@ setMethod("predict"
             micro2<-micro
             #index for the F matrices
             u<-0
-            for(pic in 2:(T)){
+            for(peak in 2:(T)){
               
               #keeping predictor groups
-              IND<-which(groupe[gene2]%in%1:(pic-1))
+              IND<-which(groupe[gene2]%in%1:(peak-1))
               grIND<-groupe[IND]
               #silencing targets
               if(!is.null(targets)){
@@ -60,7 +60,7 @@ setMethod("predict"
               pred<-micro2@microarray[IND,sup_pred]
               #print(pred[IND==72,])
               #for every group
-              for(k in 1:(pic-1)){
+              for(k in 1:(peak-1)){
                 #indices for the kth group
                 ind<-which(grIND %in% k)
                 #increasing the F matrix index
@@ -74,7 +74,7 @@ setMethod("predict"
               }
               pred[is.na(pred)]<-0
               #Indices des genes du groupe d'interet
-              IND2<-which(groupe[gene2]==(pic))
+              IND2<-which(groupe[gene2]==(peak))
               #Pour chaque gene du groupe reponse
               for(j in IND2){
                 #predj<-(pred)*O[IND,j]
@@ -247,16 +247,16 @@ setMethod(f="inference"
               # laquelle des matrices Fab est indicee. 
               # Se referer plus haut pour en connaitre l'ordre
               
-              for(pic in 2:T){ 
-                #Comprendre ici que pic correspond au groupe du 
+              for(peak in 2:T){ 
+                #Comprendre ici que peak correspond au groupe du 
                 # gene REPONSE ; en consequence, nous 
                 # commencons a deux.
                 
-                IND<-which(gr %in% 1:(pic-1)) 
+                IND<-which(gr %in% 1:(peak-1)) 
                 #Ici nous cherchons les genes possiblement 
                 # PREDICTEURS.
-                #En effet, le gene reponse etant de groupe pic, 
-                # un predicteur ne peut etre que de groupe 1 a (pic-1)
+                #En effet, le gene reponse etant de groupe peak, 
+                # un predicteur ne peut etre que de groupe 1 a (peak-1)
                 
                 grIND<-gr[IND] 				
                 #Nous recuperons le groupe des individus possiblement
@@ -265,12 +265,12 @@ setMethod(f="inference"
                 #Nous creons la matrice des predicteurs 
                 
                 
-                for(k in 1:(pic-1)) { 
+                for(k in 1:(peak-1)) { 
                   #Cette boucle sert a transformer les 
                   # predicteurs en fonction des matrices Fab
                   #Le groupe de la variable reponse 
-                  # etant pic, les groupes des predicteurs 
-                  # sont 1..(pic-1)
+                  # etant peak, les groupes des predicteurs 
+                  # sont 1..(peak-1)
                   
                   ind<-which(grIND %in% k) 
                   #On regarde successivement, et dans 
@@ -278,11 +278,11 @@ setMethod(f="inference"
                   
                   u<-u+1 
                   #u est initialise a 0. La premiere fois, 
-                  # u vaut donc 1, pic 2, et k =1. Donc F[,,u]=F12.
+                  # u vaut donc 1, peak 2, et k =1. Donc F[,,u]=F12.
                   #La deuxieme fois qu'on arrive ici 
-                  # pic est passe a 3, et k vaut de nouveau 1  
+                  # peak est passe a 3, et k vaut de nouveau 1  
                   # F[,,u]=F13
-                  #La troisieme fois pic reste a 2 car la boucle 
+                  #La troisieme fois peak reste a 2 car la boucle 
                   # avec k n'est pas finie, et k vaut 2 donc 
                   # F[,,u]=F23
                   # ... c'est bien l'ordre dans lequel nous 
@@ -306,8 +306,8 @@ setMethod(f="inference"
                 
                 #On construit ci dessous la matrice des vecteurs 
                 # reponse
-                Y<-mat[which(gr %in% pic),sup_pred+1]
-                Omega[IND, which(gr %in% pic)]<-Omega[IND, which(gr %in% pic)]*0
+                Y<-mat[which(gr %in% peak),sup_pred+1]
+                Omega[IND, which(gr %in% peak)]<-Omega[IND, which(gr %in% peak)]*0
                 
                 #Nous allons passer au Lasso
                 #retenir<-lars::cv.folds 
@@ -335,15 +335,15 @@ setMethod(f="inference"
                   #                     )
                   #                   }
                   #                   , ns="lars")
-                  Omega[IND, which(gr %in% pic)]<-apply(Y,1,fun_lasso)
+                  Omega[IND, which(gr %in% peak)]<-apply(Y,1,fun_lasso)
 #                  assignInNamespace("cv.folds",retenir, ns="lars")
                 # }
                 # else{
-                #   Omega[IND, which(gr %in% pic)]<-apply(Y,1,fun_lasso)
+                #   Omega[IND, which(gr %in% peak)]<-apply(Y,1,fun_lasso)
                 # }
                 
               } 
-              #fin de la boucle for avec pic ; 
+              #fin de la boucle for avec peak ; 
               # la matrice omega est inferee
               
               co<-apply(Omega,2,sumabso)
@@ -374,12 +374,12 @@ setMethod(f="inference"
               # on reprend la meme maniere de faire que pour Omega
               #Nous annotons les differences
               
-              for(pic in 2:T){
-                IND<-which(gr %in% 1:(pic-1))
+              for(peak in 2:T){
+                IND<-which(gr %in% 1:(peak-1))
                 grIND<-gr[IND]
                 sup_pred<-rep(1:(T-1),P)+rep(seq(0,T*(P-1),T),each=T-1)
                 pred<-(mat[IND,sup_pred])
-                IND2<-which(gr %in% pic)
+                IND2<-which(gr %in% peak)
                 
                 Xf<-NULL
                 
@@ -387,7 +387,7 @@ setMethod(f="inference"
                 # les memes equations Fij, i=1...(j-1) doivent 
                 #etre estimees en meme temps
                 
-                for(i in 1:(pic-1)){ 
+                for(i in 1:(peak-1)){ 
                   #Cette  boucle permet de creer la matrice des 
                   # predicteurs selon une forme pratique
                   X<-NULL
@@ -401,7 +401,7 @@ setMethod(f="inference"
                       apply(pred[which(grIND==i),]*Omega[IND[which(grIND==i)],x],2,suma)
                     }
                   )
-                  #On applique cette fonction aux genes de pic
+                  #On applique cette fonction aux genes de peak
                   Xa<-(f(IND2))
                   Xb<-NULL
                   
@@ -443,7 +443,7 @@ setMethod(f="inference"
                   F[,,uuu]<-F_f(F[,,uuu],model[1:(T-1)+(jj-1)*(T-1)])
                 }
               } 
-              #fin de la boucle pic
+              #fin de la boucle peak
               
               if( type.inf=="iterative"){
                 F<-(g(tour)*F+sauvF)/(1+g(tour))
@@ -481,7 +481,7 @@ setMethod("gene_expr_simulation"
           ,function(network
                     ,time_label=1:4
                     ,subject=5
-                    ,level_pic=100
+                    ,level_peak=100
           ){
             require(VGAM)
             
@@ -490,16 +490,16 @@ setMethod("gene_expr_simulation"
             T<-length(unique(time_label))
             gene1<-which(time_label==1)
             supp<-seq(1,dim(M)[2],by=length(unique(time_label)))
-            M[gene1,supp]<-VGAM::rlaplace(length(supp)*length(gene1),level_pic,level_pic*0.9)*(-1)^rbinom(length(supp)*length(gene1),1,0.5)
+            M[gene1,supp]<-VGAM::rlaplace(length(supp)*length(gene1),level_peak,level_peak*0.9)*(-1)^rbinom(length(supp)*length(gene1),1,0.5)
             supp<-(1:dim(M)[2])[-supp]
-            M[gene1,supp]<-VGAM::rlaplace(length(supp)*length(gene1),0,level_pic*0.3) 
+            M[gene1,supp]<-VGAM::rlaplace(length(supp)*length(gene1),0,level_peak*0.3) 
             
             
             for(i in 2:T){
               
               genei<-which(time_label==i)
               supp<-seq(1,dim(M)[2],by=length(unique(time_label)))
-              M[genei,supp]<-VGAM::rlaplace(length(supp)*length(genei),0,level_pic*0.3)
+              M[genei,supp]<-VGAM::rlaplace(length(supp)*length(genei),0,level_peak*0.3)
               for(j in genei){
                 for( t in 2:T){
                   M[j,supp+t-1]<-apply(N[,j]*M[,supp+(t-2)],2,sum) + 	rnorm(length(supp+t),0,50)	

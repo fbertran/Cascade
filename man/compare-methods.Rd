@@ -1,24 +1,30 @@
-\name{compare}
+\name{compare-methods}
+\docType{methods}
+\alias{compare-methods}
 \alias{compare}
-%- Also NEED an '\alias' for EACH other topic documented here.
+\alias{compare,network,network,numeric-method}
 \title{
 Some basic criteria of comparison between actual and inferred network.
 }
 \description{
 Allows comparison between actual and inferred network.}
-\usage{
-compare(Net, Net_inf, nv)
-}
-%- maybe also 'usage' for other objects documented here.
-\arguments{
+\section{Methods}{
+\describe{
+
+\item{\code{signature(Net = "network", Net_inf = "network", nv = "numeric")}}{
+\describe{
   \item{Net}{
-A network object containing the actual network.
-}
+  A network object containing the actual network.
+  }
   \item{Net_inf}{
-A network object containing the inferred network.
-}
+  A network object containing the inferred network.
+  }
   \item{nv}{
-A number that indicates at which level of cutoff the comparison should be done.
+  A number that indicates at which level of cutoff the comparison should be done.
+  }
+}
+}                        
+
 }
 }
 
@@ -34,6 +40,16 @@ Vallat, L., Kemper, C. A., Jung, N., Maumy-Bertrand, M., Bertrand, F., Meyer, N.
 \author{
 Nicolas Jung, Frédéric Bertrand , Myriam Maumy-Bertrand.
 }
+\examples{
+data(simul)
 
+#Comparing true and inferred networks
+F_score=NULL
 
-
+#Here are the cutoff level tested
+test.seq<-seq(0,max(abs(Net_inf@network*0.9)),length.out=200)
+for(u in test.seq){
+	F_score<-rbind(F_score,Cascade::compare(Net,Net_inf,u))
+}
+matplot(test.seq,F_score,type="l",ylab="criterion value",xlab="cutoff level",lwd=2)
+}

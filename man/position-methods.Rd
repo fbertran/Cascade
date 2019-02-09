@@ -14,5 +14,9 @@ Returns the position of edges in the network
 Returns a matrix with the position of the node. This matrix can then be used as an argument in the plot function.
 }
 }}
+\examples{
+data(simul)
+position(Net)
+}
 \keyword{methods}
 

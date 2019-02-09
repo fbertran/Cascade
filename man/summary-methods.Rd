@@ -8,4 +8,8 @@
  Methods for function \code{summary}  
 }
 
+\examples{
+data(simul)
+summary(M)
+}
 \keyword{methods}

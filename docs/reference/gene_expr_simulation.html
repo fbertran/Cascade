@@ -142,7 +142,7 @@
       <td><dl class='dl-horizontal'>
   <dt>time_label</dt><dd><p>a vector containing the time labels.</p></dd>
   <dt>subject</dt><dd><p>the number of subjects</p></dd>
-  <dt>level_pic</dt><dd><p>the mean level of pics.</p></dd>
+  <dt>level_peak</dt><dd><p>the mean level of peaks.</p></dd>
 </dl></td>
     </tr>
     </table>
@@ -158,8 +158,42 @@
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'>	#See vignette
-</div></pre>
+    <pre class="examples"><div class='input'><span class='fu'><a href='https://www.rdocumentation.org/packages/utils/topics/data'>data</a></span>(<span class='no'>simul</span>)
+<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/Random'>set.seed</a></span>(<span class='fl'>1</span>)
+
+<span class='co'>#We simulate gene expression according to the network Net</span>
+<span class='no'>Msim</span><span class='kw'>&lt;-</span><span class='fu'>gene_expr_simulation</span>(
+        <span class='kw'>network</span><span class='kw'>=</span><span class='no'>Net</span>,
+        <span class='kw'>time_label</span><span class='kw'>=</span><span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/rep'>rep</a></span>(<span class='fl'>1</span>:<span class='fl'>4</span>,<span class='kw'>each</span><span class='kw'>=</span><span class='fl'>25</span>),
+        <span class='kw'>subject</span><span class='kw'>=</span><span class='fl'>5</span>,
+        <span class='kw'>level_peak</span><span class='kw'>=</span><span class='fl'>200</span>)</div><div class='output co'>#&gt; <span class='message'>Loading required package: VGAM</span></div><div class='output co'>#&gt; <span class='message'>Loading required package: splines</span></div><div class='output co'>#&gt; <span class='message'>Loading required package: magic</span></div><div class='output co'>#&gt; <span class='message'>Loading required package: abind</span></div><div class='output co'>#&gt; <span class='message'></span>
+#&gt; <span class='message'>Attaching package: ‘magic’</span></div><div class='output co'>#&gt; <span class='message'>The following object is masked from ‘package:IRanges’:</span>
+#&gt; <span class='message'></span>
+#&gt; <span class='message'>    shift</span></div><div class='input'><span class='fu'><a href='https://www.rdocumentation.org/packages/utils/topics/head'>head</a></span>(<span class='no'>Msim</span>)</div><div class='output co'>#&gt; The matrix :
+#&gt; 
+#&gt;        log(S/US) : P1T1 log(S/US) : P1T2 log(S/US) : P1T3
+#&gt; gene 1         86.06709        44.533656       -57.361320
+#&gt; gene 2       -146.83138       120.514233       -39.892240
+#&gt; gene 3        228.34653        -3.625970       -60.889866
+#&gt; gene 4        505.11452        13.929252        -2.786049
+#&gt; gene 5        -36.57508        -1.828829        46.784308
+#&gt; gene 6       -486.82335       -91.502323      -173.402124
+#&gt; ...
+#&gt; 
+#&gt; Vector of names :
+#&gt; [1] "gene 1" "gene 2" "gene 3" "gene 4" "gene 5" "gene 6"
+#&gt; ...
+#&gt; Vector of group :
+#&gt; [1] 1 1 1 1 1 1
+#&gt; ...
+#&gt; Vector of starting time :
+#&gt; [1] 0
+#&gt; ...
+#&gt; Vector of time :
+#&gt; [1] 1 2 3 4
+#&gt; 
+#&gt; Number of subject :
+#&gt; [1] 5</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

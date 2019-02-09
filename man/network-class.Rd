@@ -25,6 +25,7 @@ Objects can be created by calls of the form \code{new("network", ...)}.
 \section{Methods}{
   \describe{
     \item{analyze_network}{\code{signature(Omega = "network")}: ... }
+    \item{compare}{\code{signature(Net = "network", Net_inf = "network", nv = "Numeric")}: ... }
     \item{cutoff}{\code{signature(Omega = "network")}: ... }
     \item{evolution}{\code{signature(net = "network")}: ... }
     \item{geneNeighborhood}{\code{signature(net = "network")}: ... }

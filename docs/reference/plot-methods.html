@@ -52,7 +52,7 @@
   <body>
     <div class="container template-reference-topic">
       <header>
-      <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
@@ -71,9 +71,24 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fa fa-home"></span>
      
   </a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Vignettes
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="https://cran.r-project.org/web/packages/Cascade/vignettes/Cascade.pdf">Introduction to the Cascade package and application to the GSE39411 dataset</a>
+    </li>
+    <li>
+      <a href="https://cran.r-project.org/web/packages/Cascade/vignettes/E-MTAB-1475_re-analysis.pdf">Additional application of the Cascade package to E-MTAB-1475 dataset</a>
+    </li>
+  </ul>
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
@@ -86,7 +101,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/fbertran/Cascade">
-    <span class="fa fa-github fa-lg"></span>
+    <span class="fa fa-github"></span>
      
   </a>
 </li>
@@ -146,13 +161,36 @@
 </dl>
     
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='fu'><a href='https://www.rdocumentation.org/packages/utils/topics/data'>data</a></span>(<span class='no'>simul</span>)
+<span class='fu'><a href='https://www.rdocumentation.org/packages/graphics/topics/plot'>plot</a></span>(<span class='no'>Net</span>)</div><div class='output co'>#&gt; <span class='message'>Loading required package: igraph</span></div><div class='output co'>#&gt; <span class='message'></span>
+#&gt; <span class='message'>Attaching package: ‘igraph’</span></div><div class='output co'>#&gt; <span class='message'>The following object is masked from ‘package:IRanges’:</span>
+#&gt; <span class='message'></span>
+#&gt; <span class='message'>    union</span></div><div class='output co'>#&gt; <span class='message'>The following object is masked from ‘package:S4Vectors’:</span>
+#&gt; <span class='message'></span>
+#&gt; <span class='message'>    union</span></div><div class='output co'>#&gt; <span class='message'>The following objects are masked from ‘package:BiocGenerics’:</span>
+#&gt; <span class='message'></span>
+#&gt; <span class='message'>    normalize, path, union</span></div><div class='output co'>#&gt; <span class='message'>The following object is masked from ‘package:Cascade’:</span>
+#&gt; <span class='message'></span>
+#&gt; <span class='message'>    compare</span></div><div class='output co'>#&gt; <span class='message'>The following objects are masked from ‘package:stats’:</span>
+#&gt; <span class='message'></span>
+#&gt; <span class='message'>    decompose, spectrum</span></div><div class='output co'>#&gt; <span class='message'>The following object is masked from ‘package:base’:</span>
+#&gt; <span class='message'></span>
+#&gt; <span class='message'>    union</span></div><div class='img'><img src='plot-methods-1.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'><a href='https://www.rdocumentation.org/packages/graphics/topics/plot'>plot</a></span>(<span class='no'>M</span>)</div><div class='img'><img src='plot-methods-2.png' alt='' width='700' height='433' /></div><div class='img'><img src='plot-methods-3.png' alt='' width='700' height='433' /></div><div class='img'><img src='plot-methods-4.png' alt='' width='700' height='433' /></div><div class='img'><img src='plot-methods-5.png' alt='' width='700' height='433' /></div><div class='img'><img src='plot-methods-6.png' alt='' width='700' height='433' /></div><div class='img'><img src='plot-methods-7.png' alt='' width='700' height='433' /></div><div class='img'><img src='plot-methods-8.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='fu'><a href='https://www.rdocumentation.org/packages/utils/topics/data'>data</a></span>(<span class='no'>Selection</span>)
+<span class='fu'><a href='https://www.rdocumentation.org/packages/utils/topics/data'>data</a></span>(<span class='no'>network</span>)
+<span class='no'>nv</span><span class='kw'>&lt;-</span><span class='fl'>0.11</span>
+<span class='fu'><a href='https://www.rdocumentation.org/packages/graphics/topics/plot'>plot</a></span>(<span class='no'>network</span>,<span class='kw'>choice</span><span class='kw'>=</span><span class='st'>"network"</span>,<span class='kw'>gr</span><span class='kw'>=</span><span class='no'>Selection</span>@<span class='kw'>group</span>,<span class='kw'>nv</span><span class='kw'>=</span><span class='no'>nv</span>,<span class='kw'>label_v</span><span class='kw'>=</span><span class='no'>Selection</span>@<span class='kw'>name</span>,
+<span class='kw'>edge.arrow.size</span><span class='kw'>=</span><span class='fl'>0.9</span>,<span class='kw'>edge.thickness</span><span class='kw'>=</span><span class='fl'>1.5</span>)</div><div class='img'><img src='plot-methods-9.png' alt='' width='700' height='433' /></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       
       <li><a href="#methods">Methods</a></li>
-          </ul>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>

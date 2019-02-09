@@ -4,15 +4,15 @@
 \alias{micropredict-class}
 
 
-\title{Class \code{"micropred"}}
+\title{Class \code{"micropredict"}}
 \description{
-2254
+Class for prediction of microarray value.
 }
 \section{Objects from the Class}{
-Objects can be created by calls of the form \code{new("micropred", ...)}.
+Objects can be created by calls of the form \code{new("micropredict", ...)}.
 }
 
 \examples{
-showClass("network")
+showClass("micropredict")
 }
 \keyword{classes}

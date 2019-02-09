@@ -9,5 +9,10 @@
  Methods for function \code{print}  ~~
 }
 
+\examples{
+data(simul)
+print(Net)
+print(M)
+}
 
 \keyword{methods}

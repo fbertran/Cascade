@@ -1,3 +1,7 @@
+# Cascade 1.7
+
+* Help pages were completed and examples added for every function. It required new datasets that were added to the package.
+
 # Cascade 1.6
 
 * Added a `NEWS.md` file to track changes to the package.

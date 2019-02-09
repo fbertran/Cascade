@@ -1,5 +1,5 @@
 setGeneric("geneSelection",package="Cascade",def = function(x,y,tot.number,... ){standardGeneric("geneSelection")})
-setGeneric("genePeakSelection",package="Cascade",def = function(x,pic,... ){standardGeneric("genePeakSelection")})
+setGeneric("genePeakSelection",package="Cascade",def = function(x,peak,... ){standardGeneric("genePeakSelection")})
 setGeneric("unionMicro",package="Cascade",def = function(M1,M2 ){standardGeneric("unionMicro")})
 setGeneric("position",package="Cascade",def = function(net,... ){standardGeneric("position")})
 setGeneric("geneNeighborhood",package="Cascade",def = function(net,targets,... ){standardGeneric("geneNeighborhood")})
@@ -9,6 +9,7 @@ setGeneric("cutoff",package="Cascade",def = function(Omega,... ){standardGeneric
 setGeneric("analyze_network",package="Cascade",def = function(Omega,nv,...){standardGeneric("analyze_network")})
 #setGeneric("predict",def = function(object,...){standardGeneric("predict")})
 setGeneric("gene_expr_simulation",package="Cascade",def = function(network,...){standardGeneric("gene_expr_simulation")})
+setGeneric("compare",package="Cascade",def = function(Net,Net_inf,nv){standardGeneric("compare")})
 
 
 as.micro_array<-function(M,time,subject){
@@ -209,19 +210,4 @@ network_random<-function(nb,time_label,exp,init,regul,min_expr,max_expr,casc.lev
   for(i in 1:(T*(T-1)/2)){diag(F[,,i])<-1}
   N<-new("network",network=net2,name=paste("gene",1:nb),F=F,convO=0,convF=matrix(0,1,1),time_pt=1:length(unique(time_label)))
   return(N)
-}
-
-compare<-function(Net,Net_inf,nv){
-  N1<-Net@network
-  N2<-Net_inf@network
-  N1[abs(N1)>0]<-1
-  N1[abs(N1)<=0]<-0
-  N2[abs(N2)>nv]<-1
-  N2[abs(N2)<=nv]<-0
-  Nb<-sum(N1)
-  sens<-sum((N1-2*N2)==-1)/sum(N1==1)
-  spe<-sum((N1-2*N2)==-1)/sum(N2==1)
-  Fscore<-2*sens*spe/(sens+spe)
-  return(c(sens,spe,Fscore))
-  
 }

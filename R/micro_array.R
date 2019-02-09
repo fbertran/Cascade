@@ -184,10 +184,15 @@ else{
  
  setMethod(f="geneSelection", 
 	signature=c("micro_array","micro_array","numeric"),
-	definition=function(x,y,tot.number,data_log=TRUE,wanted.patterns=NULL,forbidden.patterns=NULL,pic=NULL,alpha=0.05,Design=NULL,lfc=0){
+	definition=function(x,y,tot.number,data_log=TRUE,wanted.patterns=NULL,forbidden.patterns=NULL,peak=NULL,alpha=0.05,Design=NULL,lfc=0){
    
+	  if(!is.null(sessionInfo()$otherPkgs$limma$Version)){
 	  BBB<-strsplit(sessionInfo()$otherPkgs$limma$Version,"[.]")
-	  
+	  } else {
+	    if(!is.null(sessionInfo()$loadedOnly$limma$Version)){
+	  BBB<-strsplit(sessionInfo()$loadedOnly$limma$Version,"[.]")
+	    } else {stop("Please install the limma BioConductor package")}
+	  }
 	  if( !(BBB[[1]][1]>3 || (BBB[[1]][1]==3 && BBB[[1]][2]>18) || 
 	          (BBB[[1]][1]==3 && BBB[[1]][2]==18 && BBB[[1]][3]>=13 ) ))
 	  {stop("Upgrade your version of Limma (>= 3.18.13)")}
@@ -323,12 +328,12 @@ p.val.ind.class<-p.val.ind[(ind.class),]
 		}
 
 
-		f_test_pic<-function(x,pic){
-				x[pic]
+		f_test_peak<-function(x,peak){
+				x[peak]
 				}
 
-		if(!is.null(pic)){
-				f_test2<-function(x){f_test_pic(x,pic)}
+		if(!is.null(peak)){
+				f_test2<-function(x){f_test_peak(x,peak)}
 				
 				# if(tot.number>0){
 				# S<-apply(choix[,1:(ch-1)],1,f_test2)
@@ -350,7 +355,7 @@ p.val.ind.class<-p.val.ind[(ind.class),]
 			PN<-dim(choix)[1]
 			PN<-1:PN
 			
-			if(is.null(pic)){
+			if(is.null(peak)){
 			while(sum(choix[,ch])<tot.number){
 				
 				choix[i,ch]<-1
@@ -368,7 +373,7 @@ p.val.ind.class<-p.val.ind[(ind.class),]
 		}
 
 		if((!is.null(wanted.patterns))  ){choix<-choix[choix[,ch]==1,]}
-		if(!is.null(pic)&&tot.number<=0){choix<-choix[choix[,ch]==1,]}
+		if(!is.null(peak)&&tot.number<=0){choix<-choix[choix[,ch]==1,]}
 	
 		temps.prem<-function(x){
 			u<-0
@@ -412,7 +417,13 @@ setMethod(f="geneSelection",
 	definition=function(x,y,tot.number,data_log=TRUE,alpha=0.05,cont=FALSE,lfc=0,f.asso=NULL){
   
   
-	  BBB<-strsplit(sessionInfo()$otherPkgs$limma$Version,"[.]")
+	  if(!is.null(sessionInfo()$otherPkgs$limma$Version)){
+	    BBB<-strsplit(sessionInfo()$otherPkgs$limma$Version,"[.]")
+	  } else {
+	    if(!is.null(sessionInfo()$loadedOnly$limma$Version)){
+	      BBB<-strsplit(sessionInfo()$loadedOnly$limma$Version,"[.]")
+	    } else {stop("Please install the limma BioConductor package")}
+	  }
 	  
 	  if( !(BBB[[1]][1]>3 || (BBB[[1]][1]==3 && BBB[[1]][2]>18) || 
 	          (BBB[[1]][1]==3 && BBB[[1]][2]==18 && BBB[[1]][3]>=13 ) ))
@@ -669,16 +680,16 @@ p.val.all<-p.val.all[1:nb.ret,]
 
 setMethod(f="genePeakSelection", 
 	signature=c("micro_array","numeric"),
-	definition=function(x,pic,y=NULL,data_log=TRUE,durPic=c(1,1),abs_val=TRUE,alpha_diff=0.05){
+	definition=function(x,peak,y=NULL,data_log=TRUE,durPeak=c(1,1),abs_val=TRUE,alpha_diff=0.05){
 			
 			  M1<-x
 			  M2<-y
-			Select<-geneSelection(M1,tot.number=-1,M2,data_log=data_log,pic=pic)
+			Select<-geneSelection(M1,tot.number=-1,M2,data_log=data_log,peak=peak)
 			
 			if(abs_val==FALSE){
 			M<-Select@microarray
 			sel<-rep(0,length(M[,1]))
-			comp<-M[,(1:M1@subject-1)*length(M1@time)+pic]
+			comp<-M[,(1:M1@subject-1)*length(M1@time)+peak]
 			test1<-function(y){
 				if(wilcox.test(y[1:M1@subject],y[(M1@subject+1):(2*M1@subject)], alternative="less")$p.value<alpha_diff){
 					return(1)
@@ -688,8 +699,8 @@ setMethod(f="genePeakSelection",
 					}
 				}
 				uu<-0
-			if((pic-durPic[1])>0){
-			for(i in 1:(pic-durPic[1])){
+			if((peak-durPeak[1])>0){
+			for(i in 1:(peak-durPeak[1])){
 				comp1<-M[,(1:M1@subject-1)*length(M1@time)+i]
 				comp2<-cbind(comp1,comp)
 				sel<-sel+apply(comp2,1,test1)
@@ -697,8 +708,8 @@ setMethod(f="genePeakSelection",
 			}
 			}
 		
-			if((pic+durPic[2])<=length(M1@time)){
-			for(i in (pic+durPic[2]):length(M1@time)){
+			if((peak+durPeak[2])<=length(M1@time)){
+			for(i in (peak+durPeak[2]):length(M1@time)){
 				comp1<-M[,(1:M1@subject-1)*length(M1@time)+i]
 				comp2<-cbind(comp1,comp)
 				sel<-sel+apply(comp2,1,test1)	
@@ -713,7 +724,7 @@ setMethod(f="genePeakSelection",
 			
 			M<--Select@microarray
 			sel<-rep(0,length(M[,1]))
-			comp<-M[,(1:M1@subject-1)*length(M1@time)+pic]
+			comp<-M[,(1:M1@subject-1)*length(M1@time)+peak]
 			test1<-function(y){
 				if(wilcox.test(y[1:M1@subject],y[(M1@subject+1):(2*M1@subject)], alternative="less")$p.value<alpha_diff){
 					return(1)
@@ -723,8 +734,8 @@ setMethod(f="genePeakSelection",
 					}
 				}
 				uu<-0
-			if((pic-durPic[1])>0){
-			for(i in 1:(pic-durPic[1])){
+			if((peak-durPeak[1])>0){
+			for(i in 1:(peak-durPeak[1])){
 				comp1<-M[,(1:M1@subject-1)*length(M1@time)+i]
 				comp2<-cbind(comp1,comp)
 				sel<-sel+apply(comp2,1,test1)
@@ -732,8 +743,8 @@ setMethod(f="genePeakSelection",
 			}
 			}
 		
-			if((pic+durPic[2])<=length(M1@time)){
-			for(i in (pic+durPic[2]):length(M1@time)){
+			if((peak+durPeak[2])<=length(M1@time)){
+			for(i in (peak+durPeak[2]):length(M1@time)){
 				comp1<-M[,(1:M1@subject-1)*length(M1@time)+i]
 				comp2<-cbind(comp1,comp)
 				sel<-sel+apply(comp2,1,test1)	
@@ -746,13 +757,13 @@ setMethod(f="genePeakSelection",
 			#N2<-Select2@name
 			
 			N<-c(N1,N11)
-			Mi<-new("micro_array",microarray=Select@microarray[which(Select@name %in% N ),],name=N,time=M1@time,subject=M1@subject,start_time=Select@start_time[which(Select@name %in% N)],group=rep(pic,length(N)))			
+			Mi<-new("micro_array",microarray=Select@microarray[which(Select@name %in% N ),],name=N,time=M1@time,subject=M1@subject,start_time=Select@start_time[which(Select@name %in% N)],group=rep(peak,length(N)))			
 			return(Mi)
 			} 		
 		else{
 			M<-abs(Select@microarray)
 			sel<-rep(0,length(M[,1]))
-			comp<-M[,(1:M1@subject-1)*length(M1@time)+pic]
+			comp<-M[,(1:M1@subject-1)*length(M1@time)+peak]
 			test1<-function(y){
 				if(wilcox.test(y[1:M1@subject],y[(M1@subject+1):(2*M1@subject)], alternative="less")$p.value<0.05){
 					return(1)
@@ -762,8 +773,8 @@ setMethod(f="genePeakSelection",
 					}
 				}
 				uu<-0
-			if((pic-durPic[1])>0){
-			for(i in 1:(pic-durPic[1])){
+			if((peak-durPeak[1])>0){
+			for(i in 1:(peak-durPeak[1])){
 				comp1<-M[,(1:M1@subject-1)*length(M1@time)+i]
 				comp2<-cbind(comp1,comp)
 				sel<-sel+apply(comp2,1,test1)
@@ -771,8 +782,8 @@ setMethod(f="genePeakSelection",
 			}
 			}
 		
-			if((pic+durPic[2])<=length(M1@time)){
-			for(i in (pic+durPic[2]):length(M1@time)){
+			if((peak+durPeak[2])<=length(M1@time)){
+			for(i in (peak+durPeak[2]):length(M1@time)){
 				comp1<-M[,(1:M1@subject-1)*length(M1@time)+i]
 				comp2<-cbind(comp1,comp)
 				sel<-sel+apply(comp2,1,test1)	
@@ -785,7 +796,7 @@ setMethod(f="genePeakSelection",
 			#N2<-Select2@name
 			
 		
-			Mi<-new("micro_array",microarray=Select@microarray[which(Select@name %in% N ),],name=N,time=M1@time,subject=M1@subject,group=rep(pic,length(N)),start_time=Select@start_time[which(Select@name %in% N)])	
+			Mi<-new("micro_array",microarray=Select@microarray[which(Select@name %in% N ),],name=N,time=M1@time,subject=M1@subject,group=rep(peak,length(N)),start_time=Select@start_time[which(Select@name %in% N)])	
 			
 			
 		}

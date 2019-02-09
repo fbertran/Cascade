@@ -52,7 +52,7 @@
   <body>
     <div class="container template-reference-topic">
       <header>
-      <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
@@ -71,9 +71,24 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fa fa-home"></span>
      
   </a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Vignettes
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="https://cran.r-project.org/web/packages/Cascade/vignettes/Cascade.pdf">Introduction to the Cascade package and application to the GSE39411 dataset</a>
+    </li>
+    <li>
+      <a href="https://cran.r-project.org/web/packages/Cascade/vignettes/E-MTAB-1475_re-analysis.pdf">Additional application of the Cascade package to E-MTAB-1475 dataset</a>
+    </li>
+  </ul>
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
@@ -86,7 +101,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/fbertran/Cascade">
-    <span class="fa fa-github fa-lg"></span>
+    <span class="fa fa-github"></span>
      
   </a>
 </li>
@@ -115,11 +130,57 @@
 
         
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='fu'><a href='https://www.rdocumentation.org/packages/utils/topics/data'>data</a></span>(<span class='no'>simul</span>)
+<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/summary'>summary</a></span>(<span class='no'>M</span>)</div><div class='output co'>#&gt;  log(S/US) : P1T1   log(S/US) : P1T2     log(S/US) : P1T3   
+#&gt;  Min.   :-759.882   Min.   :-2024.5979   Min.   :-1007.748  
+#&gt;  1st Qu.: -36.758   1st Qu.:  -22.5653   1st Qu.:  -68.054  
+#&gt;  Median :   6.265   Median :    0.5759   Median :   -4.192  
+#&gt;  Mean   :  10.613   Mean   :   -6.6230   Mean   :    3.085  
+#&gt;  3rd Qu.:  74.682   3rd Qu.:   78.2516   3rd Qu.:   74.866  
+#&gt;  Max.   : 647.643   Max.   :  870.7513   Max.   : 1155.413  
+#&gt;  log(S/US) : P1T4    log(S/US) : P2T1   log(S/US) : P2T2    log(S/US) : P2T3  
+#&gt;  Min.   :-1075.637   Min.   :-790.431   Min.   :-1505.543   Min.   :-980.965  
+#&gt;  1st Qu.:  -31.538   1st Qu.: -65.394   1st Qu.:  -59.833   1st Qu.: -55.077  
+#&gt;  Median :   -2.293   Median :   2.087   Median :   -1.262   Median :  -7.144  
+#&gt;  Mean   :    9.055   Mean   :   7.791   Mean   :  -18.568   Mean   : -35.647  
+#&gt;  3rd Qu.:   75.316   3rd Qu.:  70.108   3rd Qu.:   76.908   3rd Qu.:  41.364  
+#&gt;  Max.   :  556.449   Max.   : 669.203   Max.   : 1058.385   Max.   :1114.897  
+#&gt;  log(S/US) : P2T4   log(S/US) : P3T1     log(S/US) : P3T2   log(S/US) : P3T3   
+#&gt;  Min.   :-547.117   Min.   :-1278.6158   Min.   :-624.834   Min.   :-1018.897  
+#&gt;  1st Qu.: -58.721   1st Qu.:  -42.1909   1st Qu.: -48.460   1st Qu.:  -52.456  
+#&gt;  Median :  -3.519   Median :    0.4064   Median :  -2.505   Median :   -2.026  
+#&gt;  Mean   : -24.277   Mean   :   -3.8860   Mean   : -11.950   Mean   :    5.893  
+#&gt;  3rd Qu.:  37.621   3rd Qu.:   48.4275   3rd Qu.:  33.781   3rd Qu.:   43.214  
+#&gt;  Max.   : 270.423   Max.   :  527.3972   Max.   : 576.141   Max.   : 1159.517  
+#&gt;  log(S/US) : P3T4    log(S/US) : P4T1   log(S/US) : P4T2     log(S/US) : P4T3  
+#&gt;  Min.   :-2403.703   Min.   :-683.000   Min.   :-1957.3692   Min.   :-591.460  
+#&gt;  1st Qu.:  -57.493   1st Qu.: -81.510   1st Qu.:  -39.3372   1st Qu.: -39.499  
+#&gt;  Median :   -4.529   Median :   5.102   Median :   -0.0215   Median :   2.251  
+#&gt;  Mean   :  -33.088   Mean   :  -2.034   Mean   :    2.9550   Mean   :  27.377  
+#&gt;  3rd Qu.:   51.808   3rd Qu.:  74.738   3rd Qu.:   77.1869   3rd Qu.:  62.097  
+#&gt;  Max.   :  495.014   Max.   : 454.955   Max.   :  955.0680   Max.   :1341.859  
+#&gt;  log(S/US) : P4T4   log(S/US) : P5T1   log(S/US) : P5T2    log(S/US) : P5T3  
+#&gt;  Min.   :-577.069   Min.   :-436.986   Min.   :-647.1962   Min.   :-409.347  
+#&gt;  1st Qu.: -31.924   1st Qu.: -69.809   1st Qu.: -48.5156   1st Qu.: -44.205  
+#&gt;  Median :   2.456   Median :   2.156   Median :  -0.2949   Median :  -1.056  
+#&gt;  Mean   :  29.675   Mean   :  -2.929   Mean   :   6.2300   Mean   :   6.190  
+#&gt;  3rd Qu.:  35.322   3rd Qu.:  47.462   3rd Qu.:  47.9558   3rd Qu.:  47.694  
+#&gt;  Max.   :1577.042   Max.   : 651.596   Max.   :1359.9584   Max.   : 434.178  
+#&gt;  log(S/US) : P5T4  
+#&gt;  Min.   :-188.652  
+#&gt;  1st Qu.: -33.097  
+#&gt;  Median :   1.873  
+#&gt;  Mean   :  26.740  
+#&gt;  3rd Qu.:  67.879  
+#&gt;  Max.   : 743.820  </div><div class='img'><img src='summary-methods-1.png' alt='' width='700' height='433' /></div><div class='img'><img src='summary-methods-2.png' alt='' width='700' height='433' /></div><div class='img'><img src='summary-methods-3.png' alt='' width='700' height='433' /></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-                </ul>
+            
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>

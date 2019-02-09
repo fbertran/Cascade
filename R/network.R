@@ -872,11 +872,11 @@ setMethod("cutoff","network",function(Omega,sequence=NULL,x_min=0){
     }
     
     #  select method (discrete or continuous) for fitting and test if x is a vector
-    fdattype<-"unknow"
+    fdattype<-"unknown"
     if( is.vector(x,"numeric") ){ fdattype<-"real" }
     if( all(x==floor(x)) && is.vector(x) ){ fdattype<-"integer" }
     if( all(x==floor(x)) && min(x) > 1000 && length(x) > 100 ){ fdattype <- "real" }
-    if( fdattype=="unknow" ){ stop("(plfit) Error: x must contain only reals or only integers.") }
+    if( fdattype=="unknown" ){ stop("(plfit) Error: x must contain only reals or only integers.") }
     
     N   <- length(x)
     nof <- rep(0,Bt)
@@ -1143,5 +1143,37 @@ print(f)
   )
   
   return(list(p.value=f2,p.value.inter=f,sequence=sequence_test)	)
+}
+)
+
+
+setMethod("compare",c("network","network","numeric"),function(Net,
+                                                    Net_inf,
+                                                    nv=1){
+  N1<-Net@network
+  N2<-Net_inf@network
+  N1[abs(N1)>0]<-1
+  N1[abs(N1)<=0]<-0
+  N2[abs(N2)>nv]<-1
+  N2[abs(N2)<=nv]<-0
+  Nb<-sum(N1)
+  sens<-0
+  if(sum(N1==1)){
+    sens<-sum((N1-2*N2)==-1)/sum(N1==1)
+  }
+  spe<-0
+  if(sum(N2==1)){
+    spe<-sum((N1-2*N2)==-1)/sum(N2==1)
+  }
+  Fscore<-0
+  Fscore12<-0
+  Fscore2<-0
+  if(sens !=0){
+    Fscore<-2*spe*sens/(spe+sens)
+    Fscore12<-(1+0.5^2)*spe*sens/(spe/4+sens)
+    Fscore2<-(1+2^2)*spe*sens/(spe*4+sens)
+    return(c(sens,spe,Fscore,Fscore12,Fscore2))
+  }
+  return(c(sens,spe,Fscore,Fscore12,Fscore2))
 }
 )

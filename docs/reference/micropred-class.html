@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Class <code>"micropred"</code> — micropredict-class • Cascade</title>
+<title>Class <code>"micropredict"</code> — micropredict-class • Cascade</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -30,9 +30,9 @@
 
 
 
-<meta property="og:title" content="Class <code>"micropred"</code> — micropredict-class" />
+<meta property="og:title" content="Class <code>"micropredict"</code> — micropredict-class" />
 
-<meta property="og:description" content="2254" />
+<meta property="og:description" content="Class for prediction of microarray value." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -52,7 +52,7 @@
   <body>
     <div class="container template-reference-topic">
       <header>
-      <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
@@ -71,9 +71,24 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fa fa-home"></span>
      
   </a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Vignettes
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="https://cran.r-project.org/web/packages/Cascade/vignettes/Cascade.pdf">Introduction to the Cascade package and application to the GSE39411 dataset</a>
+    </li>
+    <li>
+      <a href="https://cran.r-project.org/web/packages/Cascade/vignettes/E-MTAB-1475_re-analysis.pdf">Additional application of the Cascade package to E-MTAB-1475 dataset</a>
+    </li>
+  </ul>
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
@@ -86,7 +101,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/fbertran/Cascade">
-    <span class="fa fa-github fa-lg"></span>
+    <span class="fa fa-github"></span>
      
   </a>
 </li>
@@ -102,30 +117,33 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Class <code>"micropred"</code></h1>
+    <h1>Class <code>"micropredict"</code></h1>
     
     <div class="hidden name"><code>micropred-class.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>2254</p>
+    <p>Class for prediction of microarray value.</p>
     
     </div>
 
         
     <h2 class="hasAnchor" id="objects-from-the-class"><a class="anchor" href="#objects-from-the-class"></a>Objects from the Class</h2>
 
-    <p>Objects can be created by calls of the form <code>new("micropred", ...)</code>.</p>
+    <p>Objects can be created by calls of the form <code>new("micropredict", ...)</code>.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>showClass</span>(<span class='st'>"network"</span>)</div><div class='output co'>#&gt; Class "network" [package "Cascade"]
+    <pre class="examples"><div class='input'><span class='fu'>showClass</span>(<span class='st'>"micropredict"</span>)</div><div class='output co'>#&gt; Class "micropredict" [package "Cascade"]
 #&gt; 
 #&gt; Slots:
-#&gt;                                                       
-#&gt; Name:  network    name       F   convF   convO time_pt
-#&gt; Class:  matrix  vector   array  matrix  vector  vector</div></pre>
+#&gt;                                                                      
+#&gt; Name:  microarray_unchanged   microarray_changed   microarray_predict
+#&gt; Class:          micro_array          micro_array          micro_array
+#&gt;                                                                      
+#&gt; Name:                    nv              network              targets
+#&gt; Class:              numeric              network              numeric</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

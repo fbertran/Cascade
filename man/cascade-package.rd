@@ -10,8 +10,8 @@ A modeling tool allowing gene selection, reverse engineering, and prediction in 
 \tabular{ll}{
 Package: \tab Cascade\cr
 Type: \tab Package\cr
-Version: \tab 1.6\cr
-Date: \tab 2019-02-03\cr
+Version: \tab 1.7\cr
+Date: \tab 2019-02-09\cr
 License: \tab GNU 2.0\cr
 Depends: \tab methods\cr
 }

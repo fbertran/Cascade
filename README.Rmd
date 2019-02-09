@@ -104,7 +104,7 @@ M <- Cascade::gene_expr_simulation(
   network=Net,
   time_label=rep(1:4,each=25),
   subject=5,
-  level_pic=200)
+  level_peak=200)
 ```
 
 Get a summay and plots of the simulated data:
