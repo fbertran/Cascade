@@ -57,6 +57,7 @@ Vallat, L., Kemper, C. A., Jung, N., Maumy-Bertrand, M., Bertrand, F., Meyer, N.
 }
 
 \examples{
+\donttest{
   if(require(CascadeData)){
 	data(micro_US)
 	micro_US<-as.micro_array(micro_US,time=c(60,90,210,390),subject=6)
@@ -82,7 +83,6 @@ Vallat, L., Kemper, C. A., Jung, N., Maumy-Bertrand, M., Bertrand, F., Meyer, N.
   summary(Selection_3)
   }
 
-\donttest{
   if(require(CascadeData)){
 data(micro_US)
 micro_US<-as.micro_array(micro_US,time=c(60,90,210,390),subject=6)
