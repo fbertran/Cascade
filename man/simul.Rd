@@ -1,4 +1,5 @@
 \name{simul}
+\alias{simul}
 \alias{M}
 \alias{Net}
 \alias{Net_inf}
