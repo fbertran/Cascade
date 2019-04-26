@@ -445,7 +445,7 @@ setMethod(f="inference"
               } 
               #fin de la boucle peak
               
-              if( type.inf=="iterative"){
+              if(type.inf=="iterative"){
                 F<-(g(tour)*F+sauvF)/(1+g(tour))
               }
               cc<-rep(0,nF)

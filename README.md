@@ -220,7 +220,7 @@ plot(M)
 
 <img src="man/figures/README-plotsimuldata-1.png" title="plot of chunk plotsimuldata" alt="plot of chunk plotsimuldata" width="100%" /><img src="man/figures/README-plotsimuldata-2.png" title="plot of chunk plotsimuldata" alt="plot of chunk plotsimuldata" width="100%" /><img src="man/figures/README-plotsimuldata-3.png" title="plot of chunk plotsimuldata" alt="plot of chunk plotsimuldata" width="100%" /><img src="man/figures/README-plotsimuldata-4.png" title="plot of chunk plotsimuldata" alt="plot of chunk plotsimuldata" width="100%" /><img src="man/figures/README-plotsimuldata-5.png" title="plot of chunk plotsimuldata" alt="plot of chunk plotsimuldata" width="100%" /><img src="man/figures/README-plotsimuldata-6.png" title="plot of chunk plotsimuldata" alt="plot of chunk plotsimuldata" width="100%" /><img src="man/figures/README-plotsimuldata-7.png" title="plot of chunk plotsimuldata" alt="plot of chunk plotsimuldata" width="100%" />
 
-### Network inferrence
+### Network inference
 We infer the new network using subjectwise leave one out cross-validation (all measurement from the same subject are removed from the dataset)
 
 ```r
@@ -286,7 +286,7 @@ Analyze the network with a cutoff set to the previouly found 0.14 optimal value.
 
 ```r
 analyze_network(network,nv=0.14)
-#> Error in analyze_network(network, nv = 0.14): object 'network' not found
+#> Error in analyze_network(network, nv = 0.14): objet 'network' introuvable
 ```
 
 

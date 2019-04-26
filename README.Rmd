@@ -116,7 +116,7 @@ summary(M)
 plot(M)
 ```
 
-### Network inferrence
+### Network inference
 We infer the new network using subjectwise leave one out cross-validation (all measurement from the same subject are removed from the dataset)
 ```{r netinf}
 Net_inf_C <- Cascade::inference(M, cv.subjects=TRUE)
