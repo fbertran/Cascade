@@ -27,7 +27,7 @@ setMethod("predict"
             supp2<-1:(T*object@subject)
             #all times that are not first times
             supp2<-supp2[-supp]
-            #removinh silenced genes
+            #removing silenced genes
             if(!is.null(targets)){
               gene<-gene[-targets]
             }

@@ -19,3 +19,4 @@ rsconnect/
 
 # Files for review
 review/
+inst/.DS_Store
