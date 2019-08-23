@@ -63,7 +63,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">Cascade</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.6</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.8</span>
       </span>
     </div>
 
@@ -131,14 +131,16 @@
         
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://www.rdocumentation.org/packages/utils/topics/data'>data</a></span>(<span class='no'>simul</span>)
+    <pre class="examples"><div class='input'><span class='fu'><a href='https://www.rdocumentation.org/packages/utils/topics/data'>data</a></span>(<span class='no'>Net</span>)
 <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/print'>print</a></span>(<span class='no'>Net</span>)</div><div class='output co'>#&gt; This is a S4 class with : 
 #&gt;  - (@network) a matrix of dimension  100 * 100  .... [the network] 
 #&gt;  - (@name) a vector of length  100  .... [gene names] 
 #&gt;  - (@F) a array of dimension  3 * 3 * 6  .... [F matrices] 
 #&gt;  - (@convF) a matrix of dimension  1 * 1  .... [convergence (L1 norm) of array F] 
 #&gt;  - (@convO)a vector of length  1  .... [convergence (L1 norm) of matrix Omega]
-#&gt;  - (@time_pt) an vector of length 4   .... [time points]</div><div class='input'><span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/print'>print</a></span>(<span class='no'>M</span>)</div><div class='output co'>#&gt; This is a micro_array S4 class. It contains : 
+#&gt;  - (@time_pt) an vector of length 4   .... [time points]</div><div class='input'>
+<span class='fu'><a href='https://www.rdocumentation.org/packages/utils/topics/data'>data</a></span>(<span class='no'>M</span>)
+<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/print'>print</a></span>(<span class='no'>M</span>)</div><div class='output co'>#&gt; This is a micro_array S4 class. It contains : 
 #&gt;  - (@microarray) a matrix of dimension  100 * 20 
 #&gt;           .... [gene expressions] 
 #&gt;  - (@name) a vector of length  100  .... [gene names] 

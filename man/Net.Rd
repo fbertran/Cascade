@@ -1,4 +1,5 @@
 \name{Net}
+\alias{Net}
 \docType{data}
 \title{
 Simulated network data for examples.

@@ -1,4 +1,5 @@
 \name{Net_inf}
+\alias{Net_inf}
 \docType{data}
 \title{
 Reverse-engineered network of the simulated data.

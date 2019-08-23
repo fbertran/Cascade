@@ -16,3 +16,4 @@
 ^fullrespdf*$
 ^inst/animation*$
 ^articles*$
+^review*$

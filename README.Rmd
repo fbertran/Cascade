@@ -124,7 +124,7 @@ Net_inf_C <- Cascade::inference(M, cv.subjects=TRUE)
 
 Heatmap of the coefficients of the Omega matrix of the network
 ```{r heatresults}
-stats::heatmap(Net_inf_C@network, Rowv = NA, Colv = NA, scale="none", revC=TRUE)
+stats::heatmap(Net_inf_C@network, Rowv=NA, Colv=NA, scale="none", revC=TRUE)
 ```
 
 ###Post inferrence network analysis
