@@ -1,3 +1,12 @@
+genlogo.R
+.gitignore
+^codecov\.yml$
+^revdep$
+^_pkgdown\.yml$
+^figure$
+^pkgdown$
+^Meta$
+#^doc$
 #All packages
 ^.*\.Rproj$
 ^\.Rproj\.user$
@@ -11,9 +20,10 @@
 #If README too big, not on CRAN but only on git
 ^man/figures*$
 ^README\.Rmd$
-^README\.md$
+#^README\.md$
 #Specific
 ^fullrespdf*$
 ^inst/animation*$
 ^articles*$
 ^review*$
+^\.github$

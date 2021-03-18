@@ -8,21 +8,36 @@
 
 <title>Returns the position of edges in the network — position-methods • Cascade</title>
 
+<!-- favicons -->
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png" />
+
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
-<!-- sticky kit -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+<!-- headroom.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -30,10 +45,11 @@
 
 
 
-<meta property="og:title" content="Returns the position of edges in the network — position-methods" />
 
+<meta property="og:title" content="Returns the position of edges in the network — position-methods" />
 <meta property="og:description" content="Returns the position of edges in the network" />
-<meta name="twitter:card" content="summary" />
+<meta property="og:image" content="/logo.png" />
+
 
 
 
@@ -47,9 +63,10 @@
 <![endif]-->
 
 
+
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -63,7 +80,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">Cascade</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.8</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.0</span>
       </span>
     </div>
 
@@ -71,7 +88,7 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fa fa-home"></span>
+    <span class="fas fa-home"></span>
      
   </a>
 </li>
@@ -97,11 +114,10 @@
   <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/fbertran/Cascade">
-    <span class="fa fa-github"></span>
+    <span class="fas fa-github"></span>
      
   </a>
 </li>
@@ -112,142 +128,158 @@
 </div><!--/.navbar -->
 
       
+
       </header>
 
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Returns the position of edges in the network</h1>
-    
+    <small class="dont-index">Source: <a href='https://github.com/fbertran/Cascade/blob/master/R/network.R'><code>R/network.R</code></a></small>
     <div class="hidden name"><code>position-methods.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    
     <p>Returns the position of edges in the network</p>
-    
     </div>
 
-        
+    <pre class="usage"><span class='co'># S4 method for network</span>
+<span class='fu'>position</span><span class='op'>(</span><span class='va'>net</span>, nv <span class='op'>=</span> <span class='fl'>0</span><span class='op'>)</span></pre>
+
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>net</th>
+      <td><p>a network object</p></td>
+    </tr>
+    <tr>
+      <th>nv</th>
+      <td><p>the level of cutoff at which the analysis should be done</p></td>
+    </tr>
+    </table>
+
     <h2 class="hasAnchor" id="methods"><a class="anchor" href="#methods"></a>Methods</h2>
 
-    <dl class='dl-horizontal'>
-    <dt><code>signature(net = "network")</code></dt><dd><p>Returns a matrix with the position of the node. This matrix can then be used as an argument in the plot function.</p></dd>
+    <p></p><dl>
+
+<dt>list("signature(net = \"network\")")</dt><dd><p>Returns a matrix with the
+position of the node. This matrix can then be used as an argument in the
+plot function.</p></dd> 
 </dl>
-    
+
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://www.rdocumentation.org/packages/utils/topics/data'>data</a></span>(<span class='no'>Net</span>)
-<span class='fu'>position</span>(<span class='no'>Net</span>)</div><div class='output co'>#&gt;       nom                  
-#&gt;  [1,]   1 86.28886 140.8559
-#&gt;  [2,]   2 74.76234 143.9413
-#&gt;  [3,]   3 82.00023 140.6807
-#&gt;  [4,]   4 76.59251 145.4013
-#&gt;  [5,]   5 82.69152 150.1110
-#&gt;  [6,]   6 84.64301 141.4651
-#&gt;  [7,]   7 83.28489 138.5121
-#&gt;  [8,]   8 85.69518 146.1499
-#&gt;  [9,]   9 84.11061 136.8050
-#&gt; [10,]  10 79.76102 144.6050
-#&gt; [11,]  11 79.64630 145.6379
-#&gt; [12,]  12 84.08473 145.4271
-#&gt; [13,]  14 83.74666 149.0822
-#&gt; [14,]  16 79.97621 141.1700
-#&gt; [15,]  17 84.03095 146.0752
-#&gt; [16,]  18 81.60416 149.4737
-#&gt; [17,]  20 86.99650 138.8308
-#&gt; [18,]  21 86.40023 137.8015
-#&gt; [19,]  22 76.42021 149.8191
-#&gt; [20,]  23 79.06276 145.8588
-#&gt; [21,]  24 81.63390 140.5510
-#&gt; [22,]  25 88.50194 150.5046
-#&gt; [23,]  26 79.87445 138.9959
-#&gt; [24,]  27 85.05660 138.5914
-#&gt; [25,]  28 84.95835 139.4037
-#&gt; [26,]  29 86.74924 139.9620
-#&gt; [27,]  30 84.27312 139.9856
-#&gt; [28,]  31 76.64580 144.7096
-#&gt; [29,]  32 80.50715 143.1912
-#&gt; [30,]  33 77.41636 143.7088
-#&gt; [31,]  34 74.67060 144.8507
-#&gt; [32,]  35 78.81372 144.3508
-#&gt; [33,]  36 83.76781 143.7021
-#&gt; [34,]  37 85.23235 147.6617
-#&gt; [35,]  38 82.73252 137.7640
-#&gt; [36,]  39 81.91081 148.1621
-#&gt; [37,]  40 83.45251 151.7663
-#&gt; [38,]  41 85.73732 147.2449
-#&gt; [39,]  42 84.23519 142.8000
-#&gt; [40,]  43 85.69105 148.7360
-#&gt; [41,]  44 76.28171 148.0160
-#&gt; [42,]  45 79.56361 147.4023
-#&gt; [43,]  46 86.48614 144.6473
-#&gt; [44,]  47 82.97719 145.1906
-#&gt; [45,]  48 84.53249 148.4895
-#&gt; [46,]  49 87.02899 143.4204
-#&gt; [47,]  50 81.55349 147.3421
-#&gt; [48,]  51 80.85750 149.0865
-#&gt; [49,]  52 81.34495 146.3667
-#&gt; [50,]  53 83.02778 143.5723
-#&gt; [51,]  54 86.08921 143.7048
-#&gt; [52,]  55 79.14095 141.0294
-#&gt; [53,]  56 85.33512 145.3948
-#&gt; [54,]  57 81.69051 143.9616
-#&gt; [55,]  58 82.44720 138.9503
-#&gt; [56,]  59 79.96968 149.2808
-#&gt; [57,]  60 78.16365 142.5321
-#&gt; [58,]  61 88.37430 143.1373
-#&gt; [59,]  62 84.49551 137.4855
-#&gt; [60,]  63 76.97263 145.9947
-#&gt; [61,]  64 82.46222 144.2710
-#&gt; [62,]  65 81.98906 142.9360
-#&gt; [63,]  66 78.36303 141.6996
-#&gt; [64,]  67 82.57339 143.3169
-#&gt; [65,]  68 81.46935 137.9421
-#&gt; [66,]  69 81.47243 145.1343
-#&gt; [67,]  70 79.92819 142.9488
-#&gt; [68,]  71 82.23993 146.6593
-#&gt; [69,]  72 81.29512 139.9071
-#&gt; [70,]  73 84.77261 141.9546
-#&gt; [71,]  74 77.74168 141.7818
-#&gt; [72,]  75 89.05995 145.0358
-#&gt; [73,]  76 88.48701 145.4172
-#&gt; [74,]  77 88.48639 146.2140
-#&gt; [75,]  78 79.11044 143.4273
-#&gt; [76,]  79 80.65854 138.5652
-#&gt; [77,]  80 79.55240 141.5778
-#&gt; [78,]  81 88.82702 144.2181
-#&gt; [79,]  82 86.59666 145.8327
-#&gt; [80,]  83 75.43997 146.0000
-#&gt; [81,]  84 75.69101 147.4459
-#&gt; [82,]  85 84.33055 144.3317
-#&gt; [83,]  86 84.89989 143.4359
-#&gt; [84,]  87 83.36160 140.3196
-#&gt; [85,]  88 83.25818 142.1160
-#&gt; [86,]  89 80.43235 140.3546
-#&gt; [87,]  90 78.51154 143.4604
-#&gt; [88,]  91 81.22866 141.8498
-#&gt; [89,]  92 77.45031 139.3441
-#&gt; [90,]  93 82.91702 148.0656
-#&gt; [91,]  94 79.99389 148.2784
-#&gt; [92,]  95 87.47846 141.8726
-#&gt; [93,]  96 82.34090 151.8975
-#&gt; [94,]  97 75.07261 146.8726
-#&gt; [95,]  98 87.76647 151.1557
-#&gt; [96,]  99 77.01369 151.0005
-#&gt; [97,] 100 86.43040 147.0344</div></pre>
+    <pre class="examples"><div class='input'>
+<span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='va'>Net</span><span class='op'>)</span>
+<span class='fu'>position</span><span class='op'>(</span><span class='va'>Net</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;       nom                  
+#&gt;  [1,]   1 78.85484 152.7683
+#&gt;  [2,]   2 80.73265 140.3326
+#&gt;  [3,]   3 76.57021 147.8938
+#&gt;  [4,]   4 77.30162 141.0465
+#&gt;  [5,]   5 71.00997 147.0415
+#&gt;  [6,]   6 78.20188 150.8659
+#&gt;  [7,]   7 78.42931 149.5879
+#&gt;  [8,]   8 77.16807 151.5203
+#&gt;  [9,]   9 81.75499 152.7064
+#&gt; [10,]  10 77.48446 144.2810
+#&gt; [11,]  11 79.35835 144.5039
+#&gt; [12,]  12 77.06034 147.8797
+#&gt; [13,]  14 73.26918 151.5965
+#&gt; [14,]  16 80.48012 143.9473
+#&gt; [15,]  17 77.19330 149.4140
+#&gt; [16,]  18 71.89331 149.6357
+#&gt; [17,]  20 78.25099 153.8567
+#&gt; [18,]  21 79.26495 153.8774
+#&gt; [19,]  22 76.84748 138.4932
+#&gt; [20,]  23 72.35936 146.3824
+#&gt; [21,]  24 79.93850 147.4140
+#&gt; [22,]  25 71.58754 153.9699
+#&gt; [23,]  26 82.32988 145.5563
+#&gt; [24,]  27 80.09718 152.8794
+#&gt; [25,]  28 78.56182 151.4335
+#&gt; [26,]  29 77.59028 153.1586
+#&gt; [27,]  30 80.00614 150.6119
+#&gt; [28,]  31 80.72523 142.0140
+#&gt; [29,]  32 76.52055 145.8798
+#&gt; [30,]  33 77.83139 142.1685
+#&gt; [31,]  34 79.15973 140.0066
+#&gt; [32,]  35 79.11818 142.8366
+#&gt; [33,]  36 79.95207 148.2620
+#&gt; [34,]  37 74.97872 149.7272
+#&gt; [35,]  38 81.22257 150.4959
+#&gt; [36,]  39 73.98454 148.5653
+#&gt; [37,]  40 69.48633 146.5341
+#&gt; [38,]  41 76.24484 151.7853
+#&gt; [39,]  42 77.76353 149.8644
+#&gt; [40,]  43 74.82341 152.7588
+#&gt; [41,]  44 76.73467 139.5315
+#&gt; [42,]  45 76.14032 144.3769
+#&gt; [43,]  46 81.63763 148.3505
+#&gt; [44,]  47 79.24698 147.9431
+#&gt; [45,]  48 74.83840 151.3479
+#&gt; [46,]  49 77.23896 153.7782
+#&gt; [47,]  50 72.89956 149.2259
+#&gt; [48,]  51 74.07417 144.5736
+#&gt; [49,]  52 74.80053 147.9126
+#&gt; [50,]  53 78.35582 147.7615
+#&gt; [51,]  54 82.39085 148.9637
+#&gt; [52,]  55 75.46003 144.8044
+#&gt; [53,]  56 81.90065 147.7694
+#&gt; [54,]  57 78.17523 145.4298
+#&gt; [55,]  58 74.75948 149.1277
+#&gt; [56,]  59 73.89493 145.9768
+#&gt; [57,]  60 77.66456 143.5201
+#&gt; [58,]  61 83.11713 150.3445
+#&gt; [59,]  62 80.60282 152.1739
+#&gt; [60,]  63 73.37547 143.6575
+#&gt; [61,]  64 75.65534 148.7750
+#&gt; [62,]  65 79.66686 146.0697
+#&gt; [63,]  66 75.47854 143.4149
+#&gt; [64,]  67 79.00442 146.3063
+#&gt; [65,]  68 81.55500 149.3232
+#&gt; [66,]  69 81.08489 145.7259
+#&gt; [67,]  70 73.59143 147.3852
+#&gt; [68,]  71 74.16051 146.8806
+#&gt; [69,]  72 78.02293 147.1075
+#&gt; [70,]  73 79.37085 149.7686
+#&gt; [71,]  74 74.77069 144.0244
+#&gt; [72,]  75 84.26284 148.0404
+#&gt; [73,]  76 83.97207 149.5187
+#&gt; [74,]  77 84.07898 148.7472
+#&gt; [75,]  78 76.70146 145.0884
+#&gt; [76,]  79 80.23954 145.9696
+#&gt; [77,]  80 78.74175 144.8752
+#&gt; [78,]  81 83.99918 147.3008
+#&gt; [79,]  82 79.62773 148.8688
+#&gt; [80,]  83 74.81738 141.4505
+#&gt; [81,]  84 71.97613 142.2116
+#&gt; [82,]  85 80.09548 146.8718
+#&gt; [83,]  86 82.28782 146.5345
+#&gt; [84,]  87 76.05275 149.6222
+#&gt; [85,]  88 81.39892 146.8329
+#&gt; [86,]  89 82.05737 144.4835
+#&gt; [87,]  90 76.80720 143.0073
+#&gt; [88,]  91 79.96052 145.1206
+#&gt; [89,]  92 73.90196 142.7808
+#&gt; [90,]  93 75.03531 146.1846
+#&gt; [91,]  94 72.28061 148.2045
+#&gt; [92,]  95 81.86576 151.0836
+#&gt; [93,]  96 69.48840 147.7425
+#&gt; [94,]  97 71.45098 143.1290
+#&gt; [95,]  98 70.89808 153.2679
+#&gt; [96,]  99 77.86785 138.2195
+#&gt; [97,] 100 75.68637 150.1935</div><div class='input'>
+</div></pre>
   </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      
-      <li><a href="#methods">Methods</a></li>
-      
-      <li><a href="#examples">Examples</a></li>
-    </ul>
-
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
+
 
       <footer>
       <div class="copyright">
@@ -255,13 +287,16 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
+
       </footer>
    </div>
 
   
 
+
   </body>
 </html>
+
 
