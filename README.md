@@ -21,7 +21,7 @@
 Cascade is a modeling tool allowing gene selection, reverse engineering, and prediction in cascade networks. Jung, N., Bertrand, F., Bahram, S., Vallat, L., and Maumy-Bertrand, M. (2014) <https://doi.org/10.1093/bioinformatics/btt705>.
 
 
-The package was presented at the [User2014!](http://user2014.r-project.org/) conference. Jung, N., Bertrand, F., Bahram, S., Vallat, L., and Maumy-Bertrand, M. (2014). "Cascade: a R-package to study, predict and simulate the diffusion of a signal through a temporal genenetwork", *book of abstracts*, User2014!, Los Angeles, page 153, <http://user2014.r-project.org/abstracts/posters/181_Jung.pdf>.
+The package was presented at the [User2014!](https://user2014.r-project.org/) conference. Jung, N., Bertrand, F., Bahram, S., Vallat, L., and Maumy-Bertrand, M. (2014). "Cascade: a R-package to study, predict and simulate the diffusion of a signal through a temporal genenetwork", *book of abstracts*, User2014!, Los Angeles, page 153, <https://user2014.r-project.org/abstracts/posters/181_Jung.pdf>.
 
 
 ![Reverse-engineered network.](man/figures/figure_article_def.png)
@@ -62,62 +62,48 @@ Get a summay and plots of the data:
 
 ```r
 summary(micro_US)
-#>    N1_US_T60        N1_US_T90        N1_US_T210    
-#>  Min.   :   1.0   Min.   :   1.0   Min.   :   1.0  
-#>  1st Qu.:  19.7   1st Qu.:  18.8   1st Qu.:  15.2  
-#>  Median :  38.0   Median :  37.2   Median :  34.9  
-#>  Mean   : 107.5   Mean   : 106.9   Mean   : 109.6  
-#>  3rd Qu.:  80.6   3rd Qu.:  82.1   3rd Qu.:  82.8  
-#>  Max.   :8587.9   Max.   :8311.7   Max.   :7930.3  
-#>    N1_US_T390       N2_US_T60        N2_US_T90     
-#>  Min.   :   1.0   Min.   :   1.0   Min.   :   1.0  
-#>  1st Qu.:  20.9   1st Qu.:  18.5   1st Qu.:  17.1  
-#>  Median :  40.2   Median :  36.9   Median :  36.7  
-#>  Mean   : 105.7   Mean   : 110.6   Mean   : 102.1  
-#>  3rd Qu.:  84.8   3rd Qu.:  85.3   3rd Qu.:  78.2  
-#>  Max.   :7841.8   Max.   :7750.3   Max.   :8014.3  
-#>    N2_US_T210       N2_US_T390       N3_US_T60     
-#>  Min.   :   1.0   Min.   :   1.0   Min.   :   1.0  
-#>  1st Qu.:  15.8   1st Qu.:  17.7   1st Qu.:  17.3  
-#>  Median :  36.0   Median :  37.4   Median :  34.4  
-#>  Mean   : 106.8   Mean   : 111.3   Mean   : 101.6  
-#>  3rd Qu.:  83.5   3rd Qu.:  86.4   3rd Qu.:  75.4  
-#>  Max.   :8028.6   Max.   :7498.4   Max.   :8072.2  
-#>    N3_US_T90        N3_US_T210       N3_US_T390    
-#>  Min.   :   1.0   Min.   :   1.0   Min.   :   1.0  
-#>  1st Qu.:  19.5   1st Qu.:  16.4   1st Qu.:  20.9  
-#>  Median :  38.2   Median :  34.7   Median :  41.0  
-#>  Mean   : 107.1   Mean   : 100.3   Mean   : 113.9  
-#>  3rd Qu.:  82.3   3rd Qu.:  76.3   3rd Qu.:  89.2  
-#>  Max.   :7889.2   Max.   :8278.2   Max.   :6856.2  
-#>    N4_US_T60        N4_US_T90        N4_US_T210    
-#>  Min.   :   1.0   Min.   :   1.0   Min.   :   1.0  
-#>  1st Qu.:  20.4   1st Qu.:  19.5   1st Qu.:  20.5  
-#>  Median :  38.9   Median :  38.5   Median :  39.9  
-#>  Mean   : 113.6   Mean   : 114.8   Mean   : 110.1  
-#>  3rd Qu.:  84.6   3rd Qu.:  86.1   3rd Qu.:  86.8  
-#>  Max.   :9502.3   Max.   :9193.4   Max.   :9436.0  
-#>    N4_US_T390       N5_US_T60        N5_US_T90     
-#>  Min.   :   1.0   Min.   :   1.0   Min.   :   1.0  
-#>  1st Qu.:  19.9   1st Qu.:  16.8   1st Qu.:  18.8  
-#>  Median :  38.8   Median :  34.5   Median :  36.9  
-#>  Mean   : 111.7   Mean   : 111.3   Mean   : 108.0  
-#>  3rd Qu.:  85.4   3rd Qu.:  82.0   3rd Qu.:  81.4  
-#>  Max.   :8771.0   Max.   :8569.3   Max.   :7970.1  
-#>    N5_US_T210       N5_US_T390       N6_US_T60     
-#>  Min.   :   1.0   Min.   :   1.0   Min.   :   1.0  
-#>  1st Qu.:  19.5   1st Qu.:  19.9   1st Qu.:  21.1  
-#>  Median :  38.2   Median :  39.0   Median :  40.9  
-#>  Mean   : 107.4   Mean   : 109.8   Mean   : 110.1  
-#>  3rd Qu.:  82.4   3rd Qu.:  84.9   3rd Qu.:  86.3  
-#>  Max.   :8371.0   Max.   :7686.5   Max.   :8241.0  
-#>    N6_US_T90        N6_US_T210       N6_US_T390    
-#>  Min.   :   1.0   Min.   :   1.0   Min.   :   1.0  
-#>  1st Qu.:  21.5   1st Qu.:  19.9   1st Qu.:  20.2  
-#>  Median :  40.8   Median :  39.1   Median :  39.4  
-#>  Mean   : 108.5   Mean   : 112.0   Mean   : 109.5  
-#>  3rd Qu.:  85.6   3rd Qu.:  86.3   3rd Qu.:  86.6  
-#>  Max.   :8355.0   Max.   :8207.1   Max.   :9520.0
+#>    N1_US_T60        N1_US_T90        N1_US_T210       N1_US_T390    
+#>  Min.   :   1.0   Min.   :   1.0   Min.   :   1.0   Min.   :   1.0  
+#>  1st Qu.:  19.7   1st Qu.:  18.8   1st Qu.:  15.2   1st Qu.:  20.9  
+#>  Median :  38.0   Median :  37.2   Median :  34.9   Median :  40.2  
+#>  Mean   : 107.5   Mean   : 106.9   Mean   : 109.6   Mean   : 105.7  
+#>  3rd Qu.:  80.6   3rd Qu.:  82.1   3rd Qu.:  82.8   3rd Qu.:  84.8  
+#>  Max.   :8587.9   Max.   :8311.7   Max.   :7930.3   Max.   :7841.8  
+#>    N2_US_T60        N2_US_T90        N2_US_T210       N2_US_T390    
+#>  Min.   :   1.0   Min.   :   1.0   Min.   :   1.0   Min.   :   1.0  
+#>  1st Qu.:  18.5   1st Qu.:  17.1   1st Qu.:  15.8   1st Qu.:  17.7  
+#>  Median :  36.9   Median :  36.7   Median :  36.0   Median :  37.4  
+#>  Mean   : 110.6   Mean   : 102.1   Mean   : 106.8   Mean   : 111.3  
+#>  3rd Qu.:  85.3   3rd Qu.:  78.2   3rd Qu.:  83.5   3rd Qu.:  86.4  
+#>  Max.   :7750.3   Max.   :8014.3   Max.   :8028.6   Max.   :7498.4  
+#>    N3_US_T60        N3_US_T90        N3_US_T210       N3_US_T390    
+#>  Min.   :   1.0   Min.   :   1.0   Min.   :   1.0   Min.   :   1.0  
+#>  1st Qu.:  17.3   1st Qu.:  19.5   1st Qu.:  16.4   1st Qu.:  20.9  
+#>  Median :  34.4   Median :  38.2   Median :  34.7   Median :  41.0  
+#>  Mean   : 101.6   Mean   : 107.1   Mean   : 100.3   Mean   : 113.9  
+#>  3rd Qu.:  75.4   3rd Qu.:  82.3   3rd Qu.:  76.3   3rd Qu.:  89.2  
+#>  Max.   :8072.2   Max.   :7889.2   Max.   :8278.2   Max.   :6856.2  
+#>    N4_US_T60        N4_US_T90        N4_US_T210       N4_US_T390    
+#>  Min.   :   1.0   Min.   :   1.0   Min.   :   1.0   Min.   :   1.0  
+#>  1st Qu.:  20.4   1st Qu.:  19.5   1st Qu.:  20.5   1st Qu.:  19.9  
+#>  Median :  38.9   Median :  38.5   Median :  39.9   Median :  38.8  
+#>  Mean   : 113.6   Mean   : 114.8   Mean   : 110.1   Mean   : 111.7  
+#>  3rd Qu.:  84.6   3rd Qu.:  86.1   3rd Qu.:  86.8   3rd Qu.:  85.4  
+#>  Max.   :9502.3   Max.   :9193.4   Max.   :9436.0   Max.   :8771.0  
+#>    N5_US_T60        N5_US_T90        N5_US_T210       N5_US_T390    
+#>  Min.   :   1.0   Min.   :   1.0   Min.   :   1.0   Min.   :   1.0  
+#>  1st Qu.:  16.8   1st Qu.:  18.8   1st Qu.:  19.5   1st Qu.:  19.9  
+#>  Median :  34.5   Median :  36.9   Median :  38.2   Median :  39.0  
+#>  Mean   : 111.3   Mean   : 108.0   Mean   : 107.4   Mean   : 109.8  
+#>  3rd Qu.:  82.0   3rd Qu.:  81.4   3rd Qu.:  82.4   3rd Qu.:  84.9  
+#>  Max.   :8569.3   Max.   :7970.1   Max.   :8371.0   Max.   :7686.5  
+#>    N6_US_T60        N6_US_T90        N6_US_T210       N6_US_T390    
+#>  Min.   :   1.0   Min.   :   1.0   Min.   :   1.0   Min.   :   1.0  
+#>  1st Qu.:  21.1   1st Qu.:  21.5   1st Qu.:  19.9   1st Qu.:  20.2  
+#>  Median :  40.9   Median :  40.8   Median :  39.1   Median :  39.4  
+#>  Mean   : 110.1   Mean   : 108.5   Mean   : 112.0   Mean   : 109.5  
+#>  3rd Qu.:  86.3   3rd Qu.:  85.6   3rd Qu.:  86.3   3rd Qu.:  86.6  
+#>  Max.   :8241.0   Max.   :8355.0   Max.   :8207.1   Max.   :9520.0
 ```
 
 <img src="man/figures/README-plotmicroarrayclass-1.png" title="plot of chunk plotmicroarrayclass" alt="plot of chunk plotmicroarrayclass" width="100%" /><img src="man/figures/README-plotmicroarrayclass-2.png" title="plot of chunk plotmicroarrayclass" alt="plot of chunk plotmicroarrayclass" width="100%" />
