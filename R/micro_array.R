@@ -10,7 +10,7 @@
 #' 
 #' \item{list("signature(x = \"micro_array\")")}{ Gives an overview. } }
 #' 
-#' @param x an object of class `micro-array`
+#' @param x an object of class `micro_array`.
 #' @param ... additional parameters
 #' @keywords methods
 #' @examples
@@ -353,7 +353,7 @@ else{
 #' @param lfc log fold change value used in limma's `topTable`. Defaults to 0.
 #' @param cont use contrasts. Defaults to `FALSE`. 
 #' @param f.asso function used to assess the association between the genes. 
-#' Tje default value `NULL` implies the use of the usual `mean` function. 
+#' The default value `NULL` implies the use of the usual `mean` function. 
 #' 
 #' @return A micro_array object.
 #' @author Nicolas Jung, Frédéric Bertrand , Myriam Maumy-Bertrand.
