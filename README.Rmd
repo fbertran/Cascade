@@ -20,7 +20,7 @@ knitr::opts_chunk$set(
 [![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-green.svg)](https://lifecycle.r-lib.org/articles/stages.html)
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![R-CMD-check](https://github.com/fbertran/Cascade/workflows/R-CMD-check/badge.svg)](https://github.com/fbertran/Cascade/actions)
-[![Codecov test coverage](https://codecov.io/gh/fbertran/Cascade/branch/master/graph/badge.svg)](https://codecov.io/gh/fbertran/Cascade?branch=master)
+[![Codecov test coverage](https://codecov.io/gh/fbertran/Cascade/branch/master/graph/badge.svg)](https://app.codecov.io/gh/fbertran/Cascade?branch=master)
 [![CRAN status](https://www.r-pkg.org/badges/version/Cascade)](https://cran.r-project.org/package=Cascade)
 [![CRAN RStudio mirror downloads](https://cranlogs.r-pkg.org/badges/Cascade)](https://cran.r-project.org/package=Cascade)
 [![GitHub Repo stars](https://img.shields.io/github/stars/fbertran/Cascade?style=social)](https://github.com/fbertran/Cascade)

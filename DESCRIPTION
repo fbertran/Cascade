@@ -1,8 +1,8 @@
 Package: Cascade
 Type: Package
 Title: Selection, Reverse-Engineering and Prediction in Cascade Networks
-Version: 2.0
-Date: 2021-03-18
+Version: 2.1
+Date: 2022-11-28
 Depends: R (>= 3.5.0)
 biocViews:
 Imports: abind, animation, cluster, grid, igraph, lars, lattice, 
@@ -12,12 +12,12 @@ Suggests:
     CascadeData,
     knitr
 Authors@R: c(
-	person(given = "Frederic", family= "Bertrand", role = c("cre", "aut"), email = "frederic.bertrand@math.unistra.fr", comment = c(ORCID = "0000-0002-0837-8281")),
-	person(given = "Myriam", family= "Maumy-Bertrand", role = c("aut"), email = "myriam.maumy-bertrand@math.unistra.fr", comment = c(ORCID = "0000-0002-4615-1512")),
+	person(given = "Frederic", family= "Bertrand", role = c("cre", "aut"), email = "frederic.bertrand@utt.fr", comment = c(ORCID = "0000-0002-0837-8281")),
+	person(given = "Myriam", family= "Maumy-Bertrand", role = c("aut"), email = "myriam.maumy-bertrand@utt.fr", comment = c(ORCID = "0000-0002-4615-1512")),
 	person(given = "Laurent", family= "Vallat", role = c("ctb"), email = "vallat@unistra.fr"),
 	person(given = "Nicolas", family= "Jung", role = c("ctb"), email = "nicolas.jung@unistra.fr"))
 Author: Frederic Bertrand [cre, aut] (<https://orcid.org/0000-0002-0837-8281>), Myriam Maumy-Bertrand [aut] (<https://orcid.org/0000-0002-4615-1512>), Laurent Vallat [ctb], Nicolas Jung [ctb]
-Maintainer: Frederic Bertrand <frederic.bertrand@math.unistra.fr>
+Maintainer: Frederic Bertrand <frederic.bertrand@utt.fr>
 Description: A modeling tool allowing gene selection, reverse engineering, and prediction in cascade networks. Jung, N., Bertrand, F., Bahram, S., Vallat, L., and Maumy-Bertrand, M. (2014) <doi:10.1093/bioinformatics/btt705>.
 License: GPL (>= 2)
 Encoding: UTF-8
@@ -25,6 +25,6 @@ Collate: Cascade-package.R global.R micro_array.R network.R micro_array-network.
         micropredict.R datasets.R
 Classification/MSC: 62J05, 62J07, 62J99, 92C42
 VignetteBuilder: R.rsp
-RoxygenNote: 7.1.1
+RoxygenNote: 7.2.1
 URL: https://fbertran.github.io/Cascade/, https://github.com/fbertran/Cascade/
 BugReports: https://github.com/fbertran/Cascade/issues/

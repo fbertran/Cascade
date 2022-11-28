@@ -1,10 +1,3 @@
-base
-methods
-datasets
-utils
-grDevices
-graphics
-stats
 Cascade
 animation
 igraph
@@ -13,8 +6,6 @@ usethis
 survival
 tnet
 CascadeData
-stats4
-splines
 VGAM
 abind
 magic

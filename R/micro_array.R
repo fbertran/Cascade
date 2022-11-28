@@ -195,7 +195,7 @@ setMethod("dim","micro_array",function(x)
 #' @section Methods: \describe{
 #' 
 #' \item{list("signature(x = \"micro_array\", y = \"ANY\",...)")}{ \describe{
-#' \item{x}{a micro\_array object} \item{list_nv}{a vector of cutoff at which
+#' \item{x}{a micro_array object} \item{list_nv}{a vector of cutoff at which
 #' the network should be shown} } } \item{list("signature(x = \"network\", y =
 #' \"ANY\",...)")}{ \describe{ \item{x}{a network object}
 #' \item{list()}{Optionnal arguments: \describe{ \item{gr}{a vector giving the
@@ -215,7 +215,7 @@ setMethod("dim","micro_array",function(x)
 #' \item{x}{a micropredict object} \item{list()}{Optionnal arguments: see plot
 #' for network} }} }
 #' 
-#' @param x a micro\_array object, a network object or a micropredict object
+#' @param x a micro_array object, a network object or a micropredict object
 #' @param y optional and not used if x is an appropriate structure
 #' @param gr a vector giving the group of each gene 
 #' @param choice what graphic should be plotted: either "F"

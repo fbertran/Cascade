@@ -29,6 +29,7 @@
 #' @importFrom utils sessionInfo 
 #' @importFrom cluster agnes
 #' @importFrom animation ani.options saveHTML
+#' @importFrom abind abind
 #' @import grid
 #' @import igraph 
 #' @import lattice
