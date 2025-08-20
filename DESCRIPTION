@@ -1,8 +1,8 @@
 Package: Cascade
 Type: Package
 Title: Selection, Reverse-Engineering and Prediction in Cascade Networks
-Version: 2.1
-Date: 2022-11-28
+Version: 2.2
+Date: 2025-08-21
 Depends: R (>= 3.5.0)
 biocViews:
 Imports: abind, animation, cluster, grid, igraph, lars, lattice, 
@@ -10,7 +10,8 @@ Imports: abind, animation, cluster, grid, igraph, lars, lattice,
 Suggests: 
     R.rsp,
     CascadeData,
-    knitr
+    knitr,
+    testthat (>= 3.0.0)
 Authors@R: c(
 	person(given = "Frederic", family= "Bertrand", role = c("cre", "aut"), email = "frederic.bertrand@utt.fr", comment = c(ORCID = "0000-0002-0837-8281")),
 	person(given = "Myriam", family= "Maumy-Bertrand", role = c("aut"), email = "myriam.maumy-bertrand@utt.fr", comment = c(ORCID = "0000-0002-4615-1512")),
@@ -28,3 +29,4 @@ VignetteBuilder: R.rsp
 RoxygenNote: 7.3.2
 URL: https://fbertran.github.io/Cascade/, https://github.com/fbertran/Cascade/
 BugReports: https://github.com/fbertran/Cascade/issues/
+Config/testthat/edition: 3
