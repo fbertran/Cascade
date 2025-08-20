@@ -1,144 +1,39 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>/404.html</loc>
-  </url>
-  <url>
-    <loc>/authors.html</loc>
-  </url>
-  <url>
-    <loc>/index.html</loc>
-  </url>
-  <url>
-    <loc>/news/index.html</loc>
-  </url>
-  <url>
-    <loc>/reference/Cascade-package.html</loc>
-  </url>
-  <url>
-    <loc>/reference/M.html</loc>
-  </url>
-  <url>
-    <loc>/reference/Net.html</loc>
-  </url>
-  <url>
-    <loc>/reference/Net_inf.html</loc>
-  </url>
-  <url>
-    <loc>/reference/Selection.html</loc>
-  </url>
-  <url>
-    <loc>/reference/analyze_network-methods.html</loc>
-  </url>
-  <url>
-    <loc>/reference/analyze_network-network-method.html</loc>
-  </url>
-  <url>
-    <loc>/reference/as.micro_array.html</loc>
-  </url>
-  <url>
-    <loc>/reference/compare-methods.html</loc>
-  </url>
-  <url>
-    <loc>/reference/compare.html</loc>
-  </url>
-  <url>
-    <loc>/reference/cutoff-methods.html</loc>
-  </url>
-  <url>
-    <loc>/reference/cutoff-network-method.html</loc>
-  </url>
-  <url>
-    <loc>/reference/dim-methods.html</loc>
-  </url>
-  <url>
-    <loc>/reference/dim.html</loc>
-  </url>
-  <url>
-    <loc>/reference/evolution-methods.html</loc>
-  </url>
-  <url>
-    <loc>/reference/evolution-network-method.html</loc>
-  </url>
-  <url>
-    <loc>/reference/geneNeighborhood-methods.html</loc>
-  </url>
-  <url>
-    <loc>/reference/geneNeighborhood-network-method.html</loc>
-  </url>
-  <url>
-    <loc>/reference/genePeakSelection-methods.html</loc>
-  </url>
-  <url>
-    <loc>/reference/geneSelection-micro_array-micro_array-numeric-method.html</loc>
-  </url>
-  <url>
-    <loc>/reference/geneSelection.html</loc>
-  </url>
-  <url>
-    <loc>/reference/gene_expr_simulation-network-method.html</loc>
-  </url>
-  <url>
-    <loc>/reference/gene_expr_simulation.html</loc>
-  </url>
-  <url>
-    <loc>/reference/head-methods.html</loc>
-  </url>
-  <url>
-    <loc>/reference/head-micro_array-method.html</loc>
-  </url>
-  <url>
-    <loc>/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>/reference/inference-methods.html</loc>
-  </url>
-  <url>
-    <loc>/reference/inference-micro_array-method.html</loc>
-  </url>
-  <url>
-    <loc>/reference/micro_array-class.html</loc>
-  </url>
-  <url>
-    <loc>/reference/micropred-class.html</loc>
-  </url>
-  <url>
-    <loc>/reference/micropredict-class.html</loc>
-  </url>
-  <url>
-    <loc>/reference/network-class.html</loc>
-  </url>
-  <url>
-    <loc>/reference/network.html</loc>
-  </url>
-  <url>
-    <loc>/reference/network_agg.html</loc>
-  </url>
-  <url>
-    <loc>/reference/network_random.html</loc>
-  </url>
-  <url>
-    <loc>/reference/plot-methods.html</loc>
-  </url>
-  <url>
-    <loc>/reference/position-methods.html</loc>
-  </url>
-  <url>
-    <loc>/reference/predict-methods.html</loc>
-  </url>
-  <url>
-    <loc>/reference/predict-micro_array-method.html</loc>
-  </url>
-  <url>
-    <loc>/reference/print-methods.html</loc>
-  </url>
-  <url>
-    <loc>/reference/simul.html</loc>
-  </url>
-  <url>
-    <loc>/reference/summary-methods.html</loc>
-  </url>
-  <url>
-    <loc>/reference/unionMicro-methods.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://fbertran.github.io/Cascade/404.html</loc></url>
+<url><loc>https://fbertran.github.io/Cascade/authors.html</loc></url>
+<url><loc>https://fbertran.github.io/Cascade/index.html</loc></url>
+<url><loc>https://fbertran.github.io/Cascade/news/index.html</loc></url>
+<url><loc>https://fbertran.github.io/Cascade/reference/Cascade-package.html</loc></url>
+<url><loc>https://fbertran.github.io/Cascade/reference/M.html</loc></url>
+<url><loc>https://fbertran.github.io/Cascade/reference/Net.html</loc></url>
+<url><loc>https://fbertran.github.io/Cascade/reference/Net_inf.html</loc></url>
+<url><loc>https://fbertran.github.io/Cascade/reference/Selection.html</loc></url>
+<url><loc>https://fbertran.github.io/Cascade/reference/analyze_network-network-method.html</loc></url>
+<url><loc>https://fbertran.github.io/Cascade/reference/as.micro_array.html</loc></url>
+<url><loc>https://fbertran.github.io/Cascade/reference/compare-methods.html</loc></url>
+<url><loc>https://fbertran.github.io/Cascade/reference/cutoff-network-method.html</loc></url>
+<url><loc>https://fbertran.github.io/Cascade/reference/dim.html</loc></url>
+<url><loc>https://fbertran.github.io/Cascade/reference/evolution-network-method.html</loc></url>
+<url><loc>https://fbertran.github.io/Cascade/reference/geneNeighborhood-network-method.html</loc></url>
+<url><loc>https://fbertran.github.io/Cascade/reference/geneSelection-micro_array-micro_array-numeric-method.html</loc></url>
+<url><loc>https://fbertran.github.io/Cascade/reference/geneSelection.html</loc></url>
+<url><loc>https://fbertran.github.io/Cascade/reference/gene_expr_simulation-network-method.html</loc></url>
+<url><loc>https://fbertran.github.io/Cascade/reference/head-micro_array-method.html</loc></url>
+<url><loc>https://fbertran.github.io/Cascade/reference/index.html</loc></url>
+<url><loc>https://fbertran.github.io/Cascade/reference/inference-micro_array-method.html</loc></url>
+<url><loc>https://fbertran.github.io/Cascade/reference/micro_array-class.html</loc></url>
+<url><loc>https://fbertran.github.io/Cascade/reference/micropred-class.html</loc></url>
+<url><loc>https://fbertran.github.io/Cascade/reference/micropredict-class.html</loc></url>
+<url><loc>https://fbertran.github.io/Cascade/reference/network-class.html</loc></url>
+<url><loc>https://fbertran.github.io/Cascade/reference/network.html</loc></url>
+<url><loc>https://fbertran.github.io/Cascade/reference/network_agg.html</loc></url>
+<url><loc>https://fbertran.github.io/Cascade/reference/network_random.html</loc></url>
+<url><loc>https://fbertran.github.io/Cascade/reference/plot-methods.html</loc></url>
+<url><loc>https://fbertran.github.io/Cascade/reference/position-methods.html</loc></url>
+<url><loc>https://fbertran.github.io/Cascade/reference/predict-micro_array-method.html</loc></url>
+<url><loc>https://fbertran.github.io/Cascade/reference/print-methods.html</loc></url>
+<url><loc>https://fbertran.github.io/Cascade/reference/simul.html</loc></url>
+<url><loc>https://fbertran.github.io/Cascade/reference/summary-methods.html</loc></url>
+<url><loc>https://fbertran.github.io/Cascade/reference/unionMicro-methods.html</loc></url>
 </urlset>
+

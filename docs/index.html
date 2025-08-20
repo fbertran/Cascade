@@ -6,27 +6,26 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Selection, Reverse-Engineering and Prediction in Cascade Networks • Cascade</title>
-<!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="apple-touch-icon.png">
-<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="apple-touch-icon-120x120.png">
-<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="apple-touch-icon-76x76.png">
-<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="apple-touch-icon-60x60.png">
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
+<!-- favicons --><link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
+<link rel="icon" type="”image/svg+xml”" href="favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" sizes="any" href="favicon.ico">
+<link rel="manifest" href="site.webmanifest">
+<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="bootstrap-toc.css">
 <script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
 <script src="pkgdown.js"></script><meta property="og:title" content="Selection, Reverse-Engineering and Prediction in Cascade Networks">
 <meta property="og:description" content="A modeling tool allowing gene selection, reverse engineering, and prediction in cascade networks. Jung, N., Bertrand, F., Bahram, S., Vallat, L., and Maumy-Bertrand, M. (2014) &lt;doi:10.1093/bioinformatics/btt705&gt;.">
-<meta property="og:image" content="/logo.png">
+<meta property="og:image" content="https://fbertran.github.io/Cascade/logo.png">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
-    
+
 
     <div class="container template-home">
       <header><div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -49,13 +48,13 @@
 <li>
   <a href="index.html">
     <span class="fa fa-home"></span>
-     
+
   </a>
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Vignettes
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
@@ -78,7 +77,7 @@
 <li>
   <a href="https://github.com/fbertran/Cascade" class="external-link">
     <span class="fa fa-github"></span>
-     
+
   </a>
 </li>
       </ul>
@@ -89,7 +88,7 @@
 </div>
 <!--/.navbar -->
 
-      
+
 
       </header><div class="row">
   <div class="contents col-md-9">
@@ -108,11 +107,11 @@
 
 <p>Cascade is a modeling tool allowing gene selection, reverse engineering, and prediction in cascade networks. Jung, N., Bertrand, F., Bahram, S., Vallat, L., and Maumy-Bertrand, M. (2014) <a href="https://doi.org/10.1093/bioinformatics/btt705" class="external-link uri">https://doi.org/10.1093/bioinformatics/btt705</a>.</p>
 <p>The package was presented at the <a href="https://user2014.r-project.org/" class="external-link">User2014!</a> conference. Jung, N., Bertrand, F., Bahram, S., Vallat, L., and Maumy-Bertrand, M. (2014). “Cascade: a R-package to study, predict and simulate the diffusion of a signal through a temporal genenetwork”, <em>book of abstracts</em>, User2014!, Los Angeles, page 153, <a href="https://user2014.r-project.org/abstracts/posters/181_Jung.pdf" class="external-link uri">https://user2014.r-project.org/abstracts/posters/181_Jung.pdf</a>.</p>
-<div class="figure">
-<img src="reference/figures/figure_article_def.png" alt=""><p class="caption">Reverse-engineered network.</p>
+<div class="float">
+<img src="reference/figures/figure_article_def.png" alt="Reverse-engineered network."><div class="figcaption">Reverse-engineered network.</div>
 </div>
-<div class="figure">
-<img src="reference/figures/figure_network_pred2.png" alt=""><p class="caption">Simulation of an intervention on a gene of the network.</p>
+<div class="float">
+<img src="reference/figures/figure_network_pred2.png" alt="Simulation of an intervention on a gene of the network."><div class="figcaption">Simulation of an intervention on a gene of the network.</div>
 </div>
 <p>This website and these examples were created by F. Bertrand and M. Maumy-Bertrand.</p>
 </div>
@@ -134,72 +133,65 @@
 </h3>
 <p>Import Cascade Data (repeated measurements on several subjects) from the CascadeData package and turn them into a micro array object. The second line makes sure the CascadeData package is installed.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://fbertran.github.io/Cascade/" class="external-link">Cascade</a></span><span class="op">)</span></span>
-<span><span class="kw">if</span><span class="op">(</span><span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">require</a></span><span class="op">(</span><span class="va"><a href="https://fbertran.github.io/CascadeData/" class="external-link">CascadeData</a></span><span class="op">)</span><span class="op">)</span><span class="op">{</span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"CascadeData"</span><span class="op">)</span><span class="op">}</span></span>
-<span><span class="co">#&gt; Le chargement a nécessité le package : CascadeData</span></span>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://fbertran.github.io/Cascade/">Cascade</a></span><span class="op">)</span></span>
+<span><span class="kw">if</span><span class="op">(</span><span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">require</a></span><span class="op">(</span><span class="va"><a href="https://fbertran.github.io/CascadeData/">CascadeData</a></span><span class="op">)</span><span class="op">)</span><span class="op">{</span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"CascadeData"</span><span class="op">)</span><span class="op">}</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">micro_US</span><span class="op">)</span></span>
 <span><span class="va">micro_US</span><span class="op">&lt;-</span><span class="fu"><a href="reference/as.micro_array.html">as.micro_array</a></span><span class="op">(</span><span class="va">micro_US</span>,time<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">60</span>,<span class="fl">90</span>,<span class="fl">210</span>,<span class="fl">390</span><span class="op">)</span>,subject<span class="op">=</span><span class="fl">6</span><span class="op">)</span></span></code></pre></div>
 <p>Get a summay and plots of the data:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">micro_US</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Le chargement a nécessité le package : cluster</span></span>
-<span><span class="co">#&gt;    N1_US_T60        N1_US_T90        N1_US_T210    </span></span>
-<span><span class="co">#&gt;  Min.   :   1.0   Min.   :   1.0   Min.   :   1.0  </span></span>
-<span><span class="co">#&gt;  1st Qu.:  19.7   1st Qu.:  18.8   1st Qu.:  15.2  </span></span>
-<span><span class="co">#&gt;  Median :  38.0   Median :  37.2   Median :  34.9  </span></span>
-<span><span class="co">#&gt;  Mean   : 107.5   Mean   : 106.9   Mean   : 109.6  </span></span>
-<span><span class="co">#&gt;  3rd Qu.:  80.6   3rd Qu.:  82.1   3rd Qu.:  82.8  </span></span>
-<span><span class="co">#&gt;  Max.   :8587.9   Max.   :8311.7   Max.   :7930.3  </span></span>
-<span><span class="co">#&gt;    N1_US_T390       N2_US_T60        N2_US_T90     </span></span>
-<span><span class="co">#&gt;  Min.   :   1.0   Min.   :   1.0   Min.   :   1.0  </span></span>
-<span><span class="co">#&gt;  1st Qu.:  20.9   1st Qu.:  18.5   1st Qu.:  17.1  </span></span>
-<span><span class="co">#&gt;  Median :  40.2   Median :  36.9   Median :  36.7  </span></span>
-<span><span class="co">#&gt;  Mean   : 105.7   Mean   : 110.6   Mean   : 102.1  </span></span>
-<span><span class="co">#&gt;  3rd Qu.:  84.8   3rd Qu.:  85.3   3rd Qu.:  78.2  </span></span>
-<span><span class="co">#&gt;  Max.   :7841.8   Max.   :7750.3   Max.   :8014.3  </span></span>
-<span><span class="co">#&gt;    N2_US_T210       N2_US_T390       N3_US_T60     </span></span>
-<span><span class="co">#&gt;  Min.   :   1.0   Min.   :   1.0   Min.   :   1.0  </span></span>
-<span><span class="co">#&gt;  1st Qu.:  15.8   1st Qu.:  17.7   1st Qu.:  17.3  </span></span>
-<span><span class="co">#&gt;  Median :  36.0   Median :  37.4   Median :  34.4  </span></span>
-<span><span class="co">#&gt;  Mean   : 106.8   Mean   : 111.3   Mean   : 101.6  </span></span>
-<span><span class="co">#&gt;  3rd Qu.:  83.5   3rd Qu.:  86.4   3rd Qu.:  75.4  </span></span>
-<span><span class="co">#&gt;  Max.   :8028.6   Max.   :7498.4   Max.   :8072.2  </span></span>
-<span><span class="co">#&gt;    N3_US_T90        N3_US_T210       N3_US_T390    </span></span>
-<span><span class="co">#&gt;  Min.   :   1.0   Min.   :   1.0   Min.   :   1.0  </span></span>
-<span><span class="co">#&gt;  1st Qu.:  19.5   1st Qu.:  16.4   1st Qu.:  20.9  </span></span>
-<span><span class="co">#&gt;  Median :  38.2   Median :  34.7   Median :  41.0  </span></span>
-<span><span class="co">#&gt;  Mean   : 107.1   Mean   : 100.3   Mean   : 113.9  </span></span>
-<span><span class="co">#&gt;  3rd Qu.:  82.3   3rd Qu.:  76.3   3rd Qu.:  89.2  </span></span>
-<span><span class="co">#&gt;  Max.   :7889.2   Max.   :8278.2   Max.   :6856.2  </span></span>
-<span><span class="co">#&gt;    N4_US_T60        N4_US_T90        N4_US_T210    </span></span>
-<span><span class="co">#&gt;  Min.   :   1.0   Min.   :   1.0   Min.   :   1.0  </span></span>
-<span><span class="co">#&gt;  1st Qu.:  20.4   1st Qu.:  19.5   1st Qu.:  20.5  </span></span>
-<span><span class="co">#&gt;  Median :  38.9   Median :  38.5   Median :  39.9  </span></span>
-<span><span class="co">#&gt;  Mean   : 113.6   Mean   : 114.8   Mean   : 110.1  </span></span>
-<span><span class="co">#&gt;  3rd Qu.:  84.6   3rd Qu.:  86.1   3rd Qu.:  86.8  </span></span>
-<span><span class="co">#&gt;  Max.   :9502.3   Max.   :9193.4   Max.   :9436.0  </span></span>
-<span><span class="co">#&gt;    N4_US_T390       N5_US_T60        N5_US_T90     </span></span>
-<span><span class="co">#&gt;  Min.   :   1.0   Min.   :   1.0   Min.   :   1.0  </span></span>
-<span><span class="co">#&gt;  1st Qu.:  19.9   1st Qu.:  16.8   1st Qu.:  18.8  </span></span>
-<span><span class="co">#&gt;  Median :  38.8   Median :  34.5   Median :  36.9  </span></span>
-<span><span class="co">#&gt;  Mean   : 111.7   Mean   : 111.3   Mean   : 108.0  </span></span>
-<span><span class="co">#&gt;  3rd Qu.:  85.4   3rd Qu.:  82.0   3rd Qu.:  81.4  </span></span>
-<span><span class="co">#&gt;  Max.   :8771.0   Max.   :8569.3   Max.   :7970.1  </span></span>
-<span><span class="co">#&gt;    N5_US_T210       N5_US_T390       N6_US_T60     </span></span>
-<span><span class="co">#&gt;  Min.   :   1.0   Min.   :   1.0   Min.   :   1.0  </span></span>
-<span><span class="co">#&gt;  1st Qu.:  19.5   1st Qu.:  19.9   1st Qu.:  21.1  </span></span>
-<span><span class="co">#&gt;  Median :  38.2   Median :  39.0   Median :  40.9  </span></span>
-<span><span class="co">#&gt;  Mean   : 107.4   Mean   : 109.8   Mean   : 110.1  </span></span>
-<span><span class="co">#&gt;  3rd Qu.:  82.4   3rd Qu.:  84.9   3rd Qu.:  86.3  </span></span>
-<span><span class="co">#&gt;  Max.   :8371.0   Max.   :7686.5   Max.   :8241.0  </span></span>
-<span><span class="co">#&gt;    N6_US_T90        N6_US_T210       N6_US_T390    </span></span>
-<span><span class="co">#&gt;  Min.   :   1.0   Min.   :   1.0   Min.   :   1.0  </span></span>
-<span><span class="co">#&gt;  1st Qu.:  21.5   1st Qu.:  19.9   1st Qu.:  20.2  </span></span>
-<span><span class="co">#&gt;  Median :  40.8   Median :  39.1   Median :  39.4  </span></span>
-<span><span class="co">#&gt;  Mean   : 108.5   Mean   : 112.0   Mean   : 109.5  </span></span>
-<span><span class="co">#&gt;  3rd Qu.:  85.6   3rd Qu.:  86.3   3rd Qu.:  86.6  </span></span>
-<span><span class="co">#&gt;  Max.   :8355.0   Max.   :8207.1   Max.   :9520.0</span></span></code></pre></div>
-<p><img src="reference/figures/README-plotmicroarrayclass-1.png" title="plot of chunk plotmicroarrayclass" alt="plot of chunk plotmicroarrayclass" width="100%"><img src="reference/figures/README-plotmicroarrayclass-2.png" title="plot of chunk plotmicroarrayclass" alt="plot of chunk plotmicroarrayclass" width="100%"></p>
+<span><span class="co">#&gt;    N1_US_T60        N1_US_T90        N1_US_T210       N1_US_T390    </span></span>
+<span><span class="co">#&gt;  Min.   :   1.0   Min.   :   1.0   Min.   :   1.0   Min.   :   1.0  </span></span>
+<span><span class="co">#&gt;  1st Qu.:  19.7   1st Qu.:  18.8   1st Qu.:  15.2   1st Qu.:  20.9  </span></span>
+<span><span class="co">#&gt;  Median :  38.0   Median :  37.2   Median :  34.9   Median :  40.2  </span></span>
+<span><span class="co">#&gt;  Mean   : 107.5   Mean   : 106.9   Mean   : 109.6   Mean   : 105.7  </span></span>
+<span><span class="co">#&gt;  3rd Qu.:  80.6   3rd Qu.:  82.1   3rd Qu.:  82.8   3rd Qu.:  84.8  </span></span>
+<span><span class="co">#&gt;  Max.   :8587.9   Max.   :8311.7   Max.   :7930.3   Max.   :7841.8  </span></span>
+<span><span class="co">#&gt;    N2_US_T60        N2_US_T90        N2_US_T210       N2_US_T390    </span></span>
+<span><span class="co">#&gt;  Min.   :   1.0   Min.   :   1.0   Min.   :   1.0   Min.   :   1.0  </span></span>
+<span><span class="co">#&gt;  1st Qu.:  18.5   1st Qu.:  17.1   1st Qu.:  15.8   1st Qu.:  17.7  </span></span>
+<span><span class="co">#&gt;  Median :  36.9   Median :  36.7   Median :  36.0   Median :  37.4  </span></span>
+<span><span class="co">#&gt;  Mean   : 110.6   Mean   : 102.1   Mean   : 106.8   Mean   : 111.3  </span></span>
+<span><span class="co">#&gt;  3rd Qu.:  85.3   3rd Qu.:  78.2   3rd Qu.:  83.5   3rd Qu.:  86.4  </span></span>
+<span><span class="co">#&gt;  Max.   :7750.3   Max.   :8014.3   Max.   :8028.6   Max.   :7498.4  </span></span>
+<span><span class="co">#&gt;    N3_US_T60        N3_US_T90        N3_US_T210       N3_US_T390    </span></span>
+<span><span class="co">#&gt;  Min.   :   1.0   Min.   :   1.0   Min.   :   1.0   Min.   :   1.0  </span></span>
+<span><span class="co">#&gt;  1st Qu.:  17.3   1st Qu.:  19.5   1st Qu.:  16.4   1st Qu.:  20.9  </span></span>
+<span><span class="co">#&gt;  Median :  34.4   Median :  38.2   Median :  34.7   Median :  41.0  </span></span>
+<span><span class="co">#&gt;  Mean   : 101.6   Mean   : 107.1   Mean   : 100.3   Mean   : 113.9  </span></span>
+<span><span class="co">#&gt;  3rd Qu.:  75.4   3rd Qu.:  82.3   3rd Qu.:  76.3   3rd Qu.:  89.2  </span></span>
+<span><span class="co">#&gt;  Max.   :8072.2   Max.   :7889.2   Max.   :8278.2   Max.   :6856.2  </span></span>
+<span><span class="co">#&gt;    N4_US_T60        N4_US_T90        N4_US_T210       N4_US_T390    </span></span>
+<span><span class="co">#&gt;  Min.   :   1.0   Min.   :   1.0   Min.   :   1.0   Min.   :   1.0  </span></span>
+<span><span class="co">#&gt;  1st Qu.:  20.4   1st Qu.:  19.5   1st Qu.:  20.5   1st Qu.:  19.9  </span></span>
+<span><span class="co">#&gt;  Median :  38.9   Median :  38.5   Median :  39.9   Median :  38.8  </span></span>
+<span><span class="co">#&gt;  Mean   : 113.6   Mean   : 114.8   Mean   : 110.1   Mean   : 111.7  </span></span>
+<span><span class="co">#&gt;  3rd Qu.:  84.6   3rd Qu.:  86.1   3rd Qu.:  86.8   3rd Qu.:  85.4  </span></span>
+<span><span class="co">#&gt;  Max.   :9502.3   Max.   :9193.4   Max.   :9436.0   Max.   :8771.0  </span></span>
+<span><span class="co">#&gt;    N5_US_T60        N5_US_T90        N5_US_T210       N5_US_T390    </span></span>
+<span><span class="co">#&gt;  Min.   :   1.0   Min.   :   1.0   Min.   :   1.0   Min.   :   1.0  </span></span>
+<span><span class="co">#&gt;  1st Qu.:  16.8   1st Qu.:  18.8   1st Qu.:  19.5   1st Qu.:  19.9  </span></span>
+<span><span class="co">#&gt;  Median :  34.5   Median :  36.9   Median :  38.2   Median :  39.0  </span></span>
+<span><span class="co">#&gt;  Mean   : 111.3   Mean   : 108.0   Mean   : 107.4   Mean   : 109.8  </span></span>
+<span><span class="co">#&gt;  3rd Qu.:  82.0   3rd Qu.:  81.4   3rd Qu.:  82.4   3rd Qu.:  84.9  </span></span>
+<span><span class="co">#&gt;  Max.   :8569.3   Max.   :7970.1   Max.   :8371.0   Max.   :7686.5  </span></span>
+<span><span class="co">#&gt;    N6_US_T60        N6_US_T90        N6_US_T210       N6_US_T390    </span></span>
+<span><span class="co">#&gt;  Min.   :   1.0   Min.   :   1.0   Min.   :   1.0   Min.   :   1.0  </span></span>
+<span><span class="co">#&gt;  1st Qu.:  21.1   1st Qu.:  21.5   1st Qu.:  19.9   1st Qu.:  20.2  </span></span>
+<span><span class="co">#&gt;  Median :  40.9   Median :  40.8   Median :  39.1   Median :  39.4  </span></span>
+<span><span class="co">#&gt;  Mean   : 110.1   Mean   : 108.5   Mean   : 112.0   Mean   : 109.5  </span></span>
+<span><span class="co">#&gt;  3rd Qu.:  86.3   3rd Qu.:  85.6   3rd Qu.:  86.3   3rd Qu.:  86.6  </span></span>
+<span><span class="co">#&gt;  Max.   :8241.0   Max.   :8355.0   Max.   :8207.1   Max.   :9520.0</span></span></code></pre></div>
+<div class="figure">
+<img src="reference/figures/README-plotmicroarrayclass-1.png" alt="plot of chunk plotmicroarrayclass" width="100%"><p class="caption">
+plot of chunk plotmicroarrayclass
+</p>
+</div>
+<div class="figure">
+<img src="reference/figures/README-plotmicroarrayclass-2.png" alt="plot of chunk plotmicroarrayclass" width="100%"><p class="caption">
+plot of chunk plotmicroarrayclass
+</p>
+</div>
 </div>
 <div class="section level3">
 <h3 id="gene-selection">Gene selection<a class="anchor" aria-label="anchor" href="#gene-selection"></a>
@@ -242,68 +234,104 @@
 <span>  network<span class="op">=</span><span class="va">Net</span>,</span>
 <span>  time_label<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span>,each<span class="op">=</span><span class="fl">25</span><span class="op">)</span>,</span>
 <span>  subject<span class="op">=</span><span class="fl">5</span>,</span>
-<span>  level_peak<span class="op">=</span><span class="fl">200</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Le chargement a nécessité le package : VGAM</span></span>
-<span><span class="co">#&gt; Le chargement a nécessité le package : stats4</span></span>
-<span><span class="co">#&gt; Le chargement a nécessité le package : splines</span></span>
-<span><span class="co">#&gt; Le chargement a nécessité le package : magic</span></span>
-<span><span class="co">#&gt; Le chargement a nécessité le package : abind</span></span></code></pre></div>
+<span>  level_peak<span class="op">=</span><span class="fl">200</span><span class="op">)</span></span></code></pre></div>
 <p>Get a summay and plots of the simulated data:</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">M</span><span class="op">)</span></span>
-<span><span class="co">#&gt;  log(S/US) : P1T1   log(S/US) : P1T2     log(S/US) : P1T3   </span></span>
-<span><span class="co">#&gt;  Min.   :-759.882   Min.   :-2024.5979   Min.   :-1007.748  </span></span>
-<span><span class="co">#&gt;  1st Qu.: -36.758   1st Qu.:  -22.5653   1st Qu.:  -68.054  </span></span>
-<span><span class="co">#&gt;  Median :   6.265   Median :    0.5759   Median :   -4.192  </span></span>
-<span><span class="co">#&gt;  Mean   :  10.613   Mean   :   -6.6230   Mean   :    3.085  </span></span>
-<span><span class="co">#&gt;  3rd Qu.:  74.682   3rd Qu.:   78.2516   3rd Qu.:   74.866  </span></span>
-<span><span class="co">#&gt;  Max.   : 647.643   Max.   :  870.7513   Max.   : 1155.413  </span></span>
-<span><span class="co">#&gt;  log(S/US) : P1T4    log(S/US) : P2T1   log(S/US) : P2T2   </span></span>
-<span><span class="co">#&gt;  Min.   :-1075.637   Min.   :-790.431   Min.   :-1505.543  </span></span>
-<span><span class="co">#&gt;  1st Qu.:  -31.538   1st Qu.: -65.394   1st Qu.:  -59.833  </span></span>
-<span><span class="co">#&gt;  Median :   -2.293   Median :   2.087   Median :   -1.262  </span></span>
-<span><span class="co">#&gt;  Mean   :    9.055   Mean   :   7.791   Mean   :  -18.568  </span></span>
-<span><span class="co">#&gt;  3rd Qu.:   75.316   3rd Qu.:  70.108   3rd Qu.:   76.908  </span></span>
-<span><span class="co">#&gt;  Max.   :  556.449   Max.   : 669.203   Max.   : 1058.385  </span></span>
-<span><span class="co">#&gt;  log(S/US) : P2T3   log(S/US) : P2T4   log(S/US) : P3T1    </span></span>
-<span><span class="co">#&gt;  Min.   :-980.965   Min.   :-547.117   Min.   :-1278.6158  </span></span>
-<span><span class="co">#&gt;  1st Qu.: -55.077   1st Qu.: -58.721   1st Qu.:  -42.1909  </span></span>
-<span><span class="co">#&gt;  Median :  -7.144   Median :  -3.519   Median :    0.4064  </span></span>
-<span><span class="co">#&gt;  Mean   : -35.647   Mean   : -24.277   Mean   :   -3.8860  </span></span>
-<span><span class="co">#&gt;  3rd Qu.:  41.364   3rd Qu.:  37.621   3rd Qu.:   48.4275  </span></span>
-<span><span class="co">#&gt;  Max.   :1114.897   Max.   : 270.423   Max.   :  527.3972  </span></span>
-<span><span class="co">#&gt;  log(S/US) : P3T2   log(S/US) : P3T3    log(S/US) : P3T4   </span></span>
-<span><span class="co">#&gt;  Min.   :-624.834   Min.   :-1018.897   Min.   :-2403.703  </span></span>
-<span><span class="co">#&gt;  1st Qu.: -48.460   1st Qu.:  -52.456   1st Qu.:  -57.493  </span></span>
-<span><span class="co">#&gt;  Median :  -2.505   Median :   -2.026   Median :   -4.529  </span></span>
-<span><span class="co">#&gt;  Mean   : -11.950   Mean   :    5.893   Mean   :  -33.088  </span></span>
-<span><span class="co">#&gt;  3rd Qu.:  33.781   3rd Qu.:   43.214   3rd Qu.:   51.808  </span></span>
-<span><span class="co">#&gt;  Max.   : 576.141   Max.   : 1159.517   Max.   :  495.014  </span></span>
-<span><span class="co">#&gt;  log(S/US) : P4T1   log(S/US) : P4T2     log(S/US) : P4T3  </span></span>
-<span><span class="co">#&gt;  Min.   :-683.000   Min.   :-1957.3692   Min.   :-591.460  </span></span>
-<span><span class="co">#&gt;  1st Qu.: -81.510   1st Qu.:  -39.3372   1st Qu.: -39.499  </span></span>
-<span><span class="co">#&gt;  Median :   5.102   Median :   -0.0215   Median :   2.251  </span></span>
-<span><span class="co">#&gt;  Mean   :  -2.034   Mean   :    2.9550   Mean   :  27.377  </span></span>
-<span><span class="co">#&gt;  3rd Qu.:  74.738   3rd Qu.:   77.1869   3rd Qu.:  62.097  </span></span>
-<span><span class="co">#&gt;  Max.   : 454.955   Max.   :  955.0680   Max.   :1341.859  </span></span>
-<span><span class="co">#&gt;  log(S/US) : P4T4   log(S/US) : P5T1   log(S/US) : P5T2   </span></span>
-<span><span class="co">#&gt;  Min.   :-577.069   Min.   :-436.986   Min.   :-647.1962  </span></span>
-<span><span class="co">#&gt;  1st Qu.: -31.924   1st Qu.: -69.809   1st Qu.: -48.5156  </span></span>
-<span><span class="co">#&gt;  Median :   2.456   Median :   2.156   Median :  -0.2949  </span></span>
-<span><span class="co">#&gt;  Mean   :  29.675   Mean   :  -2.929   Mean   :   6.2300  </span></span>
-<span><span class="co">#&gt;  3rd Qu.:  35.322   3rd Qu.:  47.462   3rd Qu.:  47.9558  </span></span>
-<span><span class="co">#&gt;  Max.   :1577.042   Max.   : 651.596   Max.   :1359.9584  </span></span>
-<span><span class="co">#&gt;  log(S/US) : P5T3   log(S/US) : P5T4  </span></span>
-<span><span class="co">#&gt;  Min.   :-409.347   Min.   :-188.652  </span></span>
-<span><span class="co">#&gt;  1st Qu.: -44.205   1st Qu.: -33.097  </span></span>
-<span><span class="co">#&gt;  Median :  -1.056   Median :   1.873  </span></span>
-<span><span class="co">#&gt;  Mean   :   6.190   Mean   :  26.740  </span></span>
-<span><span class="co">#&gt;  3rd Qu.:  47.694   3rd Qu.:  67.879  </span></span>
-<span><span class="co">#&gt;  Max.   : 434.178   Max.   : 743.820</span></span></code></pre></div>
-<p><img src="reference/figures/README-summarysimuldata-1.png" title="plot of chunk summarysimuldata" alt="plot of chunk summarysimuldata" width="100%"><img src="reference/figures/README-summarysimuldata-2.png" title="plot of chunk summarysimuldata" alt="plot of chunk summarysimuldata" width="100%"><img src="reference/figures/README-summarysimuldata-3.png" title="plot of chunk summarysimuldata" alt="plot of chunk summarysimuldata" width="100%"></p>
+<span><span class="co">#&gt;  log(S/US) : P1T1   log(S/US) : P1T2    log(S/US) : P1T3   </span></span>
+<span><span class="co">#&gt;  Min.   :-887.428   Min.   :-2060.695   Min.   :-837.5811  </span></span>
+<span><span class="co">#&gt;  1st Qu.: -53.644   1st Qu.:  -70.993   1st Qu.: -85.2176  </span></span>
+<span><span class="co">#&gt;  Median :   6.122   Median :    2.206   Median :  -6.6303  </span></span>
+<span><span class="co">#&gt;  Mean   :   3.928   Mean   :   -3.800   Mean   :   0.5563  </span></span>
+<span><span class="co">#&gt;  3rd Qu.:  74.894   3rd Qu.:   79.999   3rd Qu.:  71.9501  </span></span>
+<span><span class="co">#&gt;  Max.   : 747.779   Max.   : 1461.163   Max.   :1279.6850  </span></span>
+<span><span class="co">#&gt;  log(S/US) : P1T4   log(S/US) : P2T1   log(S/US) : P2T2   log(S/US) : P2T3  </span></span>
+<span><span class="co">#&gt;  Min.   :-2189.33   Min.   :-431.905   Min.   :-845.072   Min.   :-557.840  </span></span>
+<span><span class="co">#&gt;  1st Qu.: -115.23   1st Qu.: -50.282   1st Qu.: -21.668   1st Qu.: -42.958  </span></span>
+<span><span class="co">#&gt;  Median :  -10.49   Median :  -3.782   Median :   2.059   Median :  -2.448  </span></span>
+<span><span class="co">#&gt;  Mean   :  -75.60   Mean   :   8.264   Mean   :  18.235   Mean   :  25.290  </span></span>
+<span><span class="co">#&gt;  3rd Qu.:   43.85   3rd Qu.:  40.975   3rd Qu.:  40.323   3rd Qu.:  46.573  </span></span>
+<span><span class="co">#&gt;  Max.   :  492.80   Max.   :1287.819   Max.   : 699.912   Max.   :1754.081  </span></span>
+<span><span class="co">#&gt;  log(S/US) : P2T4  log(S/US) : P3T1   log(S/US) : P3T2   log(S/US) : P3T3   </span></span>
+<span><span class="co">#&gt;  Min.   :-660.17   Min.   :-868.834   Min.   :-953.894   Min.   :-1182.316  </span></span>
+<span><span class="co">#&gt;  1st Qu.: -63.34   1st Qu.: -44.656   1st Qu.: -59.964   1st Qu.:  -87.170  </span></span>
+<span><span class="co">#&gt;  Median : -10.97   Median :   1.839   Median :  -1.306   Median :   -2.614  </span></span>
+<span><span class="co">#&gt;  Mean   :  18.10   Mean   :  -2.150   Mean   :  24.123   Mean   :   10.224  </span></span>
+<span><span class="co">#&gt;  3rd Qu.:  42.56   3rd Qu.:  55.072   3rd Qu.:  78.430   3rd Qu.:   79.246  </span></span>
+<span><span class="co">#&gt;  Max.   :1418.99   Max.   : 597.562   Max.   :1808.233   Max.   : 2761.291  </span></span>
+<span><span class="co">#&gt;  log(S/US) : P3T4   log(S/US) : P4T1   log(S/US) : P4T2   log(S/US) : P4T3  </span></span>
+<span><span class="co">#&gt;  Min.   :-1027.24   Min.   :-1012.76   Min.   :-1569.32   Min.   :-577.799  </span></span>
+<span><span class="co">#&gt;  1st Qu.:  -61.31   1st Qu.:  -33.79   1st Qu.: -118.83   1st Qu.: -62.623  </span></span>
+<span><span class="co">#&gt;  Median :   16.27   Median :   11.57   Median :  -13.84   Median :  -8.788  </span></span>
+<span><span class="co">#&gt;  Mean   :   27.52   Mean   :   10.98   Mean   :  -63.39   Mean   : -14.803  </span></span>
+<span><span class="co">#&gt;  3rd Qu.:   60.93   3rd Qu.:   74.09   3rd Qu.:   40.22   3rd Qu.:  37.779  </span></span>
+<span><span class="co">#&gt;  Max.   : 1926.45   Max.   :  891.60   Max.   :  678.27   Max.   : 430.737  </span></span>
+<span><span class="co">#&gt;  log(S/US) : P4T4   log(S/US) : P5T1   log(S/US) : P5T2    log(S/US) : P5T3 </span></span>
+<span><span class="co">#&gt;  Min.   :-661.083   Min.   :-555.708   Min.   :-1467.268   Min.   :-911.18  </span></span>
+<span><span class="co">#&gt;  1st Qu.: -41.705   1st Qu.: -64.469   1st Qu.:  -68.769   1st Qu.: -71.66  </span></span>
+<span><span class="co">#&gt;  Median :  -1.468   Median :   2.697   Median :   -1.565   Median :   1.54  </span></span>
+<span><span class="co">#&gt;  Mean   :  10.111   Mean   :   9.403   Mean   :    8.180   Mean   :  13.03  </span></span>
+<span><span class="co">#&gt;  3rd Qu.:  67.888   3rd Qu.:  57.251   3rd Qu.:   62.256   3rd Qu.:  86.29  </span></span>
+<span><span class="co">#&gt;  Max.   : 492.723   Max.   : 654.771   Max.   :  990.550   Max.   :1386.11  </span></span>
+<span><span class="co">#&gt;  log(S/US) : P5T4  </span></span>
+<span><span class="co">#&gt;  Min.   :-621.705  </span></span>
+<span><span class="co">#&gt;  1st Qu.: -62.466  </span></span>
+<span><span class="co">#&gt;  Median :  -5.789  </span></span>
+<span><span class="co">#&gt;  Mean   :   7.083  </span></span>
+<span><span class="co">#&gt;  3rd Qu.:  62.041  </span></span>
+<span><span class="co">#&gt;  Max.   : 689.323</span></span></code></pre></div>
+<div class="figure">
+<img src="reference/figures/README-summarysimuldata-1.png" alt="plot of chunk summarysimuldata" width="100%"><p class="caption">
+plot of chunk summarysimuldata
+</p>
+</div>
+<div class="figure">
+<img src="reference/figures/README-summarysimuldata-2.png" alt="plot of chunk summarysimuldata" width="100%"><p class="caption">
+plot of chunk summarysimuldata
+</p>
+</div>
+<div class="figure">
+<img src="reference/figures/README-summarysimuldata-3.png" alt="plot of chunk summarysimuldata" width="100%"><p class="caption">
+plot of chunk summarysimuldata
+</p>
+</div>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">M</span><span class="op">)</span></span></code></pre></div>
-<p><img src="reference/figures/README-plotsimuldata-1.png" title="plot of chunk plotsimuldata" alt="plot of chunk plotsimuldata" width="100%"><img src="reference/figures/README-plotsimuldata-2.png" title="plot of chunk plotsimuldata" alt="plot of chunk plotsimuldata" width="100%"><img src="reference/figures/README-plotsimuldata-3.png" title="plot of chunk plotsimuldata" alt="plot of chunk plotsimuldata" width="100%"><img src="reference/figures/README-plotsimuldata-4.png" title="plot of chunk plotsimuldata" alt="plot of chunk plotsimuldata" width="100%"><img src="reference/figures/README-plotsimuldata-5.png" title="plot of chunk plotsimuldata" alt="plot of chunk plotsimuldata" width="100%"><img src="reference/figures/README-plotsimuldata-6.png" title="plot of chunk plotsimuldata" alt="plot of chunk plotsimuldata" width="100%"><img src="reference/figures/README-plotsimuldata-7.png" title="plot of chunk plotsimuldata" alt="plot of chunk plotsimuldata" width="100%"></p>
+<div class="figure">
+<img src="reference/figures/README-plotsimuldata-1.png" alt="plot of chunk plotsimuldata" width="100%"><p class="caption">
+plot of chunk plotsimuldata
+</p>
+</div>
+<div class="figure">
+<img src="reference/figures/README-plotsimuldata-2.png" alt="plot of chunk plotsimuldata" width="100%"><p class="caption">
+plot of chunk plotsimuldata
+</p>
+</div>
+<div class="figure">
+<img src="reference/figures/README-plotsimuldata-3.png" alt="plot of chunk plotsimuldata" width="100%"><p class="caption">
+plot of chunk plotsimuldata
+</p>
+</div>
+<div class="figure">
+<img src="reference/figures/README-plotsimuldata-4.png" alt="plot of chunk plotsimuldata" width="100%"><p class="caption">
+plot of chunk plotsimuldata
+</p>
+</div>
+<div class="figure">
+<img src="reference/figures/README-plotsimuldata-5.png" alt="plot of chunk plotsimuldata" width="100%"><p class="caption">
+plot of chunk plotsimuldata
+</p>
+</div>
+<div class="figure">
+<img src="reference/figures/README-plotsimuldata-6.png" alt="plot of chunk plotsimuldata" width="100%"><p class="caption">
+plot of chunk plotsimuldata
+</p>
+</div>
+<div class="figure">
+<img src="reference/figures/README-plotsimuldata-7.png" alt="plot of chunk plotsimuldata" width="100%"><p class="caption">
+plot of chunk plotsimuldata
+</p>
+</div>
 </div>
 <div class="section level3">
 <h3 id="network-inference">Network inference<a class="anchor" aria-label="anchor" href="#network-inference"></a>
@@ -311,18 +339,32 @@
 <p>We infer the new network using subjectwise leave one out cross-validation (all measurement from the same subject are removed from the dataset)</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">Net_inf_C</span> <span class="op">&lt;-</span> <span class="fu">Cascade</span><span class="fu">::</span><span class="fu"><a href="reference/inference-micro_array-method.html">inference</a></span><span class="op">(</span><span class="va">M</span>, cv.subjects<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Le chargement a nécessité le package : nnls</span></span>
 <span><span class="co">#&gt; We are at step :  1</span></span>
-<span><span class="co">#&gt; The convergence of the network is (L1 norm) : 0.0068</span></span>
+<span><span class="co">#&gt; The convergence of the network is (L1 norm) : 0.0072</span></span>
 <span><span class="co">#&gt; We are at step :  2</span></span>
-<span><span class="co">#&gt; The convergence of the network is (L1 norm) : 0.00121</span></span>
+<span><span class="co">#&gt; The convergence of the network is (L1 norm) : 0.00139</span></span>
 <span><span class="co">#&gt; We are at step :  3</span></span>
-<span><span class="co">#&gt; The convergence of the network is (L1 norm) : 0.00096</span></span></code></pre></div>
-<p><img src="reference/figures/README-netinf-1.png" title="plot of chunk netinf" alt="plot of chunk netinf" width="100%"><img src="reference/figures/README-netinf-2.png" title="plot of chunk netinf" alt="plot of chunk netinf" width="100%"></p>
+<span><span class="co">#&gt; The convergence of the network is (L1 norm) : 0.00106</span></span>
+<span><span class="co">#&gt; We are at step :  4</span></span>
+<span><span class="co">#&gt; The convergence of the network is (L1 norm) : 0.00095</span></span></code></pre></div>
+<div class="figure">
+<img src="reference/figures/README-netinf-1.png" alt="plot of chunk netinf" width="100%"><p class="caption">
+plot of chunk netinf
+</p>
+</div>
+<div class="figure">
+<img src="reference/figures/README-netinf-2.png" alt="plot of chunk netinf" width="100%"><p class="caption">
+plot of chunk netinf
+</p>
+</div>
 <p>Heatmap of the coefficients of the Omega matrix of the network</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">stats</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/r/stats/heatmap.html" class="external-link">heatmap</a></span><span class="op">(</span><span class="va">Net_inf_C</span><span class="op">@</span><span class="va">network</span>, Rowv<span class="op">=</span><span class="cn">NA</span>, Colv<span class="op">=</span><span class="cn">NA</span>, scale<span class="op">=</span><span class="st">"none"</span>, revC<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
-<p><img src="reference/figures/README-heatresults-1.png" title="plot of chunk heatresults" alt="plot of chunk heatresults" width="100%"></p>
+<div class="figure">
+<img src="reference/figures/README-heatresults-1.png" alt="plot of chunk heatresults" width="100%"><p class="caption">
+plot of chunk heatresults
+</p>
+</div>
 <p>###Post inferrence network analysis We switch to data that were derived from the inferrence of a real biological network and try to detect the optimal cutoff value: the best cutoff value for a network to fit a scale free network.</p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"network"</span><span class="op">)</span></span>
@@ -343,34 +385,18 @@
 <p><img src="reference/figures/README-cutoff-1.png" title="plot of chunk cutoff" alt="plot of chunk cutoff" width="100%"></p>
 <pre><code><span><span class="co">#&gt; $p.value</span></span>
 <span><span class="co">#&gt;  [1] 0.000 0.001 0.126 0.112 0.091 0.584 0.885 0.677 0.604 0.363</span></span>
-<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt;</span></span>
 <span><span class="co">#&gt; $p.value.inter</span></span>
 <span><span class="co">#&gt;  [1] 0.0003073808 0.0222769859 0.0521597921 0.0819131661</span></span>
 <span><span class="co">#&gt;  [5] 0.1859011443 0.5539131661 0.8106723719 0.7795175496</span></span>
 <span><span class="co">#&gt;  [9] 0.6267996116 0.3396322205</span></span>
-<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt;</span></span>
 <span><span class="co">#&gt; $sequence</span></span>
 <span><span class="co">#&gt;  [1] 0.00000000 0.04444444 0.08888889 0.13333333 0.17777778</span></span>
 <span><span class="co">#&gt;  [6] 0.22222222 0.26666667 0.31111111 0.35555556 0.40000000</span></span></code></pre>
 <p>Analyze the network with a cutoff set to the previouly found 0.14 optimal value.</p>
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="reference/analyze_network-network-method.html">analyze_network</a></span><span class="op">(</span><span class="va">network</span>,nv<span class="op">=</span><span class="fl">0.14</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Le chargement a nécessité le package : tnet</span></span>
-<span><span class="co">#&gt; Le chargement a nécessité le package : igraph</span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; Attachement du package : 'igraph'</span></span>
-<span><span class="co">#&gt; L'objet suivant est masqué depuis 'package:Cascade':</span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt;     compare</span></span>
-<span><span class="co">#&gt; Les objets suivants sont masqués depuis 'package:stats':</span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt;     decompose, spectrum</span></span>
-<span><span class="co">#&gt; L'objet suivant est masqué depuis 'package:base':</span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt;     union</span></span>
-<span><span class="co">#&gt; Le chargement a nécessité le package : survival</span></span>
-<span><span class="co">#&gt; tnet: Analysis of Weighted, Two-mode, and Longitudinal networks.</span></span>
-<span><span class="co">#&gt; Type ?tnet for help.</span></span>
 <span><span class="co">#&gt;    node betweenness degree    output  closeness</span></span>
 <span><span class="co">#&gt; 1     1           0      3 0.8133348 16.4471148</span></span>
 <span><span class="co">#&gt; 2     2           0      3 0.8884602  7.9547696</span></span>
@@ -480,8 +506,8 @@
 <div class="developers">
 <h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
-<li>Frederic Bertrand <br><small class="roles"> Maintainer, author </small> <a href="https://orcid.org/0000-0002-0837-8281" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
-<li>Myriam Maumy-Bertrand <br><small class="roles"> Author </small> <a href="https://orcid.org/0000-0002-4615-1512" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<li>Frederic Bertrand <br><small class="roles"> Maintainer, author </small> <a href="https://orcid.org/0000-0002-0837-8281" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a>  </li>
+<li>Myriam Maumy-Bertrand <br><small class="roles"> Author </small> <a href="https://orcid.org/0000-0002-4615-1512" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a>  </li>
 <li><a href="authors.html">More about authors...</a></li>
 </ul>
 </div>
@@ -511,16 +537,16 @@
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.3.</p>
 </div>
 
       </footer>
 </div>
 
-  
 
 
-  
+
+
 
   </body>
 </html>
