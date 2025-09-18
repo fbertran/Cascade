@@ -16,7 +16,10 @@ knitr::opts_chunk$set(
 # Cascade, Selection, Reverse-Engineering and Prediction in Cascade Networks
 ## Frédéric Bertrand and Myriam Maumy-Bertrand
 
+<https://doi.org/10.32614/CRAN.package.bigalgebra>
+
 <!-- badges: start -->
+[![DOI](https://img.shields.io/badge/doi-10.32614/CRAN.package.ModStatR-blue.svg)](https://doi.org/10.32614/CRAN.package.ModStatR)
 [![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-green.svg)](https://lifecycle.r-lib.org/articles/stages.html)
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![R-CMD-check](https://github.com/fbertran/Cascade/workflows/R-CMD-check/badge.svg)](https://github.com/fbertran/Cascade/actions)
@@ -24,7 +27,6 @@ knitr::opts_chunk$set(
 [![CRAN status](https://www.r-pkg.org/badges/version/Cascade)](https://cran.r-project.org/package=Cascade)
 [![CRAN RStudio mirror downloads](https://cranlogs.r-pkg.org/badges/Cascade)](https://cran.r-project.org/package=Cascade)
 [![GitHub Repo stars](https://img.shields.io/github/stars/fbertran/Cascade?style=social)](https://github.com/fbertran/Cascade)
-[![DOI](https://zenodo.org/badge/18441815.svg)](https://zenodo.org/badge/latestdoi/18441815)
 <!-- badges: end -->
 
 Cascade is a modeling tool allowing gene selection, reverse engineering, and prediction in cascade networks. Jung, N., Bertrand, F., Bahram, S., Vallat, L., and Maumy-Bertrand, M. (2014) <https://doi.org/10.1093/bioinformatics/btt705>.
