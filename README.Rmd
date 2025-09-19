@@ -16,10 +16,10 @@ knitr::opts_chunk$set(
 # Cascade, Selection, Reverse-Engineering and Prediction in Cascade Networks
 ## Frédéric Bertrand and Myriam Maumy-Bertrand
 
-<https://doi.org/10.32614/CRAN.package.bigalgebra>
+<https://doi.org/10.32614/CRAN.package.Cascade>
 
 <!-- badges: start -->
-[![DOI](https://img.shields.io/badge/doi-10.32614/CRAN.package.ModStatR-blue.svg)](https://doi.org/10.32614/CRAN.package.ModStatR)
+[![DOI](https://img.shields.io/badge/doi-10.32614/CRAN.package.Cascade-blue.svg)](https://doi.org/10.32614/CRAN.package.Cascade)
 [![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-green.svg)](https://lifecycle.r-lib.org/articles/stages.html)
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![R-CMD-check](https://github.com/fbertran/Cascade/workflows/R-CMD-check/badge.svg)](https://github.com/fbertran/Cascade/actions)

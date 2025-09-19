@@ -69,7 +69,7 @@
 <div class="section level2">
 <h2 id="frédéric-bertrand-and-myriam-maumy-bertrand">Frédéric Bertrand and Myriam Maumy-Bertrand<a class="anchor" aria-label="anchor" href="#fr%C3%A9d%C3%A9ric-bertrand-and-myriam-maumy-bertrand"></a>
 </h2>
-<p><a href="https://doi.org/10.32614/CRAN.package.bigalgebra" class="external-link uri">https://doi.org/10.32614/CRAN.package.bigalgebra</a></p>
+<p><a href="https://doi.org/10.32614/CRAN.package.Cascade" class="external-link uri">https://doi.org/10.32614/CRAN.package.Cascade</a></p>
 <!-- badges: start -->
 
 <p>Cascade is a modeling tool allowing gene selection, reverse engineering, and prediction in cascade networks. Jung, N., Bertrand, F., Bahram, S., Vallat, L., and Maumy-Bertrand, M. (2014) <a href="https://doi.org/10.1093/bioinformatics/btt705" class="external-link uri">https://doi.org/10.1093/bioinformatics/btt705</a>.</p>
@@ -102,39 +102,48 @@
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://fbertran.github.io/Cascade/">Cascade</a></span><span class="op">)</span></span>
 <span><span class="kw">if</span><span class="op">(</span><span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">require</a></span><span class="op">(</span><span class="va"><a href="https://fbertran.github.io/CascadeData/">CascadeData</a></span><span class="op">)</span><span class="op">)</span><span class="op">{</span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"CascadeData"</span><span class="op">)</span><span class="op">}</span></span>
+<span><span class="co">#&gt; Loading required package: CascadeData</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">micro_US</span><span class="op">)</span></span>
 <span><span class="va">micro_US</span><span class="op">&lt;-</span><span class="fu"><a href="reference/as.micro_array.html">as.micro_array</a></span><span class="op">(</span><span class="va">micro_US</span>,time<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">60</span>,<span class="fl">90</span>,<span class="fl">210</span>,<span class="fl">390</span><span class="op">)</span>,subject<span class="op">=</span><span class="fl">6</span><span class="op">)</span></span></code></pre></div>
 <p>Get a summay and plots of the data:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">micro_US</span><span class="op">)</span></span>
-<span><span class="co">#&gt;    N1_US_T60        N1_US_T90        N1_US_T210       N1_US_T390       N2_US_T60     </span></span>
-<span><span class="co">#&gt;  Min.   :   1.0   Min.   :   1.0   Min.   :   1.0   Min.   :   1.0   Min.   :   1.0  </span></span>
-<span><span class="co">#&gt;  1st Qu.:  19.7   1st Qu.:  18.8   1st Qu.:  15.2   1st Qu.:  20.9   1st Qu.:  18.5  </span></span>
-<span><span class="co">#&gt;  Median :  38.0   Median :  37.2   Median :  34.9   Median :  40.2   Median :  36.9  </span></span>
-<span><span class="co">#&gt;  Mean   : 107.5   Mean   : 106.9   Mean   : 109.6   Mean   : 105.7   Mean   : 110.6  </span></span>
-<span><span class="co">#&gt;  3rd Qu.:  80.6   3rd Qu.:  82.1   3rd Qu.:  82.8   3rd Qu.:  84.8   3rd Qu.:  85.3  </span></span>
-<span><span class="co">#&gt;  Max.   :8587.9   Max.   :8311.7   Max.   :7930.3   Max.   :7841.8   Max.   :7750.3  </span></span>
-<span><span class="co">#&gt;    N2_US_T90        N2_US_T210       N2_US_T390       N3_US_T60        N3_US_T90     </span></span>
-<span><span class="co">#&gt;  Min.   :   1.0   Min.   :   1.0   Min.   :   1.0   Min.   :   1.0   Min.   :   1.0  </span></span>
-<span><span class="co">#&gt;  1st Qu.:  17.1   1st Qu.:  15.8   1st Qu.:  17.7   1st Qu.:  17.3   1st Qu.:  19.5  </span></span>
-<span><span class="co">#&gt;  Median :  36.7   Median :  36.0   Median :  37.4   Median :  34.4   Median :  38.2  </span></span>
-<span><span class="co">#&gt;  Mean   : 102.1   Mean   : 106.8   Mean   : 111.3   Mean   : 101.6   Mean   : 107.1  </span></span>
-<span><span class="co">#&gt;  3rd Qu.:  78.2   3rd Qu.:  83.5   3rd Qu.:  86.4   3rd Qu.:  75.4   3rd Qu.:  82.3  </span></span>
-<span><span class="co">#&gt;  Max.   :8014.3   Max.   :8028.6   Max.   :7498.4   Max.   :8072.2   Max.   :7889.2  </span></span>
-<span><span class="co">#&gt;    N3_US_T210       N3_US_T390       N4_US_T60        N4_US_T90        N4_US_T210    </span></span>
-<span><span class="co">#&gt;  Min.   :   1.0   Min.   :   1.0   Min.   :   1.0   Min.   :   1.0   Min.   :   1.0  </span></span>
-<span><span class="co">#&gt;  1st Qu.:  16.4   1st Qu.:  20.9   1st Qu.:  20.4   1st Qu.:  19.5   1st Qu.:  20.5  </span></span>
-<span><span class="co">#&gt;  Median :  34.7   Median :  41.0   Median :  38.9   Median :  38.5   Median :  39.9  </span></span>
-<span><span class="co">#&gt;  Mean   : 100.3   Mean   : 113.9   Mean   : 113.6   Mean   : 114.8   Mean   : 110.1  </span></span>
-<span><span class="co">#&gt;  3rd Qu.:  76.3   3rd Qu.:  89.2   3rd Qu.:  84.6   3rd Qu.:  86.1   3rd Qu.:  86.8  </span></span>
-<span><span class="co">#&gt;  Max.   :8278.2   Max.   :6856.2   Max.   :9502.3   Max.   :9193.4   Max.   :9436.0  </span></span>
-<span><span class="co">#&gt;    N4_US_T390       N5_US_T60        N5_US_T90        N5_US_T210       N5_US_T390    </span></span>
-<span><span class="co">#&gt;  Min.   :   1.0   Min.   :   1.0   Min.   :   1.0   Min.   :   1.0   Min.   :   1.0  </span></span>
-<span><span class="co">#&gt;  1st Qu.:  19.9   1st Qu.:  16.8   1st Qu.:  18.8   1st Qu.:  19.5   1st Qu.:  19.9  </span></span>
-<span><span class="co">#&gt;  Median :  38.8   Median :  34.5   Median :  36.9   Median :  38.2   Median :  39.0  </span></span>
-<span><span class="co">#&gt;  Mean   : 111.7   Mean   : 111.3   Mean   : 108.0   Mean   : 107.4   Mean   : 109.8  </span></span>
-<span><span class="co">#&gt;  3rd Qu.:  85.4   3rd Qu.:  82.0   3rd Qu.:  81.4   3rd Qu.:  82.4   3rd Qu.:  84.9  </span></span>
-<span><span class="co">#&gt;  Max.   :8771.0   Max.   :8569.3   Max.   :7970.1   Max.   :8371.0   Max.   :7686.5  </span></span>
+<span><span class="co">#&gt; Loading required package: cluster</span></span>
+<span><span class="co">#&gt;    N1_US_T60        N1_US_T90        N1_US_T210       N1_US_T390    </span></span>
+<span><span class="co">#&gt;  Min.   :   1.0   Min.   :   1.0   Min.   :   1.0   Min.   :   1.0  </span></span>
+<span><span class="co">#&gt;  1st Qu.:  19.7   1st Qu.:  18.8   1st Qu.:  15.2   1st Qu.:  20.9  </span></span>
+<span><span class="co">#&gt;  Median :  38.0   Median :  37.2   Median :  34.9   Median :  40.2  </span></span>
+<span><span class="co">#&gt;  Mean   : 107.5   Mean   : 106.9   Mean   : 109.6   Mean   : 105.7  </span></span>
+<span><span class="co">#&gt;  3rd Qu.:  80.6   3rd Qu.:  82.1   3rd Qu.:  82.8   3rd Qu.:  84.8  </span></span>
+<span><span class="co">#&gt;  Max.   :8587.9   Max.   :8311.7   Max.   :7930.3   Max.   :7841.8  </span></span>
+<span><span class="co">#&gt;    N2_US_T60        N2_US_T90        N2_US_T210       N2_US_T390    </span></span>
+<span><span class="co">#&gt;  Min.   :   1.0   Min.   :   1.0   Min.   :   1.0   Min.   :   1.0  </span></span>
+<span><span class="co">#&gt;  1st Qu.:  18.5   1st Qu.:  17.1   1st Qu.:  15.8   1st Qu.:  17.7  </span></span>
+<span><span class="co">#&gt;  Median :  36.9   Median :  36.7   Median :  36.0   Median :  37.4  </span></span>
+<span><span class="co">#&gt;  Mean   : 110.6   Mean   : 102.1   Mean   : 106.8   Mean   : 111.3  </span></span>
+<span><span class="co">#&gt;  3rd Qu.:  85.3   3rd Qu.:  78.2   3rd Qu.:  83.5   3rd Qu.:  86.4  </span></span>
+<span><span class="co">#&gt;  Max.   :7750.3   Max.   :8014.3   Max.   :8028.6   Max.   :7498.4  </span></span>
+<span><span class="co">#&gt;    N3_US_T60        N3_US_T90        N3_US_T210       N3_US_T390    </span></span>
+<span><span class="co">#&gt;  Min.   :   1.0   Min.   :   1.0   Min.   :   1.0   Min.   :   1.0  </span></span>
+<span><span class="co">#&gt;  1st Qu.:  17.3   1st Qu.:  19.5   1st Qu.:  16.4   1st Qu.:  20.9  </span></span>
+<span><span class="co">#&gt;  Median :  34.4   Median :  38.2   Median :  34.7   Median :  41.0  </span></span>
+<span><span class="co">#&gt;  Mean   : 101.6   Mean   : 107.1   Mean   : 100.3   Mean   : 113.9  </span></span>
+<span><span class="co">#&gt;  3rd Qu.:  75.4   3rd Qu.:  82.3   3rd Qu.:  76.3   3rd Qu.:  89.2  </span></span>
+<span><span class="co">#&gt;  Max.   :8072.2   Max.   :7889.2   Max.   :8278.2   Max.   :6856.2  </span></span>
+<span><span class="co">#&gt;    N4_US_T60        N4_US_T90        N4_US_T210       N4_US_T390    </span></span>
+<span><span class="co">#&gt;  Min.   :   1.0   Min.   :   1.0   Min.   :   1.0   Min.   :   1.0  </span></span>
+<span><span class="co">#&gt;  1st Qu.:  20.4   1st Qu.:  19.5   1st Qu.:  20.5   1st Qu.:  19.9  </span></span>
+<span><span class="co">#&gt;  Median :  38.9   Median :  38.5   Median :  39.9   Median :  38.8  </span></span>
+<span><span class="co">#&gt;  Mean   : 113.6   Mean   : 114.8   Mean   : 110.1   Mean   : 111.7  </span></span>
+<span><span class="co">#&gt;  3rd Qu.:  84.6   3rd Qu.:  86.1   3rd Qu.:  86.8   3rd Qu.:  85.4  </span></span>
+<span><span class="co">#&gt;  Max.   :9502.3   Max.   :9193.4   Max.   :9436.0   Max.   :8771.0  </span></span>
+<span><span class="co">#&gt;    N5_US_T60        N5_US_T90        N5_US_T210       N5_US_T390    </span></span>
+<span><span class="co">#&gt;  Min.   :   1.0   Min.   :   1.0   Min.   :   1.0   Min.   :   1.0  </span></span>
+<span><span class="co">#&gt;  1st Qu.:  16.8   1st Qu.:  18.8   1st Qu.:  19.5   1st Qu.:  19.9  </span></span>
+<span><span class="co">#&gt;  Median :  34.5   Median :  36.9   Median :  38.2   Median :  39.0  </span></span>
+<span><span class="co">#&gt;  Mean   : 111.3   Mean   : 108.0   Mean   : 107.4   Mean   : 109.8  </span></span>
+<span><span class="co">#&gt;  3rd Qu.:  82.0   3rd Qu.:  81.4   3rd Qu.:  82.4   3rd Qu.:  84.9  </span></span>
+<span><span class="co">#&gt;  Max.   :8569.3   Max.   :7970.1   Max.   :8371.0   Max.   :7686.5  </span></span>
 <span><span class="co">#&gt;    N6_US_T60        N6_US_T90        N6_US_T210       N6_US_T390    </span></span>
 <span><span class="co">#&gt;  Min.   :   1.0   Min.   :   1.0   Min.   :   1.0   Min.   :   1.0  </span></span>
 <span><span class="co">#&gt;  1st Qu.:  21.1   1st Qu.:  21.5   1st Qu.:  19.9   1st Qu.:  20.2  </span></span>
@@ -194,38 +203,57 @@ plot of chunk plotmicroarrayclass
 <span>  network<span class="op">=</span><span class="va">Net</span>,</span>
 <span>  time_label<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span>,each<span class="op">=</span><span class="fl">25</span><span class="op">)</span>,</span>
 <span>  subject<span class="op">=</span><span class="fl">5</span>,</span>
-<span>  level_peak<span class="op">=</span><span class="fl">200</span><span class="op">)</span></span></code></pre></div>
+<span>  level_peak<span class="op">=</span><span class="fl">200</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Loading required package: VGAM</span></span>
+<span><span class="co">#&gt; Loading required package: stats4</span></span>
+<span><span class="co">#&gt; Loading required package: splines</span></span>
+<span><span class="co">#&gt; Loading required package: magic</span></span>
+<span><span class="co">#&gt; Loading required package: abind</span></span></code></pre></div>
 <p>Get a summay and plots of the simulated data:</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">M</span><span class="op">)</span></span>
-<span><span class="co">#&gt;  log(S/US) : P1T1   log(S/US) : P1T2    log(S/US) : P1T3    log(S/US) : P1T4   log(S/US) : P2T1  </span></span>
-<span><span class="co">#&gt;  Min.   :-887.428   Min.   :-2060.695   Min.   :-837.5811   Min.   :-2189.33   Min.   :-431.905  </span></span>
-<span><span class="co">#&gt;  1st Qu.: -53.644   1st Qu.:  -70.993   1st Qu.: -85.2176   1st Qu.: -115.23   1st Qu.: -50.282  </span></span>
-<span><span class="co">#&gt;  Median :   6.122   Median :    2.206   Median :  -6.6303   Median :  -10.49   Median :  -3.782  </span></span>
-<span><span class="co">#&gt;  Mean   :   3.928   Mean   :   -3.800   Mean   :   0.5563   Mean   :  -75.60   Mean   :   8.264  </span></span>
-<span><span class="co">#&gt;  3rd Qu.:  74.894   3rd Qu.:   79.999   3rd Qu.:  71.9501   3rd Qu.:   43.85   3rd Qu.:  40.975  </span></span>
-<span><span class="co">#&gt;  Max.   : 747.779   Max.   : 1461.163   Max.   :1279.6850   Max.   :  492.80   Max.   :1287.819  </span></span>
-<span><span class="co">#&gt;  log(S/US) : P2T2   log(S/US) : P2T3   log(S/US) : P2T4  log(S/US) : P3T1   log(S/US) : P3T2  </span></span>
-<span><span class="co">#&gt;  Min.   :-845.072   Min.   :-557.840   Min.   :-660.17   Min.   :-868.834   Min.   :-953.894  </span></span>
-<span><span class="co">#&gt;  1st Qu.: -21.668   1st Qu.: -42.958   1st Qu.: -63.34   1st Qu.: -44.656   1st Qu.: -59.964  </span></span>
-<span><span class="co">#&gt;  Median :   2.059   Median :  -2.448   Median : -10.97   Median :   1.839   Median :  -1.306  </span></span>
-<span><span class="co">#&gt;  Mean   :  18.235   Mean   :  25.290   Mean   :  18.10   Mean   :  -2.150   Mean   :  24.123  </span></span>
-<span><span class="co">#&gt;  3rd Qu.:  40.323   3rd Qu.:  46.573   3rd Qu.:  42.56   3rd Qu.:  55.072   3rd Qu.:  78.430  </span></span>
-<span><span class="co">#&gt;  Max.   : 699.912   Max.   :1754.081   Max.   :1418.99   Max.   : 597.562   Max.   :1808.233  </span></span>
-<span><span class="co">#&gt;  log(S/US) : P3T3    log(S/US) : P3T4   log(S/US) : P4T1   log(S/US) : P4T2   log(S/US) : P4T3  </span></span>
-<span><span class="co">#&gt;  Min.   :-1182.316   Min.   :-1027.24   Min.   :-1012.76   Min.   :-1569.32   Min.   :-577.799  </span></span>
-<span><span class="co">#&gt;  1st Qu.:  -87.170   1st Qu.:  -61.31   1st Qu.:  -33.79   1st Qu.: -118.83   1st Qu.: -62.623  </span></span>
-<span><span class="co">#&gt;  Median :   -2.614   Median :   16.27   Median :   11.57   Median :  -13.84   Median :  -8.788  </span></span>
-<span><span class="co">#&gt;  Mean   :   10.224   Mean   :   27.52   Mean   :   10.98   Mean   :  -63.39   Mean   : -14.803  </span></span>
-<span><span class="co">#&gt;  3rd Qu.:   79.246   3rd Qu.:   60.93   3rd Qu.:   74.09   3rd Qu.:   40.22   3rd Qu.:  37.779  </span></span>
-<span><span class="co">#&gt;  Max.   : 2761.291   Max.   : 1926.45   Max.   :  891.60   Max.   :  678.27   Max.   : 430.737  </span></span>
-<span><span class="co">#&gt;  log(S/US) : P4T4   log(S/US) : P5T1   log(S/US) : P5T2    log(S/US) : P5T3  log(S/US) : P5T4  </span></span>
-<span><span class="co">#&gt;  Min.   :-661.083   Min.   :-555.708   Min.   :-1467.268   Min.   :-911.18   Min.   :-621.705  </span></span>
-<span><span class="co">#&gt;  1st Qu.: -41.705   1st Qu.: -64.469   1st Qu.:  -68.769   1st Qu.: -71.66   1st Qu.: -62.466  </span></span>
-<span><span class="co">#&gt;  Median :  -1.468   Median :   2.697   Median :   -1.565   Median :   1.54   Median :  -5.789  </span></span>
-<span><span class="co">#&gt;  Mean   :  10.111   Mean   :   9.403   Mean   :    8.180   Mean   :  13.03   Mean   :   7.083  </span></span>
-<span><span class="co">#&gt;  3rd Qu.:  67.888   3rd Qu.:  57.251   3rd Qu.:   62.256   3rd Qu.:  86.29   3rd Qu.:  62.041  </span></span>
-<span><span class="co">#&gt;  Max.   : 492.723   Max.   : 654.771   Max.   :  990.550   Max.   :1386.11   Max.   : 689.323</span></span></code></pre></div>
+<span><span class="co">#&gt;  log(S/US) : P1T1   log(S/US) : P1T2    log(S/US) : P1T3   </span></span>
+<span><span class="co">#&gt;  Min.   :-887.428   Min.   :-2060.695   Min.   :-837.5811  </span></span>
+<span><span class="co">#&gt;  1st Qu.: -53.644   1st Qu.:  -70.993   1st Qu.: -85.2176  </span></span>
+<span><span class="co">#&gt;  Median :   6.122   Median :    2.206   Median :  -6.6303  </span></span>
+<span><span class="co">#&gt;  Mean   :   3.928   Mean   :   -3.800   Mean   :   0.5563  </span></span>
+<span><span class="co">#&gt;  3rd Qu.:  74.894   3rd Qu.:   79.999   3rd Qu.:  71.9501  </span></span>
+<span><span class="co">#&gt;  Max.   : 747.779   Max.   : 1461.163   Max.   :1279.6850  </span></span>
+<span><span class="co">#&gt;  log(S/US) : P1T4   log(S/US) : P2T1   log(S/US) : P2T2   log(S/US) : P2T3  </span></span>
+<span><span class="co">#&gt;  Min.   :-2189.33   Min.   :-431.905   Min.   :-845.072   Min.   :-557.840  </span></span>
+<span><span class="co">#&gt;  1st Qu.: -115.23   1st Qu.: -50.282   1st Qu.: -21.668   1st Qu.: -42.958  </span></span>
+<span><span class="co">#&gt;  Median :  -10.49   Median :  -3.782   Median :   2.059   Median :  -2.448  </span></span>
+<span><span class="co">#&gt;  Mean   :  -75.60   Mean   :   8.264   Mean   :  18.235   Mean   :  25.290  </span></span>
+<span><span class="co">#&gt;  3rd Qu.:   43.85   3rd Qu.:  40.975   3rd Qu.:  40.323   3rd Qu.:  46.573  </span></span>
+<span><span class="co">#&gt;  Max.   :  492.80   Max.   :1287.819   Max.   : 699.912   Max.   :1754.081  </span></span>
+<span><span class="co">#&gt;  log(S/US) : P2T4  log(S/US) : P3T1   log(S/US) : P3T2   log(S/US) : P3T3   </span></span>
+<span><span class="co">#&gt;  Min.   :-660.17   Min.   :-868.834   Min.   :-953.894   Min.   :-1182.316  </span></span>
+<span><span class="co">#&gt;  1st Qu.: -63.34   1st Qu.: -44.656   1st Qu.: -59.964   1st Qu.:  -87.170  </span></span>
+<span><span class="co">#&gt;  Median : -10.97   Median :   1.839   Median :  -1.306   Median :   -2.614  </span></span>
+<span><span class="co">#&gt;  Mean   :  18.10   Mean   :  -2.150   Mean   :  24.123   Mean   :   10.224  </span></span>
+<span><span class="co">#&gt;  3rd Qu.:  42.56   3rd Qu.:  55.072   3rd Qu.:  78.430   3rd Qu.:   79.246  </span></span>
+<span><span class="co">#&gt;  Max.   :1418.99   Max.   : 597.562   Max.   :1808.233   Max.   : 2761.291  </span></span>
+<span><span class="co">#&gt;  log(S/US) : P3T4   log(S/US) : P4T1   log(S/US) : P4T2   log(S/US) : P4T3  </span></span>
+<span><span class="co">#&gt;  Min.   :-1027.24   Min.   :-1012.76   Min.   :-1569.32   Min.   :-577.799  </span></span>
+<span><span class="co">#&gt;  1st Qu.:  -61.31   1st Qu.:  -33.79   1st Qu.: -118.83   1st Qu.: -62.623  </span></span>
+<span><span class="co">#&gt;  Median :   16.27   Median :   11.57   Median :  -13.84   Median :  -8.788  </span></span>
+<span><span class="co">#&gt;  Mean   :   27.52   Mean   :   10.98   Mean   :  -63.39   Mean   : -14.803  </span></span>
+<span><span class="co">#&gt;  3rd Qu.:   60.93   3rd Qu.:   74.09   3rd Qu.:   40.22   3rd Qu.:  37.779  </span></span>
+<span><span class="co">#&gt;  Max.   : 1926.45   Max.   :  891.60   Max.   :  678.27   Max.   : 430.737  </span></span>
+<span><span class="co">#&gt;  log(S/US) : P4T4   log(S/US) : P5T1   log(S/US) : P5T2    log(S/US) : P5T3 </span></span>
+<span><span class="co">#&gt;  Min.   :-661.083   Min.   :-555.708   Min.   :-1467.268   Min.   :-911.18  </span></span>
+<span><span class="co">#&gt;  1st Qu.: -41.705   1st Qu.: -64.469   1st Qu.:  -68.769   1st Qu.: -71.66  </span></span>
+<span><span class="co">#&gt;  Median :  -1.468   Median :   2.697   Median :   -1.565   Median :   1.54  </span></span>
+<span><span class="co">#&gt;  Mean   :  10.111   Mean   :   9.403   Mean   :    8.180   Mean   :  13.03  </span></span>
+<span><span class="co">#&gt;  3rd Qu.:  67.888   3rd Qu.:  57.251   3rd Qu.:   62.256   3rd Qu.:  86.29  </span></span>
+<span><span class="co">#&gt;  Max.   : 492.723   Max.   : 654.771   Max.   :  990.550   Max.   :1386.11  </span></span>
+<span><span class="co">#&gt;  log(S/US) : P5T4  </span></span>
+<span><span class="co">#&gt;  Min.   :-621.705  </span></span>
+<span><span class="co">#&gt;  1st Qu.: -62.466  </span></span>
+<span><span class="co">#&gt;  Median :  -5.789  </span></span>
+<span><span class="co">#&gt;  Mean   :   7.083  </span></span>
+<span><span class="co">#&gt;  3rd Qu.:  62.041  </span></span>
+<span><span class="co">#&gt;  Max.   : 689.323</span></span></code></pre></div>
 <div class="figure">
 <img src="reference/figures/README-summarysimuldata-1.png" alt="plot of chunk summarysimuldata" width="100%"><p class="caption">
 plot of chunk summarysimuldata
@@ -285,6 +313,7 @@ plot of chunk plotsimuldata
 <p>We infer the new network using subjectwise leave one out cross-validation (all measurement from the same subject are removed from the dataset)</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">Net_inf_C</span> <span class="op">&lt;-</span> <span class="fu">Cascade</span><span class="fu">::</span><span class="fu"><a href="reference/inference-micro_array-method.html">inference</a></span><span class="op">(</span><span class="va">M</span>, cv.subjects<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Loading required package: nnls</span></span>
 <span><span class="co">#&gt; We are at step :  1</span></span>
 <span><span class="co">#&gt; The convergence of the network is (L1 norm) : 0.0072</span></span>
 <span><span class="co">#&gt; We are at step :  2</span></span>
@@ -343,6 +372,22 @@ plot of chunk heatresults
 <p>Analyze the network with a cutoff set to the previouly found 0.14 optimal value.</p>
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="reference/analyze_network-network-method.html">analyze_network</a></span><span class="op">(</span><span class="va">network</span>,nv<span class="op">=</span><span class="fl">0.14</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Loading required package: tnet</span></span>
+<span><span class="co">#&gt; Loading required package: igraph</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Attaching package: 'igraph'</span></span>
+<span><span class="co">#&gt; The following object is masked from 'package:Cascade':</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt;     compare</span></span>
+<span><span class="co">#&gt; The following objects are masked from 'package:stats':</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt;     decompose, spectrum</span></span>
+<span><span class="co">#&gt; The following object is masked from 'package:base':</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt;     union</span></span>
+<span><span class="co">#&gt; Loading required package: survival</span></span>
+<span><span class="co">#&gt; tnet: Analysis of Weighted, Two-mode, and Longitudinal networks.</span></span>
+<span><span class="co">#&gt; Type ?tnet for help.</span></span>
 <span><span class="co">#&gt;    node betweenness degree    output  closeness</span></span>
 <span><span class="co">#&gt; 1     1           0      3 0.8133348 16.4471148</span></span>
 <span><span class="co">#&gt; 2     2           0      3 0.8884602  7.9547696</span></span>
@@ -458,7 +503,7 @@ plot of chunk heatresults
 <div class="dev-status">
 <h2 data-toc-skip>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://doi.org/10.32614/CRAN.package.ModStatR" class="external-link"><img src="https://img.shields.io/badge/doi-10.32614/CRAN.package.ModStatR-blue.svg" alt="DOI"></a></li>
+<li><a href="https://doi.org/10.32614/CRAN.package.Cascade" class="external-link"><img src="https://img.shields.io/badge/doi-10.32614/CRAN.package.Cascade-blue.svg" alt="DOI"></a></li>
 <li><a href="https://lifecycle.r-lib.org/articles/stages.html" class="external-link"><img src="https://img.shields.io/badge/lifecycle-stable-green.svg" alt="Lifecycle: stable"></a></li>
 <li><a href="https://www.repostatus.org/#active" class="external-link"><img src="https://www.repostatus.org/badges/latest/active.svg" alt="Project Status: Active – The project has reached a stable, usable state and is being actively developed."></a></li>
 <li><a href="https://github.com/fbertran/Cascade/actions" class="external-link"><img src="https://github.com/fbertran/Cascade/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a></li>
