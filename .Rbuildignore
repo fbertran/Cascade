@@ -27,3 +27,4 @@ genlogo.R
 ^articles*$
 ^review*$
 ^\.github$
+\.DS_Store$
