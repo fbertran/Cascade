@@ -26,7 +26,7 @@
 #' @importFrom animation ani.options saveHTML
 #' @importFrom abind abind
 #' @import grid
-#' @import igraph 
+#' @importFrom igraph graph_from_adjacency_matrix as_edgelist layout_with_fr vcount V neighborhood
 #' @import lattice
 #' @import limma
 #' @import magic
