@@ -205,7 +205,6 @@ setMethod("evolution","network",function(net
 #' 
 #' @exportMethod position
 setMethod("position","network",function(net,nv=0){
-  require(igraph)
   O<-net@network
   Omega<-net@network
   O[abs(O)<=nv]<-0
@@ -371,7 +370,6 @@ setMethod("plot"
               O[abs(O)<=nv]<-0
               O[abs(O)>nv]<-1
               
-              require(igraph)
               if(is.null(gr)){gr<-rep(1,dim(O)[1])}
               if(is.null(color.vertex)){
                 color.vertex<-rainbow(length(unique(gr)))
@@ -709,7 +707,6 @@ setMethod("geneNeighborhood","network"
                     ,graph=TRUE
                     ,names=FALSE
           ){
-            require(igraph)
             O<-net@network
             Omega<-net@network
             O[abs(O)<=nv]<-0

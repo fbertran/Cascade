@@ -1,3 +1,8 @@
+# Cascade 2.4
+
+* Fixed CRAN package load warning by removing the unused `magic` import.
+* Replaced broad `igraph` imports with selective namespace imports to reduce collision risk.
+
 # Cascade 2.3
 
 * Maintainer email update.

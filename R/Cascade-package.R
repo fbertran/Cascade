@@ -25,11 +25,11 @@
 #' @importFrom cluster agnes
 #' @importFrom animation ani.options saveHTML
 #' @importFrom abind abind
+#' @importFrom igraph as_edgelist graph_from_adjacency_matrix layout_with_fr
+#' @importFrom igraph neighborhood vcount V
 #' @import grid
-#' @import igraph 
 #' @import lattice
 #' @import limma
-#' @import magic
 #' @import nnls
 #' @import splines 
 #' @import stats4
@@ -153,4 +153,3 @@ setClass(Class = "micropredict",
                         ,network="network"
                         ,targets="numeric")
 )
-
