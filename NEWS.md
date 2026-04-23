@@ -3,6 +3,7 @@
 * Fixed CRAN package load warning by removing the unused `magic` import.
 * Replaced broad `igraph` imports with selective namespace imports to reduce collision risk.
 * Replaced the remaining broad imports with selective imports or removed them when unused.
+* Removed the legacy `inst/animation` saveHTML output that vendored vulnerable jQuery assets.
 
 # Cascade 2.3
 
