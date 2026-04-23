@@ -28,3 +28,5 @@ genlogo.R
 ^review*$
 ^\.github$
 \.DS_Store$
+
+^inst/animation*$
