@@ -29,7 +29,6 @@
 #' 
 #' @exportMethod analyze_network
 setMethod("analyze_network","network",function(Omega,nv,label_v=NULL){
-  require(tnet)
   if(is.null(label_v)){label_v<-1:dim(Omega@network)[1]}
   O<-Omega@network
   Omega<-Omega@network

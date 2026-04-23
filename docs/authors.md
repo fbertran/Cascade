@@ -17,7 +17,7 @@
 Source:
 [`inst/CITATION`](https://github.com/fbertran/Cascade/blob/HEAD/inst/CITATION)
 
-Frédéric Bertrand and Myriam Maumy-Bertrand (2025). Cascade: a R-package
+Frédéric Bertrand and Myriam Maumy-Bertrand (2026). Cascade: a R-package
 to study, predict and simulate the diffusion of a signal through a
 temporal gene network, R package version 2.4.
 doi:10.32614/CRAN.package.Cascade.
@@ -25,7 +25,7 @@ doi:10.32614/CRAN.package.Cascade.
     @Manual{,
       title = {Cascade: a R-package to study, predict and simulate the diffusion of a signal through a temporal gene network},
       author = {Frederic Bertrand and Myriam Maumy-Bertrand and Laurent Vallat and Nicolas Jung},
-      year = {2025},
+      year = {2026},
       note = {R package version 2.4},
       url = {https://CRAN.R-project.org/package=Cascade},
       doi = {10.32614/CRAN.package.Cascade},

@@ -320,22 +320,6 @@ Analyze the network with a cutoff set to the previouly found 0.14 optimal value.
 
 ``` r
 analyze_network(network,nv=0.14)
-#> Loading required package: tnet
-#> Loading required package: igraph
-#> 
-#> Attaching package: 'igraph'
-#> The following object is masked from 'package:Cascade':
-#> 
-#>     compare
-#> The following objects are masked from 'package:stats':
-#> 
-#>     decompose, spectrum
-#> The following object is masked from 'package:base':
-#> 
-#>     union
-#> Loading required package: survival
-#> tnet: Analysis of Weighted, Two-mode, and Longitudinal networks.
-#> Type ?tnet for help.
 #>    node betweenness degree    output  closeness
 #> 1     1           0      3 0.8133348 16.4471148
 #> 2     2           0      3 0.8884602  7.9547696
