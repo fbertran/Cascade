@@ -58,7 +58,6 @@ line makes sure the CascadeData package is installed.
 ``` r
 library(Cascade)
 if(!require(CascadeData)){install.packages("CascadeData")}
-#> Loading required package: CascadeData
 data(micro_US)
 micro_US<-as.micro_array(micro_US,time=c(60,90,210,390),subject=6)
 ```
@@ -67,7 +66,6 @@ Get a summay and plots of the data:
 
 ``` r
 summary(micro_US)
-#> Loading required package: cluster
 #>    N1_US_T60        N1_US_T90        N1_US_T210       N1_US_T390       N2_US_T60     
 #>  Min.   :   1.0   Min.   :   1.0   Min.   :   1.0   Min.   :   1.0   Min.   :   1.0  
 #>  1st Qu.:  19.7   1st Qu.:  18.8   1st Qu.:  15.2   1st Qu.:  20.9   1st Qu.:  18.5  
@@ -166,9 +164,6 @@ M <- Cascade::gene_expr_simulation(
   time_label=rep(1:4,each=25),
   subject=5,
   level_peak=200)
-#> Loading required package: VGAM
-#> Loading required package: stats4
-#> Loading required package: splines
 ```
 
 Get a summay and plots of the simulated data:
@@ -274,7 +269,6 @@ the dataset)
 
 ``` r
 Net_inf_C <- Cascade::inference(M, cv.subjects=TRUE)
-#> Loading required package: nnls
 #> We are at step :  1
 #> The convergence of the network is (L1 norm) : 0.0072
 #> We are at step :  2

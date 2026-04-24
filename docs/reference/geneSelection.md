@@ -192,7 +192,6 @@ Nicolas Jung, Frédéric Bertrand , Myriam Maumy-Bertrand.
   abs_val=FALSE,alpha_diff=0.01)
   summary(Selection_3)
   }
-#> Loading required package: limma
 #>       US60               US90             US210            US390        
 #>  Min.   :-0.44125   Min.   :-0.8100   Min.   :-1.560   Min.   :-1.0414  
 #>  1st Qu.:-0.08878   1st Qu.:-0.1214   1st Qu.: 1.178   1st Qu.: 0.7883  

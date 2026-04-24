@@ -24,9 +24,8 @@ genlogo.R
 #Specific
 ^fullrespdf*$
 ^inst/animation*$
+^old_inst_animation*$
 ^articles*$
 ^review*$
 ^\.github$
 \.DS_Store$
-
-^inst/animation*$
