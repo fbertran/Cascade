@@ -23,8 +23,8 @@ genlogo.R
 #^README\.md$
 #Specific
 ^fullrespdf*$
-^inst/animation*$
-^old_inst_animation*$
+^inst/animation($|/)
+^old_inst_animation($|/)
 ^articles*$
 ^review*$
 ^\.github$
