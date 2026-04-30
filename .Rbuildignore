@@ -29,3 +29,5 @@ genlogo.R
 ^review*$
 ^\.github$
 \.DS_Store$
+
+^adddata.*
