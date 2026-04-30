@@ -60,6 +60,9 @@ Msim<-gene_expr_simulation(
   time_label=rep(1:4,each=25),
   subject=5,
   level_peak=200)
+#> Loading required package: VGAM
+#> Loading required package: stats4
+#> Loading required package: splines
 head(Msim)
 #> The matrix :
 #> 

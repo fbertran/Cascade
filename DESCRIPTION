@@ -2,7 +2,7 @@ Package: Cascade
 Type: Package
 Title: Selection, Reverse-Engineering and Prediction in Cascade Networks
 Version: 2.4
-Date: 2026-04-23
+Date: 2026-04-30
 Depends: R (>= 3.5.0)
 biocViews:
 Imports: abind, animation, cluster, igraph, lars, lattice, limma, methods,

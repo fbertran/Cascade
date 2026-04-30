@@ -9,6 +9,8 @@
   them when unused.
 - Removed the legacy `inst/animation` saveHTML output that vendored
   vulnerable jQuery assets.
+- Moved the E-MTAB-1475 re-analysis PDF out of the package vignettes and
+  made it available through the pkgdown website only.
 
 ## Cascade 2.3
 

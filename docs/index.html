@@ -42,7 +42,7 @@
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-vignettes" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Vignettes</button>
   <ul class="dropdown-menu" aria-labelledby="dropdown-vignettes">
 <li><a class="external-link dropdown-item" href="https://cran.r-project.org/web/packages/Cascade/vignettes/Cascade.pdf">Introduction to the Cascade package and application to the GSE39411 dataset</a></li>
-    <li><a class="external-link dropdown-item" href="https://cran.r-project.org/web/packages/Cascade/vignettes/E-MTAB-1475_re-analysis.pdf">Additional application of the Cascade package to E-MTAB-1475 dataset</a></li>
+    <li><a class="dropdown-item" href="vignettes/E-MTAB-1475_re-analysis.pdf">Additional application of the Cascade package to E-MTAB-1475 dataset</a></li>
   </ul>
 </li>
 <li class="nav-item"><a class="nav-link" href="reference/index.html">Reference</a></li>
@@ -102,11 +102,13 @@
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://fbertran.github.io/Cascade/">Cascade</a></span><span class="op">)</span></span>
 <span><span class="kw">if</span><span class="op">(</span><span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">require</a></span><span class="op">(</span><span class="va"><a href="https://fbertran.github.io/CascadeData/">CascadeData</a></span><span class="op">)</span><span class="op">)</span><span class="op">{</span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"CascadeData"</span><span class="op">)</span><span class="op">}</span></span>
+<span><span class="co">#&gt; Loading required package: CascadeData</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">micro_US</span><span class="op">)</span></span>
 <span><span class="va">micro_US</span><span class="op">&lt;-</span><span class="fu"><a href="reference/as.micro_array.html">as.micro_array</a></span><span class="op">(</span><span class="va">micro_US</span>,time<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">60</span>,<span class="fl">90</span>,<span class="fl">210</span>,<span class="fl">390</span><span class="op">)</span>,subject<span class="op">=</span><span class="fl">6</span><span class="op">)</span></span></code></pre></div>
 <p>Get a summay and plots of the data:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">micro_US</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Loading required package: cluster</span></span>
 <span><span class="co">#&gt;    N1_US_T60        N1_US_T90        N1_US_T210       N1_US_T390       N2_US_T60     </span></span>
 <span><span class="co">#&gt;  Min.   :   1.0   Min.   :   1.0   Min.   :   1.0   Min.   :   1.0   Min.   :   1.0  </span></span>
 <span><span class="co">#&gt;  1st Qu.:  19.7   1st Qu.:  18.8   1st Qu.:  15.2   1st Qu.:  20.9   1st Qu.:  18.5  </span></span>
@@ -156,7 +158,7 @@ plot of chunk plotmicroarrayclass
 <div class="section level3">
 <h3 id="gene-selection">Gene selection<a class="anchor" aria-label="anchor" href="#gene-selection"></a>
 </h3>
-<p>There are several functions to carry out gene selection before the inference. They are detailed in the two vignettes of the package.</p>
+<p>There are several functions to carry out gene selection before the inference. They are detailed in the package vignette and in the website-only E-MTAB-1475 re-analysis PDF.</p>
 </div>
 <div class="section level3">
 <h3 id="data-simulation">Data simulation<a class="anchor" aria-label="anchor" href="#data-simulation"></a>
@@ -194,7 +196,10 @@ plot of chunk plotmicroarrayclass
 <span>  network<span class="op">=</span><span class="va">Net</span>,</span>
 <span>  time_label<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span>,each<span class="op">=</span><span class="fl">25</span><span class="op">)</span>,</span>
 <span>  subject<span class="op">=</span><span class="fl">5</span>,</span>
-<span>  level_peak<span class="op">=</span><span class="fl">200</span><span class="op">)</span></span></code></pre></div>
+<span>  level_peak<span class="op">=</span><span class="fl">200</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Loading required package: VGAM</span></span>
+<span><span class="co">#&gt; Loading required package: stats4</span></span>
+<span><span class="co">#&gt; Loading required package: splines</span></span></code></pre></div>
 <p>Get a summay and plots of the simulated data:</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">M</span><span class="op">)</span></span>
@@ -292,6 +297,7 @@ plot of chunk plotsimuldata
 <p>We infer the new network using subjectwise leave one out cross-validation (all measurement from the same subject are removed from the dataset)</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">Net_inf_C</span> <span class="op">&lt;-</span> <span class="fu">Cascade</span><span class="fu">::</span><span class="fu"><a href="reference/inference-micro_array-method.html">inference</a></span><span class="op">(</span><span class="va">M</span>, cv.subjects<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Loading required package: nnls</span></span>
 <span><span class="co">#&gt; We are at step :  1</span></span>
 <span><span class="co">#&gt; The convergence of the network is (L1 norm) : 0.0072</span></span>
 <span><span class="co">#&gt; We are at step :  2</span></span>

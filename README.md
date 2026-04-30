@@ -56,6 +56,7 @@ Import Cascade Data (repeated measurements on several subjects) from the Cascade
 ``` r
 library(Cascade)
 if(!require(CascadeData)){install.packages("CascadeData")}
+#> Loading required package: CascadeData
 data(micro_US)
 micro_US<-as.micro_array(micro_US,time=c(60,90,210,390),subject=6)
 ```
@@ -64,6 +65,7 @@ Get a summay and plots of the data:
 
 ``` r
 summary(micro_US)
+#> Loading required package: cluster
 #>    N1_US_T60        N1_US_T90        N1_US_T210       N1_US_T390       N2_US_T60     
 #>  Min.   :   1.0   Min.   :   1.0   Min.   :   1.0   Min.   :   1.0   Min.   :   1.0  
 #>  1st Qu.:  19.7   1st Qu.:  18.8   1st Qu.:  15.2   1st Qu.:  20.9   1st Qu.:  18.5  
@@ -110,7 +112,7 @@ summary(micro_US)
 </div>
 
 ### Gene selection
-There are several functions to carry out gene selection before the inference. They are detailed in the two vignettes of the package. 
+There are several functions to carry out gene selection before the inference. They are detailed in the package vignette and in the website-only E-MTAB-1475 re-analysis PDF.
 
 ### Data simulation
 Let's simulate some cascade data and then do some reverse engineering.
@@ -155,6 +157,9 @@ M <- Cascade::gene_expr_simulation(
   time_label=rep(1:4,each=25),
   subject=5,
   level_peak=200)
+#> Loading required package: VGAM
+#> Loading required package: stats4
+#> Loading required package: splines
 ```
 
 Get a summay and plots of the simulated data:
@@ -242,6 +247,7 @@ We infer the new network using subjectwise leave one out cross-validation (all m
 
 ``` r
 Net_inf_C <- Cascade::inference(M, cv.subjects=TRUE)
+#> Loading required package: nnls
 #> We are at step :  1
 #> The convergence of the network is (L1 norm) : 0.0072
 #> We are at step :  2
@@ -390,5 +396,4 @@ analyze_network(network,nv=0.14)
 #> 73   73           0      0 0.0000000  0.0000000
 #> 74   74           0      0 0.0000000  0.0000000
 ```
-
 

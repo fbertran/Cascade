@@ -72,7 +72,7 @@ summary(micro_US)
 ```
 
 ### Gene selection
-There are several functions to carry out gene selection before the inference. They are detailed in the two vignettes of the package. 
+There are several functions to carry out gene selection before the inference. They are detailed in the package vignette and in the website-only E-MTAB-1475 re-analysis PDF.
 
 ### Data simulation
 Let's simulate some cascade data and then do some reverse engineering.
@@ -150,5 +150,4 @@ Analyze the network with a cutoff set to the previouly found 0.14 optimal value.
 ```{r analyzenet, warning=FALSE}
 analyze_network(network,nv=0.14)
 ```
-
 

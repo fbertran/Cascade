@@ -87,6 +87,7 @@ Nicolas Jung, Frédéric Bertrand , Myriam Maumy-Bertrand.
 #With simulated data
 data(M)
 infM <- inference(M)
+#> Loading required package: nnls
 #> We are at step :  1
 #> The convergence of the network is (L1 norm) : 0.0068
 #> We are at step :  2

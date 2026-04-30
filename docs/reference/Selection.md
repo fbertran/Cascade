@@ -40,6 +40,7 @@ head(Selection)
 #> Number of subject :
 #> [1] 6
 summary(Selection,3)
+#> Loading required package: cluster
 #>       US60                US90              US210             US390        
 #>  Min.   :-2.768413   Min.   :-2.36952   Min.   :-2.2557   Min.   :-2.6048  
 #>  1st Qu.:-0.231289   1st Qu.:-0.22754   1st Qu.:-0.0852   1st Qu.:-0.2729  
